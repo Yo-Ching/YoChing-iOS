@@ -199,23 +199,23 @@
 		3EED85B21978FEE8007EEB62 /* YoChing */ = {
 			isa = PBXGroup;
 			children = (
-				DE23674B1CBC353800D9E87D /* Animations */,
 				DE468E901CB968F000AC1199 /* html */,
 				DE468E911CB968F000AC1199 /* json */,
 				DE6C9A571CC1A5A100ACF11A /* txt */,
-				DE2CC9601CB8071D003233F2 /* Settings */,
-				DE6B79EB1CB721AF00C47024 /* Wrexagrams */,
+				DE468E891CB84BDB00AC1199 /* Launch Screen.storyboard */,
 				3EED85B51978FEE8007EEB62 /* AppDelegate.swift */,
 				DE5138C01CADD9560067A31C /* Coin.swift */,
 				1397CDFF1BF44E6C004523FD /* Extensions.swift */,
 				3EED85B71978FEE8007EEB62 /* MainViewController.swift */,
+				DE2367491CBC063300D9E87D /* Breaks.xcassets */,
 				3EED85BC1978FEE8007EEB62 /* Images.xcassets */,
+				DE23674B1CBC353800D9E87D /* Animations */,
 				DE683D4B1CB372100072F98A /* Fonts */,
 				3EED85B91978FEE8007EEB62 /* Main.storyboard */,
 				3EED85B11978FEE8007EEB62 /* Products */,
+				DE2CC9601CB8071D003233F2 /* Settings */,
 				3EED85B31978FEE8007EEB62 /* Supporting Files */,
-				DE468E891CB84BDB00AC1199 /* Launch Screen.storyboard */,
-				DE2367491CBC063300D9E87D /* Breaks.xcassets */,
+				DE6B79EB1CB721AF00C47024 /* Wrexagrams */,
 			);
 			path = YoChing;
 			sourceTree = "<group>";
@@ -725,7 +725,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = YoChing/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.risney.YoChing;
 				PRODUCT_NAME = YoChing;
@@ -743,7 +743,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = YoChing/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.risney.YoChing;
 				PRODUCT_NAME = YoChing;
