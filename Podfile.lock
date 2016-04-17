@@ -1,13 +1,13 @@
 PODS:
-  - AromaSwiftClient (1.0):
+  - AromaSwiftClient (1.1):
     - AromaThrift (= 1.9)
-    - SwiftExceptionCatcher (= 1.0)
+    - SwiftExceptionCatcher (= 1.1)
   - AromaThrift (1.9):
     - ThriftLib (~> 0.9.3)
   - BRYXBanner (0.5.2):
     - BRYXBanner/Core (= 0.5.2)
   - BRYXBanner/Core (0.5.2)
-  - SwiftExceptionCatcher (1.0)
+  - SwiftExceptionCatcher (1.1)
   - SwiftyJSON (2.3.2)
   - ThriftLib (0.9.3)
 
@@ -26,17 +26,17 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AromaSwiftClient:
-    :commit: b7e4ef9dddbab400042a029d49a595f5dce4ade4
+    :commit: 7da6a0d5b30b0571d0a396f8bae5117c3df1cc92
     :git: https://github.com/RedRoma/aroma-swift-client.git
   SwiftyJSON:
     :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  AromaSwiftClient: 0d288a0203cfe3afdf440f58291a676583b8931e
+  AromaSwiftClient: 0b4dc7eeedfdc2f06ec33460ca86ab0a54f4328e
   AromaThrift: 401f82fac018807e58c021df8b26941646b29a2f
   BRYXBanner: 5f0911d52e0a77e088f7ea7ddcdebd02afb7828a
-  SwiftExceptionCatcher: 078a818ce665b30f537cb37b3762f989d8bfe1b4
+  SwiftExceptionCatcher: 02e81cb4c990ee1023af9d2faa29e75b0d8a6a7d
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   ThriftLib: ff1c3191db124d58a458440f110602ee0a670485
 
