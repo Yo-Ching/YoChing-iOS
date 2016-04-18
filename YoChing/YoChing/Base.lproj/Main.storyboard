@@ -11,8 +11,13 @@
         <mutableArray key="Exo-Black.otf">
             <string>Exo-Black</string>
             <string>Exo-Black</string>
+            <string>Exo-Black</string>
+            <string>Exo-Black</string>
+            <string>Exo-Black</string>
         </mutableArray>
         <mutableArray key="Exo-Bold.otf">
+            <string>Exo-Bold</string>
+            <string>Exo-Bold</string>
             <string>Exo-Bold</string>
             <string>Exo-Bold</string>
             <string>Exo-Bold</string>
@@ -30,11 +35,6 @@
             <string>Exo-ExtraBold</string>
         </mutableArray>
         <mutableArray key="Exo-Light.otf">
-            <string>Exo-Light</string>
-            <string>Exo-Light</string>
-            <string>Exo-Light</string>
-            <string>Exo-Light</string>
-            <string>Exo-Light</string>
             <string>Exo-Light</string>
             <string>Exo-Light</string>
             <string>Exo-Light</string>
@@ -177,7 +177,7 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="64 WREXAGRAMS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlx-Gi-rdU">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
-                                    <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="26"/>
+                                    <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="26"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -400,8 +400,8 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mf6-cF-EAQ">
-                                    <rect key="frame" x="243" y="32" width="115" height="35"/>
-                                    <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="26"/>
+                                    <rect key="frame" x="241" y="32" width="118" height="35"/>
+                                    <fontDescription key="fontDescription" name="Exo-Black" family="Exo" pointSize="26"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -872,7 +872,7 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WREXAGRAM 22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydG-al-XNI">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
-                                    <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="26"/>
+                                    <fontDescription key="fontDescription" name="Exo-Black" family="Exo" pointSize="26"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -1033,7 +1033,7 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WREXAGRAM 22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9w-ud-9W3">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
-                                    <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="26"/>
+                                    <fontDescription key="fontDescription" name="Exo-Black" family="Exo" pointSize="26"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -1091,8 +1091,8 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREDITS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLi-70-0zg">
-                                    <rect key="frame" x="251" y="24" width="98" height="35"/>
-                                    <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="26"/>
+                                    <rect key="frame" x="250" y="24" width="100" height="35"/>
+                                    <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="26"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -1457,8 +1457,8 @@
         <image name="spray.galaxy" width="842" height="562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zY3-tK-GuC"/>
-        <segue reference="HT8-GF-4WQ"/>
+        <segue reference="HDs-Lu-ahA"/>
+        <segue reference="VMP-af-WSe"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
