@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r5R-oB-Gnh">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -232,6 +233,63 @@
                                     <constraint firstAttribute="width" secondItem="MZJ-OV-sZh" secondAttribute="height" multiplier="1:1" id="VPp-e6-Bc4"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzE-jB-y4h">
+                                <rect key="frame" x="60" y="24" width="480" height="214"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WREX_MASTER-splitline" translatesAutoresizingMaskIntoConstraints="NO" id="aJp-Mc-Ssl">
+                                        <rect key="frame" x="120" y="8" width="240" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aJp-Mc-Ssl" secondAttribute="height" multiplier="105:11" id="AzK-Ph-uZp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WREX_MASTER-strongline" translatesAutoresizingMaskIntoConstraints="NO" id="ApJ-rr-Y3s">
+                                        <rect key="frame" x="120" y="41" width="240" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ApJ-rr-Y3s" secondAttribute="height" multiplier="105:11" id="EmH-g2-2s8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WREX_MASTER-strongline" translatesAutoresizingMaskIntoConstraints="NO" id="D4g-yn-ZZF">
+                                        <rect key="frame" x="120" y="74" width="240" height="25"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WREX_MASTER-splitline" translatesAutoresizingMaskIntoConstraints="NO" id="bZx-8E-oGi">
+                                        <rect key="frame" x="120" y="107" width="240" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bZx-8E-oGi" secondAttribute="height" multiplier="105:11" id="Kj1-HF-PKK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WREX_MASTER-strongline" translatesAutoresizingMaskIntoConstraints="NO" id="wg2-3T-CM4">
+                                        <rect key="frame" x="120" y="141" width="240" height="25"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WREX_MASTER-strongline" translatesAutoresizingMaskIntoConstraints="NO" id="f0M-JN-8uz">
+                                        <rect key="frame" x="120" y="174" width="240" height="25"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="D4g-yn-ZZF" firstAttribute="top" secondItem="ApJ-rr-Y3s" secondAttribute="bottom" constant="8" id="0tT-IV-ggc"/>
+                                    <constraint firstItem="f0M-JN-8uz" firstAttribute="width" secondItem="f0M-JN-8uz" secondAttribute="height" multiplier="105:11" id="38A-ur-Bzy"/>
+                                    <constraint firstItem="wg2-3T-CM4" firstAttribute="top" secondItem="bZx-8E-oGi" secondAttribute="bottom" constant="8" id="7sK-ld-hua"/>
+                                    <constraint firstItem="aJp-Mc-Ssl" firstAttribute="top" secondItem="GzE-jB-y4h" secondAttribute="top" constant="8" id="Avm-fg-GSn"/>
+                                    <constraint firstItem="ApJ-rr-Y3s" firstAttribute="top" secondItem="aJp-Mc-Ssl" secondAttribute="bottom" constant="8" id="Awj-EF-6jj"/>
+                                    <constraint firstItem="f0M-JN-8uz" firstAttribute="top" secondItem="wg2-3T-CM4" secondAttribute="bottom" constant="8" id="Dgr-OD-q9f"/>
+                                    <constraint firstItem="ApJ-rr-Y3s" firstAttribute="centerX" secondItem="aJp-Mc-Ssl" secondAttribute="centerX" id="ITZ-Bt-C7f"/>
+                                    <constraint firstItem="bZx-8E-oGi" firstAttribute="width" secondItem="D4g-yn-ZZF" secondAttribute="width" id="JVU-O1-dC9"/>
+                                    <constraint firstItem="ApJ-rr-Y3s" firstAttribute="width" secondItem="aJp-Mc-Ssl" secondAttribute="width" id="LFg-bn-d0A"/>
+                                    <constraint firstItem="bZx-8E-oGi" firstAttribute="top" secondItem="D4g-yn-ZZF" secondAttribute="bottom" constant="8" id="TtL-hF-oQP"/>
+                                    <constraint firstItem="wg2-3T-CM4" firstAttribute="centerX" secondItem="bZx-8E-oGi" secondAttribute="centerX" id="b6u-EP-G8v"/>
+                                    <constraint firstItem="bZx-8E-oGi" firstAttribute="centerX" secondItem="D4g-yn-ZZF" secondAttribute="centerX" id="cUi-rZ-7Zi"/>
+                                    <constraint firstItem="D4g-yn-ZZF" firstAttribute="width" secondItem="D4g-yn-ZZF" secondAttribute="height" multiplier="105:11" id="eek-Zo-JbN"/>
+                                    <constraint firstItem="wg2-3T-CM4" firstAttribute="width" secondItem="wg2-3T-CM4" secondAttribute="height" multiplier="105:11" id="gI9-to-o1l"/>
+                                    <constraint firstItem="aJp-Mc-Ssl" firstAttribute="width" secondItem="GzE-jB-y4h" secondAttribute="width" multiplier="0.5" id="jcD-ay-VVI"/>
+                                    <constraint firstItem="aJp-Mc-Ssl" firstAttribute="centerX" secondItem="GzE-jB-y4h" secondAttribute="centerX" id="kHY-8C-S2d"/>
+                                    <constraint firstItem="wg2-3T-CM4" firstAttribute="width" secondItem="bZx-8E-oGi" secondAttribute="width" id="l5P-i6-Tkj"/>
+                                    <constraint firstItem="bZx-8E-oGi" firstAttribute="width" secondItem="bZx-8E-oGi" secondAttribute="height" multiplier="105:11" id="n8T-9a-bR5"/>
+                                    <constraint firstItem="f0M-JN-8uz" firstAttribute="width" secondItem="wg2-3T-CM4" secondAttribute="width" id="tha-8Z-buH"/>
+                                    <constraint firstItem="f0M-JN-8uz" firstAttribute="centerX" secondItem="wg2-3T-CM4" secondAttribute="centerX" id="tod-sM-tZJ"/>
+                                    <constraint firstItem="D4g-yn-ZZF" firstAttribute="width" secondItem="ApJ-rr-Y3s" secondAttribute="width" id="wCU-Ro-bKf"/>
+                                    <constraint firstItem="D4g-yn-ZZF" firstAttribute="centerX" secondItem="ApJ-rr-Y3s" secondAttribute="centerX" id="yYj-lP-pYl"/>
+                                </constraints>
+                            </view>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giy-xa-NoG">
                                 <rect key="frame" x="0.0" y="466" width="600" height="70"/>
                                 <color key="backgroundColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -251,11 +309,14 @@
                         <constraints>
                             <constraint firstItem="MZJ-OV-sZh" firstAttribute="centerY" secondItem="XWZ-UG-Vf2" secondAttribute="centerY" id="1su-JG-nzc"/>
                             <constraint firstItem="MZJ-OV-sZh" firstAttribute="width" secondItem="XWZ-UG-Vf2" secondAttribute="width" id="2Zs-Q2-nEH"/>
+                            <constraint firstItem="GzE-jB-y4h" firstAttribute="top" secondItem="8hd-as-Al9" secondAttribute="bottom" constant="24" id="5hD-x9-qra"/>
+                            <constraint firstItem="GzE-jB-y4h" firstAttribute="centerX" secondItem="P7M-QV-hgn" secondAttribute="centerX" id="6Kz-p6-MM5"/>
                             <constraint firstItem="2OV-QN-hU3" firstAttribute="top" secondItem="giy-xa-NoG" secondAttribute="bottom" id="FtU-Zj-nBE"/>
                             <constraint firstItem="2OV-QN-hU3" firstAttribute="top" secondItem="Hdp-Yh-Khy" secondAttribute="bottom" id="IPB-s0-pSV"/>
                             <constraint firstItem="Hlq-cf-f8c" firstAttribute="width" secondItem="XWZ-UG-Vf2" secondAttribute="width" id="K9g-NZ-y7H"/>
                             <constraint firstItem="XWZ-UG-Vf2" firstAttribute="centerX" secondItem="P7M-QV-hgn" secondAttribute="centerX" id="QR5-m3-qAA"/>
                             <constraint firstItem="MZJ-OV-sZh" firstAttribute="width" secondItem="MZJ-OV-sZh" secondAttribute="height" multiplier="1:1" id="RDx-v0-y6h"/>
+                            <constraint firstItem="GzE-jB-y4h" firstAttribute="width" secondItem="P7M-QV-hgn" secondAttribute="width" multiplier="0.8" id="RaO-sX-c2l"/>
                             <constraint firstItem="giy-xa-NoG" firstAttribute="leading" secondItem="P7M-QV-hgn" secondAttribute="leading" id="Rku-7b-rRF"/>
                             <constraint firstItem="Hdp-Yh-Khy" firstAttribute="top" secondItem="8hd-as-Al9" secondAttribute="bottom" id="ZBK-r4-xjr"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="MZJ-OV-sZh" secondAttribute="trailing" id="b8S-ch-dnN"/>
@@ -264,6 +325,7 @@
                             <constraint firstItem="Hlq-cf-f8c" firstAttribute="width" secondItem="Hlq-cf-f8c" secondAttribute="height" multiplier="1:1" id="hwC-lE-fYf"/>
                             <constraint firstItem="MZJ-OV-sZh" firstAttribute="width" secondItem="MZJ-OV-sZh" secondAttribute="height" multiplier="1:1" id="kHv-ts-PTm"/>
                             <constraint firstAttribute="trailing" secondItem="giy-xa-NoG" secondAttribute="trailing" id="msg-Kn-Kgx"/>
+                            <constraint firstItem="GzE-jB-y4h" firstAttribute="height" secondItem="P7M-QV-hgn" secondAttribute="height" multiplier="0.4" id="n1f-gT-Li5"/>
                             <constraint firstAttribute="trailing" secondItem="Hdp-Yh-Khy" secondAttribute="trailing" id="r3V-7Y-70X"/>
                             <constraint firstItem="XWZ-UG-Vf2" firstAttribute="leading" secondItem="Hlq-cf-f8c" secondAttribute="trailing" priority="750" constant="32" id="tOf-n6-0lJ"/>
                             <constraint firstItem="Hlq-cf-f8c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P7M-QV-hgn" secondAttribute="leadingMargin" id="u2I-IW-xDK"/>
@@ -310,6 +372,13 @@
                         <outlet property="coinThreeImage" destination="MZJ-OV-sZh" id="5kG-xb-pgB"/>
                         <outlet property="coinTwoImage" destination="XWZ-UG-Vf2" id="QVy-HN-e3f"/>
                         <outlet property="flipButton" destination="giy-xa-NoG" id="bzx-hW-dXN"/>
+                        <outlet property="wrexLine1" destination="f0M-JN-8uz" id="I2T-Ys-IGb"/>
+                        <outlet property="wrexLine2" destination="wg2-3T-CM4" id="Kkc-jb-RHe"/>
+                        <outlet property="wrexLine3" destination="bZx-8E-oGi" id="ZDc-lZ-g1J"/>
+                        <outlet property="wrexLine4" destination="D4g-yn-ZZF" id="U9H-Ps-nFf"/>
+                        <outlet property="wrexLine5" destination="ApJ-rr-Y3s" id="64a-wd-Uwe"/>
+                        <outlet property="wrexLine6" destination="aJp-Mc-Ssl" id="p1g-hH-fuh"/>
+                        <outlet property="wrexLinesContainer" destination="GzE-jB-y4h" id="f5n-Zz-WcO"/>
                         <segue destination="5GJ-ao-Ci3" kind="show" identifier="ToWrexagram" id="HT8-GF-4WQ"/>
                         <segue destination="mZ2-ZW-zjx" kind="show" identifier="ToPager" id="zY3-tK-GuC"/>
                     </connections>
@@ -1377,6 +1446,8 @@
         <image name="Coins.Slick.Heads" width="200" height="200"/>
         <image name="Coins.Slick.Tails" width="200" height="200"/>
         <image name="WREX1" width="1800" height="1800"/>
+        <image name="WREX_MASTER-splitline" width="953" height="86"/>
+        <image name="WREX_MASTER-strongline" width="942" height="98"/>
         <image name="Wrexagram-Icon" width="40" height="40"/>
         <image name="Yo-Bro-White" width="40" height="40"/>
         <image name="arrow_left" width="100" height="100"/>

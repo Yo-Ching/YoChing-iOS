@@ -11,11 +11,24 @@ import UIKit
 import QuartzCore
 
 class MainViewController: UIViewController {
-                            
+    
+    //MARK: IBOutlets
     @IBOutlet weak var coinOneImage: UIImageView!
     @IBOutlet weak var coinTwoImage: UIImageView!
     @IBOutlet weak var coinThreeImage: UIImageView!
     
+    @IBOutlet weak var wrexLinesContainer: UIView!
+    @IBOutlet weak var wrexLine1: UIImageView!
+    @IBOutlet weak var wrexLine2: UIImageView!
+    @IBOutlet weak var wrexLine3: UIImageView!
+    @IBOutlet weak var wrexLine4: UIImageView!
+    @IBOutlet weak var wrexLine5: UIImageView!
+    @IBOutlet weak var wrexLine6: UIImageView!
+    
+    @IBOutlet weak private var flipButton: UIButton!
+    
+    
+    //MARK: Internal Variables
     private var coinOne: Coin!
     private var coinTwo: Coin!
     private var coinThree: Coin!
@@ -28,9 +41,15 @@ class MainViewController: UIViewController {
     private let main = NSOperationQueue.mainQueue()
     private let async = NSOperationQueue()
     
-    @IBOutlet weak private var flipButton: UIButton!
-    
     private let transition = AnimateLeft()
+    
+    private var splitLineImage: UIImage? {
+        return UIImage(named: "WREX_MASTER-splitline")
+    }
+    
+    private var strongLineImage: UIImage? {
+        return UIImage(named: "WREX_MASTER-strongline")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,21 +81,16 @@ class MainViewController: UIViewController {
         
         flipCoin(view)
     }
-    
-    private func flipCoin(imageView: UIImageView) {
-        let animation: Void  -> Void = {
-            let heads = Int(arc4random_uniform(10)) % 2 == 0
-            imageView.image = heads ? Coin.headsCoin : Coin.tailsCoin
-        }
-        
-        UIView.transitionWithView(imageView, duration: 0.2, options: .TransitionFlipFromTop, animations: animation, completion: nil)
-    }
+
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
          self.maxTosses = Settings.isQuickEnabled ? 1 : 6
         
+        if tosses == 0 {
+            hideWrexLines()
+        }
     }
     
     private func setCoins(imageView: UIImageView...) {
@@ -108,6 +122,7 @@ class MainViewController: UIViewController {
         
         self.view.addGestureRecognizer(gesture)
     }
+
     
 }
 
@@ -132,86 +147,7 @@ extension MainViewController {
     }
     
     @IBAction func flipCoinAction(sender: AnyObject) {
-        
-        flipButton.enabled = false
-        
-        var coinsOutcome: [Coin.CoinSide] = []
-        
-        self.coinsInTheAir = 3
-        
-        delay(randomDouble()) {
-            self.coinOne?.flipCoinAction() { side in
-                self.coinsInTheAir -= 1
-                print("Coin 1 Flipped: \(side)")
-                coinsOutcome.append(side)
-            }
-        }
-        
-        delay(randomDouble()) {
-            
-            self.coinTwo.flipCoinAction() { side in
-                self.coinsInTheAir -= 1
-                print("Coin 2 Flipped: \(side)")
-                coinsOutcome.append(side)
-
-            }
-        }
-        
-        delay(randomDouble()) {
-            
-            self.coinThree?.flipCoinAction() { side in
-                self.coinsInTheAir -= 1
-                print("Coin 3 Flipped: \(side)")
-                coinsOutcome.append(side)
-
-            }
-        }
-        
-        
-        async.addOperationWithBlock() {
-            
-            self.tosses += 1
-            
-            while self.coinsInTheAir > 0 { } //wait
-            
-            self.main.addOperationWithBlock() {
-                
-                self.recordCoinTossResult(coinsOutcome)
-                self.flipButton.enabled = true
-                
-                if self.tosses >= self.maxTosses {
-                    
-                    defer {
-                        self.tosses = 0
-                        self.hexNum = ""
-                    }
-                    
-                    // confusing needs to be cleaned up, but works
-                    
-                    var outcome:String
-         
-                    // only 1 toss ? get a random wrexagram
-                    if self.maxTosses == 1 {
-                        outcome = self.randomWrexagram()
-                    } else {
-                        let hexNumber = Int(self.hexNum) ?? 111111
-                        outcome  = WrexagramLibrary.getOutcome(hexNumber)
-                    }
-                    
-                    defer {
-                        AromaClient.beginWithTitle("Coins Flipped")
-                            .addBody("Result: \(outcome)")
-                            .addLine().addLine()
-                            .addBody("From: \(UIDevice.currentDevice().name)")
-                            .send()
-                    }
-                    
-                    let wrexNumber = Int(outcome.stringByReplacingOccurrencesOfString("wrexagram", withString: "")) ?? 01
-                    self.goToWrex(wrexNumber)
-                }
-            }
-               
-        }
+        throwTheYo()
     }
     
     private func randomDouble(lower: Double = 0.0, _ upper: Double = 0.35) -> Double {
@@ -236,12 +172,6 @@ extension MainViewController {
         )
     }
     
-    private func recordCoinTossResult(coinTossResults: [Coin.CoinSide]) {
-        
-        let headCount = coinTossResults.filter{$0 == Coin.CoinSide.HEADS}.count
-        (headCount >= 2) ? (hexNum += "2") : (hexNum += "1")
-
-    }
     
 
 }
@@ -291,5 +221,148 @@ extension MainViewController {
         if tosses == 0 {
             setCoins(coinOneImage, coinTwoImage, coinThreeImage)
         }
+    }
+}
+
+//MARK: Wrexagram Logic
+extension MainViewController {
+    
+    
+    private func hideWrexLines() {
+        let lines = [ wrexLine1, wrexLine2, wrexLine3, wrexLine4, wrexLine5, wrexLine6]
+        
+        lines.forEach() { line in line.hidden = true }
+    }
+    
+    
+    private func flipCoin(imageView: UIImageView) {
+        let animation: Void  -> Void = {
+            let heads = Int(arc4random_uniform(10)) % 2 == 0
+            imageView.image = heads ? Coin.headsCoin : Coin.tailsCoin
+        }
+        
+        UIView.transitionWithView(imageView, duration: 0.2, options: .TransitionFlipFromTop, animations: animation, completion: nil)
+    }
+    
+    
+    private func getWrexLineForResults(results: [Coin.CoinSide]) -> UIImage? {
+        
+        guard !results.isEmpty && results.count == 3 else { return nil }
+        
+        let numberOfHeads = results.filter{ $0 == Coin.CoinSide.HEADS }.count
+        
+        if numberOfHeads >= 2 {
+            return strongLineImage
+        }
+        else {
+            return splitLineImage
+        }
+    }
+
+    private func throwTheYo() {
+        
+        flipButton.enabled = false
+        
+        var coinsOutcome: [Coin.CoinSide] = []
+        
+        self.coinsInTheAir = 3
+        
+        delay(randomDouble()) {
+            self.coinOne?.flipCoinAction() { side in
+                self.coinsInTheAir -= 1
+                print("Coin 1 Flipped: \(side)")
+                coinsOutcome.append(side)
+            }
+        }
+        
+        delay(randomDouble()) {
+            
+            self.coinTwo.flipCoinAction() { side in
+                self.coinsInTheAir -= 1
+                print("Coin 2 Flipped: \(side)")
+                coinsOutcome.append(side)
+                
+            }
+        }
+        
+        delay(randomDouble()) {
+            
+            self.coinThree?.flipCoinAction() { side in
+                self.coinsInTheAir -= 1
+                print("Coin 3 Flipped: \(side)")
+                coinsOutcome.append(side)
+                
+            }
+        }
+        
+        
+        async.addOperationWithBlock() {
+            
+            self.tosses += 1
+            
+            while self.coinsInTheAir > 0 { } //wait
+            
+            self.main.addOperationWithBlock() {
+                
+                self.recordCoinTossResult(coinsOutcome)
+                self.flipButton.enabled = true
+                
+                if self.tosses >= self.maxTosses {
+                    
+                    defer {
+                        self.tosses = 0
+                        self.hexNum = ""
+                        self.hideWrexLines()
+                    }
+                    
+                    // confusing needs to be cleaned up, but works
+                    
+                    var outcome:String
+                    
+                    // only 1 toss ? get a random wrexagram
+                    if self.maxTosses == 1 {
+                        outcome = self.randomWrexagram()
+                    } else {
+                        let hexNumber = Int(self.hexNum) ?? 111111
+                        outcome  = WrexagramLibrary.getOutcome(hexNumber)
+                    }
+                    
+                    defer {
+                        AromaClient.beginWithTitle("Coins Flipped")
+                            .addBody("Result: \(outcome)")
+                            .addLine().addLine()
+                            .addBody("From: \(UIDevice.currentDevice().name)")
+                            .send()
+                    }
+                    
+                    let wrexNumber = Int(outcome.stringByReplacingOccurrencesOfString("wrexagram", withString: "")) ?? 01
+                    self.goToWrex(wrexNumber)
+                }
+            }
+            
+        }
+    }
+    
+    
+    private func recordCoinTossResult(coinTossResults: [Coin.CoinSide]) {
+        
+        let headCount = coinTossResults.filter{$0 == Coin.CoinSide.HEADS}.count
+        (headCount >= 2) ? (hexNum += "2") : (hexNum += "1")
+        
+        guard let wrexLineImage = getWrexLineForResults(coinTossResults) else { return }
+        
+        switch tosses {
+            case 1 :  wrexLine1.image = wrexLineImage ; fadeInWrexagramLine(wrexLine1)
+            case 2 :  wrexLine2.image = wrexLineImage ; fadeInWrexagramLine(wrexLine2)
+            case 3 :  wrexLine3.image = wrexLineImage ; fadeInWrexagramLine(wrexLine3)
+            case 4 :  wrexLine4.image = wrexLineImage ; fadeInWrexagramLine(wrexLine4)
+            case 5 :  wrexLine5.image = wrexLineImage ; fadeInWrexagramLine(wrexLine5)
+            default : wrexLine6.image = wrexLineImage ; fadeInWrexagramLine(wrexLine6)
+        }
+    }
+    
+    private func fadeInWrexagramLine(wrexLine: UIImageView) {
+        
+        UIView.transitionWithView(wrexLine, duration: 0.3, options: .TransitionCrossDissolve, animations: { wrexLine.hidden = false }, completion: nil)
     }
 }
