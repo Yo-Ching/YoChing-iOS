@@ -347,7 +347,13 @@ extension MainViewController {
     private func recordCoinTossResult(coinTossResults: [Coin.CoinSide]) {
         
         let headCount = coinTossResults.filter{$0 == Coin.CoinSide.HEADS}.count
-        (headCount >= 2) ? (hexNum += "2") : (hexNum += "1")
+        
+        if headCount >= 2 {
+            hexNum += "1"
+        }
+        else {
+            hexNum += "2"
+        }
         
         guard let wrexLineImage = getWrexLineForResults(coinTossResults) else { return }
         
