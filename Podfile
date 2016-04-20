@@ -36,6 +36,12 @@ pod 'BRYXBanner'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 #===============================
 
+
+#===============================
+# Image Caching and Resizing
+pod 'HanekeSwift'
+#===============================
+
 end
 
 target 'YoChingTests' do
