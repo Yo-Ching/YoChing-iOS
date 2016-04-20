@@ -6,6 +6,7 @@
 //  Copyright © 2015 Gary.com. All rights reserved.
 //
 
+import AromaSwiftClient
 import Foundation
 import UIKit
 
@@ -51,6 +52,25 @@ extension UIViewController {
     }
 }
 
+//MARK: Opening Links
+extension UIViewController {
+    
+    func openLink(link: String) {
+        
+        guard let url = link.toURL() else { return }
+        
+        defer {
+            AromaClient.beginWithTitle("Opened Link")
+                .withPriority(.MEDIUM)
+                .addBody(link)
+                .send()
+        }
+        
+        let app = UIApplication.sharedApplication()
+        app.openURL(url)
+    }
+}
+
 
 //MARK: String Operations
 public extension String {
@@ -72,7 +92,7 @@ extension UITableViewController {
     func setSprayForBlackBackground() {
 
         let imageName = "spray.galaxy.black.transparent"
-//        setBackground(imageName)
+        setBackground(imageName)
     }
 
     func setSprayForWhiteBackground() {

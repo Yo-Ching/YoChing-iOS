@@ -79,9 +79,6 @@ class SettingsViewController : UITableViewController {
     private let getBookPath = NSIndexPath(forRow: 1, inSection: 2)
     private let seeStreetCredsPath = NSIndexPath(forRow: 2, inSection: 2)
     private let seeInfoPath = NSIndexPath(forRow: 3, inSection: 2)
-    
-    private let transition = AnimateRight()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -179,14 +176,6 @@ extension SettingsViewController {
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        let destination = segue.destinationViewController
-        
-        if let credits = destination as? CreditsViewController {
-            credits.transitioningDelegate = self.transition
-        }
-    }
 }
 
 
@@ -228,21 +217,4 @@ extension SettingsViewController {
 
     }
 
-    private func openLink(link: String) {
-
-        guard let url = link.toURL() else { return }
-
-        defer {
-            AromaClient.beginWithTitle("Opened Link")
-                .addBody(link)
-                .addLine().addLine()
-                .addBody("By \(UIDevice.currentDevice().name)")
-                .withPriority(.MEDIUM)
-                .send()
-        }
-
-        let app = UIApplication.sharedApplication()
-        app.openURL(url)
-
-    }
 }

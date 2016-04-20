@@ -208,8 +208,8 @@ extension MainViewController {
             pager.wrexagrams = WrexagramLibrary.wrexagrams
         }
         
-        if let settings = destination as? SettingsViewController {
-            settings.transitioningDelegate = self.transition
+        if let nav = destination as? UINavigationController, let _ = nav.topViewController as? SettingsViewController {
+            nav.transitioningDelegate = self.transition
         }
         
     }
