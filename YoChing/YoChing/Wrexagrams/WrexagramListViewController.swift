@@ -13,14 +13,12 @@ class WrexagramListViewController : UITableViewController {
 
     lazy var wrexagrams = WrexagramLibrary.wrexagrams
     
-    private let async = NSOperationQueue()
     private let main = NSOperationQueue.mainQueue()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        async.maxConcurrentOperationCount = 2
-        
+//        setSprayForWhiteBackground()
     }
 }
 
@@ -75,17 +73,11 @@ extension WrexagramListViewController {
         cell.numberLabel.text = "\(number)"
         cell.title.text = wrexagram.title
         cell.subtitle?.text = wrexagram.subtitle
-        cell.wrexagramImage?.imageView?.image = nil
+        cell.wrexagramImage?.image = nil
         
-        async.addOperationWithBlock() { [weak cell, main] in
-            guard let cell = cell else { return }
-            
-            if let image = WrexagramLibrary.imageForWrexagram(number) {
-                main.addOperationWithBlock() {
-                    cell.wrexagramImage?.imageView?.image = image
-                }
-            }
-        }
+        WrexagramLibrary.loadWrexagram(number: number, intoImageView: cell.wrexagramImage, useHaneke: true)
+        
+        randomizeSpray(forCell: cell)
         
         return cell
     }
@@ -93,6 +85,20 @@ extension WrexagramListViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 120
     }
+    
+    private func randomizeSpray(forCell cell: WrexagramListCell) {
+        
+        let factor = Int.random(from: 1, to: 6)
+        
+        switch factor {
+            case 1 : cell.sprayBackground.contentMode = .ScaleAspectFit
+            case 2 : cell.sprayBackground.contentMode = .Top
+            case 3: cell.sprayBackground.contentMode = .Bottom
+            case 4 : cell.sprayBackground.contentMode = .TopRight
+            default : cell.sprayBackground.contentMode = .ScaleToFill
+        }
+    }
+
 }
 
 //MARK: Table View Delegate Methods
@@ -110,12 +116,18 @@ extension WrexagramListViewController {
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = cell.contentView.backgroundColor
     }
+    
+    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        guard let cell = cell as? WrexagramListCell else { return }
+        cell.imageView?.image = nil
+    }
 }
 
 class WrexagramListCell : UITableViewCell {
     
+    @IBOutlet weak var sprayBackground: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var wrexagramImage: UIButton!
+    @IBOutlet weak var wrexagramImage: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
     @IBOutlet weak var arrow: UIImageView!

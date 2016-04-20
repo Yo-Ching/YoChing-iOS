@@ -68,6 +68,7 @@
 		DE71A35D1CB8055300F5BEF2 /* PTS76F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE71A34D1CB8055300F5BEF2 /* PTS76F.ttf */; };
 		DE71A35E1CB8055300F5BEF2 /* PTZ55F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE71A34E1CB8055300F5BEF2 /* PTZ55F.ttf */; };
 		DE71A35F1CB8055300F5BEF2 /* PTZ56F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE71A34F1CB8055300F5BEF2 /* PTZ56F.ttf */; };
+		DE7AC0E41CC759D9001A5A9A /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AC0E31CC759D9001A5A9A /* ShadowButton.swift */; };
 		DE8362B01CBCB4A300C73BA4 /* WrexagramPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8362AF1CBCB4A300C73BA4 /* WrexagramPagerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,7 @@
 		DE71A34D1CB8055300F5BEF2 /* PTS76F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTS76F.ttf; sourceTree = "<group>"; };
 		DE71A34E1CB8055300F5BEF2 /* PTZ55F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTZ55F.ttf; sourceTree = "<group>"; };
 		DE71A34F1CB8055300F5BEF2 /* PTZ56F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTZ56F.ttf; sourceTree = "<group>"; };
+		DE7AC0E31CC759D9001A5A9A /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		DE8362AF1CBCB4A300C73BA4 /* WrexagramPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrexagramPagerViewController.swift; sourceTree = "<group>"; };
 		FC05695ED601CAB2DFF5DB0F /* Pods-YoChing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoChing.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-YoChing/Pods-YoChing.debug.xcconfig"; sourceTree = "<group>"; };
 		FCA493FE538E6ADC2394AAC6 /* Pods_YoChing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoChing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +201,7 @@
 		3EED85B21978FEE8007EEB62 /* YoChing */ = {
 			isa = PBXGroup;
 			children = (
+				DE7AC0E21CC759C0001A5A9A /* UI */,
 				DE468E901CB968F000AC1199 /* html */,
 				DE468E911CB968F000AC1199 /* json */,
 				DE6C9A571CC1A5A100ACF11A /* txt */,
@@ -327,6 +330,14 @@
 				A31053191CBE130700BCC866 /* WrexagramSendEmailViewController.swift */,
 			);
 			path = Wrexagrams;
+			sourceTree = "<group>";
+		};
+		DE7AC0E21CC759C0001A5A9A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DE7AC0E31CC759D9001A5A9A /* ShadowButton.swift */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,6 +613,7 @@
 				1397CE021BF454E1004523FD /* WrexagramViewController.swift in Sources */,
 				1397CE041BF45CAE004523FD /* WrexagramBreaksViewController.swift in Sources */,
 				DE5138C11CADD9560067A31C /* Coin.swift in Sources */,
+				DE7AC0E41CC759D9001A5A9A /* ShadowButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

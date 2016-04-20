@@ -58,9 +58,7 @@ class WrexagramViewController : UITableViewController {
     }
     
     private func loadImage() {
-        if let image = WrexagramLibrary.imageForWrexagram(wrexagramNumber) {
-            self.wrexegramImage.image = image
-        }
+        WrexagramLibrary.loadWrexagram(number: wrexagramNumber, intoImageView: wrexegramImage, useHaneke: false)
     }
     
     

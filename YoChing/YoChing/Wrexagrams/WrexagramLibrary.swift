@@ -8,6 +8,7 @@
 
 import AromaSwiftClient
 import Foundation
+import Haneke
 import SwiftyJSON
 
 class WrexagramLibrary {
@@ -84,11 +85,7 @@ class WrexagramLibrary {
             default: return "wrexagram01"
         }
     }
-    
-    static func imageForWrexagram(number: Int) -> UIImage? {
-        let imageName = "WREX\(number)"
-        return UIImage(named: imageName)
-    }
+
     
     static func bodyForWrexagram(wrexagramNumber: Int) -> String {
 
@@ -138,4 +135,54 @@ class WrexagramLibrary {
         
         return wrexagrams
     }()
+}
+
+
+//MARK: Image Loading
+extension WrexagramLibrary {
+    
+    
+    static func loadWrexagram(number number: Int, intoImageView imageView: UIImageView, useHaneke: Bool = false) {
+        
+        if useHaneke {
+            let fetcher = WrexagramImageFetcher(wrexagramNumber: number)
+            imageView.hnk_setImageFromFetcher(fetcher)
+        }
+        else {
+            let image = WrexagramLibrary.imageForWrexagram(number)
+            imageView.image = image
+        }
+        
+    }
+    
+    
+    static func imageForWrexagram(number: Int) -> UIImage? {
+        let imageName = "WREX\(number)"
+        return UIImage(named: imageName)
+    }
+    
+    
+}
+
+class WrexagramImageFetcher: Fetcher<UIImage> {
+    
+    let wrexagramNumber: Int
+    
+    init(wrexagramNumber: Int) {
+        self.wrexagramNumber = wrexagramNumber
+        super.init(key: String(wrexagramNumber))
+    }
+    
+    override func fetch(failure fail: ((NSError?) -> ()), success succeed: (UIImage) -> ()) {
+        
+        if let image = WrexagramLibrary.imageForWrexagram(wrexagramNumber) {
+            succeed(image)
+        }
+        else {
+            fail(nil)
+        }
+    }
+    
+    override func cancelFetch() {}
+    
 }
