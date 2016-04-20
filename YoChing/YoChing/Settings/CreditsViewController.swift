@@ -12,34 +12,33 @@ import UIKit
 
 class CreditsViewController : UITableViewController {
     
+    private let truePlayerPath = NSIndexPath(forRow: 0, inSection: 0)
+    private let hughPath = NSIndexPath(forRow: 1, inSection: 0)
+    private let marcPath = NSIndexPath(forRow: 2, inSection: 0)
+    private let wellingtonPath = NSIndexPath(forRow: 3, inSection: 0)
+    private let brendanPath = NSIndexPath(forRow: 4, inSection: 0)
+    private let mayaPath = NSIndexPath(forRow: 5, inSection: 0)
     
-    private let hughPath = NSIndexPath(forRow: 0, inSection: 0)
-    private let marcPath = NSIndexPath(forRow: 1, inSection: 0)
-    private let wellingtonPath = NSIndexPath(forRow: 2, inSection: 0)
     
+    private lazy var links: [NSIndexPath : String] = [
+        self.truePlayerPath : "http://yoching.net",
+        self.hughPath : "hugh.com",
+        self.marcPath : "http://Github.com/marcrisney",
+        self.wellingtonPath : "http://sirwellington.tech/",
+        self.brendanPath : "",
+        self.mayaPath : ""
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setSprayForBlackBackground()
-        
-        addSwipeGesture()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
     
-    private func addSwipeGesture() {
-        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(self.onSwipe(_:)))
-        gesture.direction = .Right
-        
-        self.tableView.addGestureRecognizer(gesture)
-    }
-    
-    @IBAction func onSwipe(segue: UIStoryboardSegue) {
-        self.exit()
-    }
 }
 
 //MARK : Table View Delegate Methods
@@ -49,12 +48,10 @@ extension CreditsViewController {
         cell.backgroundColor = cell.contentView.backgroundColor
     }
     
-}
-
-//MARK : Segues
-extension CreditsViewController {
     
-    private func exit() {
-        self.performSegueWithIdentifier("unwind", sender: self)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        guard let link = links[indexPath] else { return }
+        self.openLink(link)
     }
 }
