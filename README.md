@@ -9,4 +9,4 @@ YoChing
 
 YoChing IOS Swift Mobile Application
 
-![Image](./YoChing/YoChing.gif?raw=true)
+![YoChing Gif](./YoChing/YoChing-2.gif?raw=true)
