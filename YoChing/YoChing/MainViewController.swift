@@ -369,6 +369,6 @@ extension MainViewController {
     
     private func fadeInWrexagramLine(wrexLine: UIImageView) {
         
-        UIView.transitionWithView(wrexLine, duration: 0.3, options: .TransitionCrossDissolve, animations: { wrexLine.hidden = false }, completion: nil)
+        UIView.transitionWithView(wrexLine, duration: 0.5, options: .TransitionCurlUp, animations: { wrexLine.hidden = false }, completion: nil)
     }
 }

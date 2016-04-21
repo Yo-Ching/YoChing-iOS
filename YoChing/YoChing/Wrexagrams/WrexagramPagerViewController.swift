@@ -97,7 +97,7 @@ extension WrexagramPagerViewController {
     @IBAction func onShare(sender: AnyObject) {
         
         let wrexagram = self.currentWrexagram ?? wrexagrams[initialIndex]
-        AromaClient.sendMediumPriorityMessage(withTitle: "Share Button Hit", withBody: "\(wrexagram)")
+        AromaClient.sendLowPriorityMessage(withTitle: "Share Button Hit", withBody: "\(wrexagram)")
         
         guard let controller = createShareController() else { return }
         
@@ -110,12 +110,7 @@ extension WrexagramPagerViewController {
             
             guard let popover = controller.popoverPresentationController else { return }
             popover.permittedArrowDirections = .Any
-//            popover.sourceView = self.view
             popover.barButtonItem = self.shareButton
-            
-//            if let view = shareButton.valueForKey("view") as? UIView {
-//                popover.sourceView = view
-//            }
             
             self.navigationController?.presentViewController(controller, animated: true, completion: nil)
         }
@@ -130,7 +125,8 @@ extension WrexagramPagerViewController {
               let image = WrexagramLibrary.imageForWrexagram(wrexagramNumber)
         else { return nil }
         
-        let text = "YO CHING\n" + (wrexagram.subtitle ?? "")
+        let text = (wrexagram.subtitle ?? "") + "\n\n" +
+                 "\(WrexagramLibrary.bodyForWrexagram(wrexagramNumber))"
         
         // let's add a String and an NSURL
         let activityViewController = UIActivityViewController(
@@ -141,18 +137,25 @@ extension WrexagramPagerViewController {
             
             if success {
                 AromaClient.beginWithTitle("Wrexagram Shared")
-                    .withPriority(.MEDIUM)
+                    .withPriority(.HIGH)
                     .addBody("Wrexagram \(wrexagramNumber)").addLine(2)
                     .addBody("\(wrexagram)").addLine(2)
                     .addBody("To Activity: ").addLine()
                     .addBody("\(activity)")
                     .send()
             }
-            else {
+            else if let error = error {
                 AromaClient.beginWithTitle("Wrexagram Share Failed")
                     .withPriority(.HIGH)
                     .addBody("Wrexagram \(wrexagramNumber)").addLine()
                     .addBody("\(wrexagram)").addLine(2)
+                    .addBody("\(error)")
+                    .send()
+            }
+            else {
+                AromaClient.beginWithTitle("Wrexagram Share Canceled")
+                    .withPriority(.LOW)
+                    .addBody("Wrexagram \(wrexagramNumber)").addLine(2)
                     .addBody("\(error)")
                     .send()
             }
