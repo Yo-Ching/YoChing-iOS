@@ -36,6 +36,10 @@ pod 'BRYXBanner'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 #===============================
 
+#===============================
+# ANIMATIONS
+pod 'LTMorphingLabel'
+#===============================
 
 #===============================
 # Image Caching and Resizing

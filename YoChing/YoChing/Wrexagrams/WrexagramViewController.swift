@@ -8,13 +8,14 @@
 
 import AromaSwiftClient
 import Foundation
+import LTMorphingLabel
 import UIKit
 
 class WrexagramViewController : UITableViewController {
     
     @IBOutlet weak var navTitle: UILabel!
     @IBOutlet weak var wrexegramImage: UIImageView!
-    @IBOutlet weak var wrexagramTitle: UILabel!
+    @IBOutlet weak var wrexagramTitle: LTMorphingLabel!
 
     
     var wrexagramNumber: Int = -1
@@ -48,12 +49,23 @@ class WrexagramViewController : UITableViewController {
                 .send()
         }
         
-        loadTitle()
+        setNavTitle()
         loadImage()
     }
     
-    private func loadTitle() {
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        loadTitle()
+    }
+    
+    private func setNavTitle() {
+        
         navTitle.text = "Wrexagram \(wrexagramNumber)"
+    }
+    
+    private func loadTitle() {
+        wrexagramTitle.morphingEffect = .Anvil
         wrexagramTitle.text = wrexagram?.title ?? ""
     }
     

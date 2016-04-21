@@ -7,10 +7,20 @@
 //
 
 import Foundation
+import LTMorphingLabel
 import UIKit
 
 
 class CreditsViewController : UITableViewController {
+    
+    @IBOutlet weak var truePlayerLabel: LTMorphingLabel!
+    @IBOutlet weak var hughLabel: LTMorphingLabel!
+    @IBOutlet weak var marcLabel: LTMorphingLabel!
+    @IBOutlet weak var wellingtonLabel: LTMorphingLabel!
+    @IBOutlet weak var brendanLabel: LTMorphingLabel!
+    @IBOutlet weak var mayaLabel: LTMorphingLabel!
+    
+    
     
     private let truePlayerPath = NSIndexPath(forRow: 0, inSection: 0)
     private let hughPath = NSIndexPath(forRow: 1, inSection: 0)
@@ -22,8 +32,8 @@ class CreditsViewController : UITableViewController {
     
     private lazy var links: [NSIndexPath : String] = [
         self.truePlayerPath : "http://yoching.net",
-        self.hughPath : "hugh.com",
-        self.marcPath : "http://Github.com/marcrisney",
+        self.hughPath : "http://hughgallagher.net/",
+        self.marcPath : "http://Github.com/mrisney",
         self.wellingtonPath : "http://sirwellington.tech/",
         self.brendanPath : "",
         self.mayaPath : ""
@@ -33,6 +43,27 @@ class CreditsViewController : UITableViewController {
         super.viewDidLoad()
         
         setSprayForBlackBackground()
+        
+        setLabel(truePlayerLabel, hughLabel, marcLabel, wellingtonLabel, brendanLabel, mayaLabel)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    private func setLabel(labels: LTMorphingLabel...) {
+        
+        let text : [String] = labels.map() { $0.text }
+        labels.forEach() { $0.morphingEnabled = false ; $0.text = nil }
+        
+        labels.enumerate()
+            .forEach() { i , label in
+                label.morphingEnabled = true
+                label.morphingEffect = .Anvil
+                
+                label.text = text[i]
+        }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

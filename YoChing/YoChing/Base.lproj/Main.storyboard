@@ -87,6 +87,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="topRight" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spray.galaxy.white.transparent" translatesAutoresizingMaskIntoConstraints="NO" id="16s-pN-DUe" userLabel="Spray Background">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5p-IB-bBe" userLabel="LINE">
                                             <rect key="frame" x="0.0" y="89" width="600" height="1"/>
                                             <color key="backgroundColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -128,10 +132,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="FLQ-vJ-KDH" secondAttribute="height" multiplier="1:1" id="avY-c3-9j9"/>
                                             </constraints>
-                                        </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="topRight" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spray.galaxy.white.transparent" translatesAutoresizingMaskIntoConstraints="NO" id="16s-pN-DUe" userLabel="Spray Background">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -930,7 +930,7 @@
                                         <constraint firstAttribute="height" constant="1" id="4I5-pY-wOZ"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UP IN YOUR FACE" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnd-dg-mLA">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UP IN YOUR FACE" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnd-dg-mLA" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                     <rect key="frame" x="198" y="130" width="204" height="35"/>
                                     <fontDescription key="fontDescription" name="Exo-Black" family="Exo" pointSize="26"/>
                                     <color key="textColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1103,7 +1103,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="True Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fR-U8-G5F">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="True Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fR-U8-G5F" userLabel="True Player" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                                     <rect key="frame" x="32" y="8" width="123" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1142,7 +1142,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hugh Gallagher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5I-P7-jEo">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hugh Gallagher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5I-P7-jEo" userLabel="Hugh Gallagher" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                                     <rect key="frame" x="32" y="8" width="166" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1181,7 +1181,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marc Risney" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PI2-4H-IxE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marc Risney" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PI2-4H-IxE" userLabel="Marc Risney" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                                     <rect key="frame" x="32" y="8" width="132" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1220,12 +1220,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wellington Moreno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ls2-X2-i59">
-                                                    <rect key="frame" x="32" y="8" width="206" height="32"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Programming Monk, App Designer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3f-BI-U4H">
                                                     <rect key="frame" x="32" y="44" width="244" height="22"/>
                                                     <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="16"/>
@@ -1238,6 +1232,12 @@
                                                         <constraint firstAttribute="width" secondItem="LgZ-AO-1rh" secondAttribute="height" multiplier="1:1" id="eMC-86-d7O"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wellington Moreno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ls2-X2-i59" userLabel="Wellington Moreno" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                    <rect key="frame" x="32" y="8" width="206" height="32"/>
+                                                    <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -1259,6 +1259,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brendan Miller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvG-SG-zou" userLabel="Brendan Miller" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                    <rect key="frame" x="32" y="8" width="158" height="32"/>
+                                                    <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrexagram Artwork, Yo Bro Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oc-Dd-5Fb">
                                                     <rect key="frame" x="32" y="44" width="254" height="22"/>
                                                     <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="16"/>
@@ -1271,12 +1277,6 @@
                                                         <constraint firstAttribute="width" secondItem="g3J-Kf-01V" secondAttribute="height" multiplier="1:1" id="T1e-th-9XY"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brendan Miller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvG-SG-zou">
-                                                    <rect key="frame" x="32" y="8" width="158" height="32"/>
-                                                    <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -1298,7 +1298,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maya Sugihara" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fam-lm-neZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maya Sugihara" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fam-lm-neZ" userLabel="Maya Sugihara" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                                     <rect key="frame" x="32" y="8" width="159" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1371,6 +1371,14 @@
                             </constraints>
                         </view>
                     </navigationItem>
+                    <connections>
+                        <outlet property="brendanLabel" destination="TvG-SG-zou" id="rDn-OM-Ysk"/>
+                        <outlet property="hughLabel" destination="D5I-P7-jEo" id="QCo-rk-kB0"/>
+                        <outlet property="marcLabel" destination="PI2-4H-IxE" id="sp2-Rr-N9s"/>
+                        <outlet property="mayaLabel" destination="fam-lm-neZ" id="aNk-5B-cAt"/>
+                        <outlet property="truePlayerLabel" destination="4fR-U8-G5F" id="MlZ-ud-XxQ"/>
+                        <outlet property="wellingtonLabel" destination="Ls2-X2-i59" id="kXz-al-G7E"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7q-lk-avn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="90" id="N2T-M6-X5V">
@@ -1453,8 +1461,8 @@
         <image name="spray.galaxy.white.transparent" width="842" height="562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zY3-tK-GuC"/>
-        <segue reference="HT8-GF-4WQ"/>
+        <segue reference="VMP-af-WSe"/>
+        <segue reference="HDs-Lu-ahA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
