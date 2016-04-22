@@ -3,7 +3,7 @@
 //  YoChing
 //
 //  Created by SirWellington on 10/01/15.
-//  Copyright (c) 2015 Marc Risney. All rights reserved.
+//  Copyright © 2015 Yo Ching. All rights reserved.
 //
 
 import AromaSwiftClient

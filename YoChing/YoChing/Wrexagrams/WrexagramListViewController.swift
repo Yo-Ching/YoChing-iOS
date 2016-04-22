@@ -3,7 +3,7 @@
 //  YoChing
 //
 //  Created by SirWellington on 4/7/16.
-//  Copyright © 2016 Gary.com. All rights reserved.
+//  Copyright © 2016 Yo Ching. All rights reserved.
 //
 
 import Foundation
