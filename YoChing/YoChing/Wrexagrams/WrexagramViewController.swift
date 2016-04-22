@@ -50,18 +50,20 @@ class WrexagramViewController : UITableViewController {
         }
         
         setNavTitle()
+        loadTitle()
         loadImage()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        loadTitle()
+//       loadTitle()
+
     }
     
     private func setNavTitle() {
         
-        navTitle.text = "Wrexagram \(wrexagramNumber)"
+        navTitle.text = "WREXAGRAM \(wrexagramNumber)"
     }
     
     private func loadTitle() {

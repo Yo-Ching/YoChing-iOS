@@ -930,8 +930,8 @@
                                         <constraint firstAttribute="height" constant="1" id="4I5-pY-wOZ"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UP IN YOUR FACE" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnd-dg-mLA" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                    <rect key="frame" x="198" y="130" width="204" height="35"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YO CHING" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnd-dg-mLA" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                    <rect key="frame" x="8" y="130" width="584" height="35"/>
                                     <fontDescription key="fontDescription" name="Exo-Black" family="Exo" pointSize="26"/>
                                     <color key="textColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -940,18 +940,28 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="NVj-6E-SwQ" firstAttribute="width" secondItem="lkZ-BJ-Fch" secondAttribute="width" multiplier="0.8" id="4fj-co-AGD"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="vnd-dg-mLA" secondAttribute="trailing" id="5Gf-Mf-Ptz"/>
                                 <constraint firstAttribute="bottom" secondItem="6gP-dm-eNJ" secondAttribute="bottom" constant="-195" id="8ci-QD-i4h"/>
                                 <constraint firstAttribute="bottom" secondItem="NVj-6E-SwQ" secondAttribute="bottom" constant="8" id="BgP-9M-aNL"/>
                                 <constraint firstItem="vnd-dg-mLA" firstAttribute="centerX" secondItem="yng-hg-ujy" secondAttribute="centerX" id="Cv8-dp-zZf"/>
                                 <constraint firstItem="NVj-6E-SwQ" firstAttribute="centerX" secondItem="lkZ-BJ-Fch" secondAttribute="centerX" id="KWF-i4-zGk"/>
+                                <constraint firstItem="vnd-dg-mLA" firstAttribute="leading" secondItem="lkZ-BJ-Fch" secondAttribute="leadingMargin" id="Ss3-ZL-qrs"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="vnd-dg-mLA" secondAttribute="trailing" id="gC4-hY-7zG"/>
                                 <constraint firstItem="6gP-dm-eNJ" firstAttribute="top" secondItem="lkZ-BJ-Fch" secondAttribute="top" constant="-241" id="h67-x2-qCJ"/>
                                 <constraint firstItem="6gP-dm-eNJ" firstAttribute="leading" secondItem="lkZ-BJ-Fch" secondAttribute="leading" id="j7n-C8-sIO"/>
+                                <constraint firstItem="vnd-dg-mLA" firstAttribute="leading" secondItem="lkZ-BJ-Fch" secondAttribute="leadingMargin" id="ktn-E3-0rr"/>
                                 <constraint firstItem="yng-hg-ujy" firstAttribute="centerX" secondItem="lkZ-BJ-Fch" secondAttribute="centerX" id="nxP-fi-oYb"/>
                                 <constraint firstAttribute="trailing" secondItem="6gP-dm-eNJ" secondAttribute="trailing" id="oJS-6d-0Om"/>
                                 <constraint firstItem="yng-hg-ujy" firstAttribute="height" secondItem="lkZ-BJ-Fch" secondAttribute="height" multiplier="0.65" id="q7N-he-PI0"/>
                                 <constraint firstItem="yng-hg-ujy" firstAttribute="top" secondItem="lkZ-BJ-Fch" secondAttribute="top" id="qgn-dA-BUU"/>
                                 <constraint firstItem="vnd-dg-mLA" firstAttribute="top" secondItem="yng-hg-ujy" secondAttribute="bottom" id="rW7-jI-LEL"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="5Gf-Mf-Ptz"/>
+                                    <exclude reference="Ss3-ZL-qrs"/>
+                                </mask>
+                            </variation>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BodyCell" rowHeight="200" id="GHa-Ic-a8j" customClass="BodyCell" customModule="YoChing" customModuleProvider="target">

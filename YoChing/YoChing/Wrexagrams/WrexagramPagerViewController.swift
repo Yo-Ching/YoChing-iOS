@@ -34,7 +34,7 @@ class WrexagramPagerViewController : UIPageViewController {
     }
     
     private func setNavTitle(toWrexagramNumber wrexagramNumber: Int) {
-        self.navTitle?.text = "Wrexagram \(wrexagramNumber)"
+        self.navTitle?.text = "WREXAGRAM \(wrexagramNumber)"
     }
 }
 

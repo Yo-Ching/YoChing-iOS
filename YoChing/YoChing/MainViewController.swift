@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
     private var maxTosses = 6
     private var tosses  = 0
     private var hexNum = ""
+    private var animationSeed = 1
     
     private var coinsInTheAir = 0
     private let main = NSOperationQueue.mainQueue()
@@ -90,6 +91,7 @@ class MainViewController: UIViewController {
         
         if tosses == 0 {
             hideWrexLines()
+            animationSeed = Int.random(from: 1, to: 5)
         }
     }
     
@@ -312,7 +314,6 @@ extension MainViewController {
                     defer {
                         self.tosses = 0
                         self.hexNum = ""
-                        self.hideWrexLines()
                     }
                     
                     // confusing needs to be cleaned up, but works
@@ -336,7 +337,19 @@ extension MainViewController {
                     }
                     
                     let wrexNumber = Int(outcome.stringByReplacingOccurrencesOfString("wrexagram", withString: "")) ?? 01
-                    self.goToWrex(wrexNumber)
+                    
+                    if self.maxTosses == 1 {
+                        self.hideWrexLines()
+                        self.goToWrex(wrexNumber)
+                    }
+                    else {
+                        self.flipButton.enabled = false
+                        self.delay(0.5) {
+                            self.goToWrex(wrexNumber)
+                            self.hideWrexLines()
+                            self.flipButton.enabled = true
+                        }
+                    }
                 }
             }
             
@@ -368,7 +381,18 @@ extension MainViewController {
     }
     
     private func fadeInWrexagramLine(wrexLine: UIImageView) {
+        let transition: UIViewAnimationOptions
+        let duration: NSTimeInterval
         
-        UIView.transitionWithView(wrexLine, duration: 0.5, options: .TransitionCurlUp, animations: { wrexLine.hidden = false }, completion: nil)
+        if animationSeed.isEven() {
+            transition = .TransitionCurlUp
+            duration = 0.4
+        }
+        else {
+            transition = .TransitionCurlDown
+            duration = 0.3
+        }
+        
+        UIView.transitionWithView(wrexLine, duration: duration, options: transition, animations: { wrexLine.hidden = false }, completion: nil)
     }
 }
