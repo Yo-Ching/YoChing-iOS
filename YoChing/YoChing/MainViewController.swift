@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  CoinToss
+//  YoChing
 //
-//  Created by main on 10/01/15.
+//  Created by SirWellington on 10/01/15.
 //  Copyright (c) 2015 Marc Risney. All rights reserved.
 //
 

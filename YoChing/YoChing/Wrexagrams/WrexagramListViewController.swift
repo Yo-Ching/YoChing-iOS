@@ -2,7 +2,7 @@
 //  WrexagramListViewController.swift
 //  YoChing
 //
-//  Created by Juan Wellington Moreno on 4/7/16.
+//  Created by SirWellington on 4/7/16.
 //  Copyright © 2016 Gary.com. All rights reserved.
 //
 

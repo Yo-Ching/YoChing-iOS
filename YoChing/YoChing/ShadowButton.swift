@@ -2,7 +2,7 @@
 //  ShadowButton.swift
 //  YoChing
 //
-//  Created by Juan Wellington Moreno on 12/13/15.
+//  Created by SirWellington on 12/13/15.
 //  Copyright © 2016 RedRoma Inc. All rights reserved.
 //
 

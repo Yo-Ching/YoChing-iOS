@@ -2,7 +2,7 @@
 //  CreditsViewController.swift
 //  YoChing
 //
-//  Created by Juan Wellington Moreno on 4/15/16.
+//  Created by SirWellington on 4/15/16.
 //  Copyright © 2016 YoChing.com. All rights reserved.
 //
 
