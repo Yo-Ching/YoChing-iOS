@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     private var maxTosses = 6
     private var tosses  = 0
     private var hexNum = ""
-    private var animationSeed = 1
+    private var animationRandomFactor = 1
     
     private var coinsInTheAir = 0
     private let main = NSOperationQueue.mainQueue()
@@ -91,7 +91,7 @@ class MainViewController: UIViewController {
         
         if tosses == 0 {
             hideWrexLines()
-            animationSeed = Int.random(from: 1, to: 5)
+            animationRandomFactor = Int.random(from: 1, to: 5)
         }
     }
     
@@ -384,7 +384,7 @@ extension MainViewController {
         let transition: UIViewAnimationOptions
         let duration: NSTimeInterval
         
-        if animationSeed.isEven() {
+        if animationRandomFactor.isEven() {
             transition = .TransitionCurlUp
             duration = 0.4
         }
