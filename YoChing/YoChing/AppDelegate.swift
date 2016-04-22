@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             AromaClient.beginWithTitle("App Crashed")
                 .addBody("Device \(UIDevice.currentDevice().name)")
-                .addLine().addLine()
+                .addLine(2)
                 .addBody("\(ex)")
                 .withPriority(.HIGH)
                 .send()

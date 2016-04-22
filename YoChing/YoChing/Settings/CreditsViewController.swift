@@ -36,7 +36,7 @@ class CreditsViewController : UITableViewController {
         self.marcPath : "http://Github.com/mrisney",
         self.wellingtonPath : "http://sirwellington.tech/",
         self.brendanPath : "",
-        self.mayaPath : ""
+        self.mayaPath : "https://www.linkedin.com/in/mayagonsalves"
     ]
     
     override func viewDidLoad() {
