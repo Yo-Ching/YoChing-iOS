@@ -50,8 +50,8 @@ class WrexagramViewController : UITableViewController {
         }
         
         setNavTitle()
-        loadTitle()
         loadImage()
+        delay(0.1) { self.loadTitle() }
     }
     
     override func viewDidAppear(animated: Bool) {
