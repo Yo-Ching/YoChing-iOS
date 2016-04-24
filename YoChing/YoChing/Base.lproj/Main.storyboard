@@ -1125,7 +1125,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="True Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fR-U8-G5F" userLabel="True Player" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                                    <rect key="frame" x="32" y="8" width="123" height="32"/>
+                                                    <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1151,6 +1151,7 @@
                                                 <constraint firstItem="srv-SC-ts5" firstAttribute="leading" secondItem="4fR-U8-G5F" secondAttribute="leading" id="CHB-ww-L5a"/>
                                                 <constraint firstItem="NJG-om-wXL" firstAttribute="centerY" secondItem="VD7-gd-pzs" secondAttribute="centerY" id="DoO-1n-bil"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="NJG-om-wXL" secondAttribute="trailing" constant="8" id="W5m-9v-Nto"/>
+                                                <constraint firstItem="NJG-om-wXL" firstAttribute="leading" secondItem="4fR-U8-G5F" secondAttribute="trailing" constant="8" id="YgM-fZ-GRB"/>
                                                 <constraint firstItem="NJG-om-wXL" firstAttribute="height" secondItem="VD7-gd-pzs" secondAttribute="height" multiplier="0.4" id="agU-Fz-OO6"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1164,7 +1165,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hugh Gallagher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5I-P7-jEo" userLabel="Hugh Gallagher" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                                    <rect key="frame" x="32" y="8" width="166" height="32"/>
+                                                    <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1190,6 +1191,7 @@
                                                 <constraint firstItem="97B-5s-PXR" firstAttribute="centerY" secondItem="BMO-OZ-yoV" secondAttribute="centerY" id="ozO-tW-DmH"/>
                                                 <constraint firstItem="zVY-2N-eYn" firstAttribute="leading" secondItem="D5I-P7-jEo" secondAttribute="leading" id="rag-YL-fUo"/>
                                                 <constraint firstItem="zVY-2N-eYn" firstAttribute="top" secondItem="D5I-P7-jEo" secondAttribute="bottom" constant="4" id="tCk-ig-6Rq"/>
+                                                <constraint firstItem="97B-5s-PXR" firstAttribute="leading" secondItem="D5I-P7-jEo" secondAttribute="trailing" constant="8" id="trd-CY-3hi"/>
                                                 <constraint firstItem="D5I-P7-jEo" firstAttribute="top" secondItem="BMO-OZ-yoV" secondAttribute="topMargin" id="uL7-uM-dc8"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1203,7 +1205,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marc Risney" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PI2-4H-IxE" userLabel="Marc Risney" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                                    <rect key="frame" x="32" y="8" width="132" height="32"/>
+                                                    <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1224,6 +1226,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="PI2-4H-IxE" firstAttribute="top" secondItem="LBY-zg-08l" secondAttribute="topMargin" id="22H-T9-9yv"/>
+                                                <constraint firstItem="lFD-nj-Za9" firstAttribute="leading" secondItem="PI2-4H-IxE" secondAttribute="trailing" constant="8" id="OkD-cX-kj6"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="lFD-nj-Za9" secondAttribute="trailing" constant="8" id="YJk-jz-tHE"/>
                                                 <constraint firstItem="PI2-4H-IxE" firstAttribute="leading" secondItem="LBY-zg-08l" secondAttribute="leadingMargin" constant="24" id="c1W-Zk-lOh"/>
                                                 <constraint firstItem="tbt-x0-Byu" firstAttribute="top" secondItem="PI2-4H-IxE" secondAttribute="bottom" constant="4" id="dgF-AB-ynI"/>
@@ -1254,7 +1257,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wellington Moreno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ls2-X2-i59" userLabel="Wellington Moreno" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                                    <rect key="frame" x="32" y="8" width="206" height="32"/>
+                                                    <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1263,6 +1266,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="y3f-BI-U4H" firstAttribute="leading" secondItem="Ls2-X2-i59" secondAttribute="leading" id="3BL-8v-kXy"/>
+                                                <constraint firstItem="LgZ-AO-1rh" firstAttribute="leading" secondItem="Ls2-X2-i59" secondAttribute="trailing" constant="8" id="FRe-zY-q4k"/>
                                                 <constraint firstItem="y3f-BI-U4H" firstAttribute="top" secondItem="Ls2-X2-i59" secondAttribute="bottom" constant="4" id="Oap-Cu-JWm"/>
                                                 <constraint firstItem="Ls2-X2-i59" firstAttribute="leading" secondItem="cJ8-rP-rnE" secondAttribute="leadingMargin" constant="24" id="U2R-26-o8D"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="LgZ-AO-1rh" secondAttribute="trailing" constant="8" id="abk-wd-lrz"/>
@@ -1281,7 +1285,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brendan Miller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvG-SG-zou" userLabel="Brendan Miller" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                                    <rect key="frame" x="32" y="8" width="158" height="32"/>
+                                                    <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1304,6 +1308,7 @@
                                                 <constraint firstItem="g3J-Kf-01V" firstAttribute="centerY" secondItem="PTY-ch-x1i" secondAttribute="centerY" id="IwN-Ne-bVS"/>
                                                 <constraint firstItem="g3J-Kf-01V" firstAttribute="height" secondItem="PTY-ch-x1i" secondAttribute="height" multiplier="0.4" id="aUa-X7-RIH"/>
                                                 <constraint firstItem="TvG-SG-zou" firstAttribute="top" secondItem="PTY-ch-x1i" secondAttribute="topMargin" id="axM-BB-ZR4"/>
+                                                <constraint firstItem="g3J-Kf-01V" firstAttribute="leading" secondItem="TvG-SG-zou" secondAttribute="trailing" constant="8" id="bub-m9-Pct"/>
                                                 <constraint firstItem="3oc-Dd-5Fb" firstAttribute="top" secondItem="TvG-SG-zou" secondAttribute="bottom" constant="4" id="dNk-AT-bOK"/>
                                                 <constraint firstItem="TvG-SG-zou" firstAttribute="leading" secondItem="PTY-ch-x1i" secondAttribute="leadingMargin" constant="24" id="gNM-wZ-S7G"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="g3J-Kf-01V" secondAttribute="trailing" constant="8" id="sPu-hD-mMN"/>
@@ -1320,7 +1325,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maya Gonsalves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fam-lm-neZ" userLabel="Maya Sugihara" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                                    <rect key="frame" x="32" y="8" width="174" height="32"/>
+                                                    <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1344,6 +1349,7 @@
                                                 <constraint firstItem="X8h-pm-Mcn" firstAttribute="centerY" secondItem="FDH-j4-Uqs" secondAttribute="centerY" id="DyH-9e-gke"/>
                                                 <constraint firstItem="X8h-pm-Mcn" firstAttribute="height" secondItem="FDH-j4-Uqs" secondAttribute="height" multiplier="0.4" id="FFZ-Xy-twc"/>
                                                 <constraint firstItem="fam-lm-neZ" firstAttribute="leading" secondItem="FDH-j4-Uqs" secondAttribute="leadingMargin" constant="24" id="L64-OH-6X7"/>
+                                                <constraint firstItem="X8h-pm-Mcn" firstAttribute="leading" secondItem="fam-lm-neZ" secondAttribute="trailing" constant="8" id="Lof-MC-wrU"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="X8h-pm-Mcn" secondAttribute="trailing" constant="8" id="QHi-1t-iEo"/>
                                                 <constraint firstItem="Zft-3x-ZWI" firstAttribute="top" secondItem="fam-lm-neZ" secondAttribute="bottom" constant="4" id="qxL-zf-KfT"/>
                                                 <constraint firstItem="Zft-3x-ZWI" firstAttribute="leading" secondItem="fam-lm-neZ" secondAttribute="leading" id="wQL-QI-V6b"/>
