@@ -69,6 +69,8 @@ class MainViewController: UIViewController {
         coinTwo = Coin(image: coinTwoImage)
         coinThree = Coin(image: coinThreeImage)
         
+        whatsYourSituationLabel.text = ""
+        
         async.maxConcurrentOperationCount = 1
         
         addSwipeGesture()
