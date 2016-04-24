@@ -95,39 +95,49 @@ class MainViewController: UIViewController {
         flipCoin(view)
     }
 
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-         self.maxTosses = Settings.isQuickEnabled ? 1 : 6
+        self.maxTosses = Settings.isQuickEnabled ? 1 : 6
         
         if tosses == 0 {
             hideWrexLines()
-            showPrompt()
             animationRandomFactor = Int.random(from: 1, to: 5)
+            showPrompt()
         }
         else {
             hidePrompt()
         }
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.hidePrompt()
+    }
+    
     private func showPrompt() {
         //In order for the animation to show, the text in the label has to change, or appear to chance value.
-        let phrase = phrases.selectOne()
+        let phrase = phrases.selectOne() ?? "WHAT'S YOUR SITUATION?"
         
-        whatsYourSituationLabel?.text = ""
+        whatsYourSituationLabel?.text = phrase
+        whatsYourSituationLabel?.layoutIfNeeded()
+        
         let animations = { [weak whatsYourSituationLabel] in
-            whatsYourSituationLabel?.text = phrase
             whatsYourSituationLabel?.hidden = false
-            whatsYourSituationLabel?.layoutIfNeeded()
-            whatsYourSituationLabel?.readjustLabelFontSize()
+            return
         }
         
         UIView.transitionWithView(whatsYourSituationLabel, duration: 0.5, options: .TransitionCrossDissolve, animations: animations, completion: nil)
     }
     
     private func hidePrompt() {
-        let animation = { self.whatsYourSituationLabel.hidden = true }
+        
+        let animation = { [weak whatsYourSituationLabel] in
+            whatsYourSituationLabel?.hidden = true
+            return
+        }
+        
         UIView.transitionWithView(whatsYourSituationLabel, duration: 0.5, options: .TransitionCrossDissolve, animations: animation, completion: nil)
     }
     
