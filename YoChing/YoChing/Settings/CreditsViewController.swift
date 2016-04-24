@@ -85,4 +85,5 @@ extension CreditsViewController {
         guard let link = links[indexPath] else { return }
         self.openLink(link)
     }
+    
 }
