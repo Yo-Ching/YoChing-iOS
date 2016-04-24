@@ -16,6 +16,7 @@
             <string>Exo-Black</string>
             <string>Exo-Black</string>
             <string>Exo-Black</string>
+            <string>Exo-Black</string>
         </mutableArray>
         <mutableArray key="Exo-Bold.otf">
             <string>Exo-Bold</string>
@@ -332,6 +333,12 @@
                                     <action selector="flipCoinAction:" destination="IGd-ft-1RS" eventType="touchUpInside" id="1KQ-kb-Cyy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WHAT'S YOUR SITUATION?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-Nb-4Tm">
+                                <rect key="frame" x="36" y="24" width="528" height="48"/>
+                                <fontDescription key="fontDescription" name="Exo-Black" family="Exo" pointSize="34"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -339,9 +346,12 @@
                             <constraint firstItem="MZJ-OV-sZh" firstAttribute="width" secondItem="XWZ-UG-Vf2" secondAttribute="width" id="2Zs-Q2-nEH"/>
                             <constraint firstItem="GzE-jB-y4h" firstAttribute="top" secondItem="8hd-as-Al9" secondAttribute="bottom" constant="24" id="5hD-x9-qra"/>
                             <constraint firstItem="GzE-jB-y4h" firstAttribute="centerX" secondItem="P7M-QV-hgn" secondAttribute="centerX" id="6Kz-p6-MM5"/>
+                            <constraint firstItem="Gh2-Nb-4Tm" firstAttribute="top" secondItem="8hd-as-Al9" secondAttribute="bottom" constant="24" id="Bxv-1V-ddT"/>
+                            <constraint firstItem="Gh2-Nb-4Tm" firstAttribute="centerX" secondItem="P7M-QV-hgn" secondAttribute="centerX" id="ELW-70-ikz"/>
                             <constraint firstItem="2OV-QN-hU3" firstAttribute="top" secondItem="giy-xa-NoG" secondAttribute="bottom" constant="16" id="FtU-Zj-nBE"/>
                             <constraint firstItem="2OV-QN-hU3" firstAttribute="top" secondItem="Hdp-Yh-Khy" secondAttribute="bottom" id="IPB-s0-pSV"/>
                             <constraint firstItem="Hlq-cf-f8c" firstAttribute="width" secondItem="XWZ-UG-Vf2" secondAttribute="width" id="K9g-NZ-y7H"/>
+                            <constraint firstItem="Gh2-Nb-4Tm" firstAttribute="leading" secondItem="P7M-QV-hgn" secondAttribute="leadingMargin" constant="16" id="KT0-2u-IHo"/>
                             <constraint firstItem="XWZ-UG-Vf2" firstAttribute="centerX" secondItem="P7M-QV-hgn" secondAttribute="centerX" id="QR5-m3-qAA"/>
                             <constraint firstItem="MZJ-OV-sZh" firstAttribute="width" secondItem="MZJ-OV-sZh" secondAttribute="height" multiplier="1:1" id="RDx-v0-y6h"/>
                             <constraint firstItem="GzE-jB-y4h" firstAttribute="width" secondItem="P7M-QV-hgn" secondAttribute="width" multiplier="0.8" id="RaO-sX-c2l"/>
@@ -359,6 +369,7 @@
                             <constraint firstItem="Hlq-cf-f8c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P7M-QV-hgn" secondAttribute="leadingMargin" id="u2I-IW-xDK"/>
                             <constraint firstItem="giy-xa-NoG" firstAttribute="top" secondItem="XWZ-UG-Vf2" secondAttribute="bottom" constant="32" id="vjc-kG-gJp"/>
                             <constraint firstItem="Hdp-Yh-Khy" firstAttribute="leading" secondItem="P7M-QV-hgn" secondAttribute="leading" id="yVB-77-PuI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gh2-Nb-4Tm" secondAttribute="trailing" constant="16" id="yhZ-g9-uEp"/>
                             <constraint firstItem="Hlq-cf-f8c" firstAttribute="centerY" secondItem="XWZ-UG-Vf2" secondAttribute="centerY" id="yjJ-NG-Zob"/>
                         </constraints>
                     </view>
@@ -400,6 +411,7 @@
                         <outlet property="coinThreeImage" destination="MZJ-OV-sZh" id="5kG-xb-pgB"/>
                         <outlet property="coinTwoImage" destination="XWZ-UG-Vf2" id="QVy-HN-e3f"/>
                         <outlet property="flipButton" destination="giy-xa-NoG" id="bzx-hW-dXN"/>
+                        <outlet property="whatsYourSituationLabel" destination="Gh2-Nb-4Tm" id="DtF-4D-uLw"/>
                         <outlet property="wrexLine1" destination="f0M-JN-8uz" id="I2T-Ys-IGb"/>
                         <outlet property="wrexLine2" destination="wg2-3T-CM4" id="Kkc-jb-RHe"/>
                         <outlet property="wrexLine3" destination="bZx-8E-oGi" id="ZDc-lZ-g1J"/>
@@ -1471,8 +1483,8 @@
         <image name="spray.galaxy.white.transparent" width="842" height="562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VMP-af-WSe"/>
-        <segue reference="HDs-Lu-ahA"/>
+        <segue reference="HT8-GF-4WQ"/>
+        <segue reference="zY3-tK-GuC"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

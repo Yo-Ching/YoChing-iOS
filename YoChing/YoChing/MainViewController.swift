@@ -7,12 +7,15 @@
 //
 
 import AromaSwiftClient
+import LTMorphingLabel
 import UIKit
 import QuartzCore
 
 class MainViewController: UIViewController {
     
     //MARK: IBOutlets
+    @IBOutlet weak var whatsYourSituationLabel: UILabel!
+    
     @IBOutlet weak var coinOneImage: UIImageView!
     @IBOutlet weak var coinTwoImage: UIImageView!
     @IBOutlet weak var coinThreeImage: UIImageView!
@@ -91,8 +94,30 @@ class MainViewController: UIViewController {
         
         if tosses == 0 {
             hideWrexLines()
+            showPrompt()
             animationRandomFactor = Int.random(from: 1, to: 5)
         }
+        else {
+            hidePrompt()
+        }
+    }
+    
+    private func showPrompt() {
+        //In order for the animation to show, the text in the label has to change, or appear to chance value.
+        let originalText = whatsYourSituationLabel.text ?? ""
+        
+        let animations = { [weak whatsYourSituationLabel] in
+            whatsYourSituationLabel?.text = ""
+            whatsYourSituationLabel?.hidden = false
+            whatsYourSituationLabel?.text = originalText
+            whatsYourSituationLabel?.layoutIfNeeded()
+        }
+        UIView.transitionWithView(whatsYourSituationLabel, duration: 0.5, options: .TransitionCrossDissolve, animations: animations, completion: nil)
+    }
+    
+    private func hidePrompt() {
+        let animation = { self.whatsYourSituationLabel.hidden = true }
+        UIView.transitionWithView(whatsYourSituationLabel, duration: 0.5, options: .TransitionCrossDissolve, animations: animation, completion: nil)
     }
     
     private func setCoins(imageView: UIImageView...) {
@@ -252,6 +277,7 @@ extension MainViewController {
     private func throwTheYo() {
         
         flipButton.enabled = false
+        hidePrompt()
         
         var coinsOutcome: [Coin.CoinSide] = []
         
