@@ -118,11 +118,11 @@ class MainViewController: UIViewController {
         //In order for the animation to show, the text in the label has to change, or appear to chance value.
         let phrase = phrases.selectOne() ?? "WHAT'S YOUR SITUATION?"
         
-        whatsYourSituationLabel?.text = phrase
-        whatsYourSituationLabel?.layoutIfNeeded()
+        whatsYourSituationLabel?.text = nil
         
         let animations = { [weak whatsYourSituationLabel] in
             whatsYourSituationLabel?.hidden = false
+            whatsYourSituationLabel?.text = phrase
             return
         }
         
