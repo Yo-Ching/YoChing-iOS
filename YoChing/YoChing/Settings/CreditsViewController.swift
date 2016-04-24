@@ -21,7 +21,6 @@ class CreditsViewController : UITableViewController {
     @IBOutlet weak var mayaLabel: LTMorphingLabel!
     
     
-    
     private let truePlayerPath = NSIndexPath(forRow: 0, inSection: 0)
     private let hughPath = NSIndexPath(forRow: 1, inSection: 0)
     private let marcPath = NSIndexPath(forRow: 2, inSection: 0)
