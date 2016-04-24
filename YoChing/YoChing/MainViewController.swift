@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
         coinTwo = Coin(image: coinTwoImage)
         coinThree = Coin(image: coinThreeImage)
         
-        whatsYourSituationLabel.text = ""
+        whatsYourSituationLabel.hidden = true
         
         async.maxConcurrentOperationCount = 1
         
@@ -110,13 +110,11 @@ class MainViewController: UIViewController {
         }
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        self.hidePrompt()
-    }
-    
     private func showPrompt() {
+        
+        guard let isHidden = whatsYourSituationLabel?.hidden where isHidden
+        else { return }
+        
         //In order for the animation to show, the text in the label has to change, or appear to chance value.
         let phrase = phrases.selectOne() ?? "WHAT'S YOUR SITUATION?"
         
