@@ -40,8 +40,8 @@ class Coin {
         
         if repeatCount > maxReps  { //This means we're done
             
-            let isEven: Bool = (Int(arc4random()) % 2 == 0)
-            let resultingSide: CoinSide =  isEven ? .HEADS : .TAILS
+            let possibleSides = [CoinSide.HEADS, CoinSide.TAILS]
+            let resultingSide = possibleSides.selectOne() ?? .HEADS
             
             image.layer.contents =  resultingSide == .HEADS ? Coin.headsCoin.CGImage : Coin.tailsCoin.CGImage
             image.layer.transform = CATransform3DIdentity
