@@ -15,6 +15,13 @@ class MainViewController: UIViewController {
     
     //MARK: IBOutlets
     @IBOutlet weak var whatsYourSituationLabel: UILabel!
+    private let phrases: [String] = [
+        "WHAT'S YOUR SITUATION?",
+        "WHAT'S UP?",
+        "WHAT'S HAPPENING?",
+        "WHAT'S GOING ON?",
+        "WHERE YOU AT?"
+    ]
     
     @IBOutlet weak var coinOneImage: UIImageView!
     @IBOutlet weak var coinTwoImage: UIImageView!
@@ -104,14 +111,15 @@ class MainViewController: UIViewController {
     
     private func showPrompt() {
         //In order for the animation to show, the text in the label has to change, or appear to chance value.
-        let originalText = whatsYourSituationLabel.text ?? ""
+        let phrase = phrases.selectOne()
         
         let animations = { [weak whatsYourSituationLabel] in
             whatsYourSituationLabel?.text = ""
             whatsYourSituationLabel?.hidden = false
-            whatsYourSituationLabel?.text = originalText
+            whatsYourSituationLabel?.text = phrase
             whatsYourSituationLabel?.layoutIfNeeded()
         }
+        
         UIView.transitionWithView(whatsYourSituationLabel, duration: 0.5, options: .TransitionCrossDissolve, animations: animations, completion: nil)
     }
     

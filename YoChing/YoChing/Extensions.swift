@@ -22,13 +22,21 @@ extension Int {
     
     static func random(from begin: Int, to end: Int) -> Int {
         
+        guard begin != end else { return begin }
         guard begin < end else { return 0 }
         
         let difference = end - begin
-        
         let random = arc4random_uniform(UInt32(difference))
         
-        return begin + Int(random)
+        let result = begin + Int(random)
+        
+        if result >= end {
+            return end - 1
+        }
+        else {
+            return result
+        }
+        
     }
 }
 
@@ -131,5 +139,19 @@ extension UITableViewController {
     //    self.view.backgroundColor = UIColor(patternImage: image)
     //    self.view.opaque = false
     //    self.view.layer.opaque = false
+    }
+}
+
+//MARK: Arrays
+extension Array {
+    
+    func selectOne() -> Element? {
+        guard count > 0 else { return nil }
+        
+        var index = Int.random(from: 0, to: count)
+        
+        if index >= count { index -= 1 }
+        
+        return self[index]
     }
 }
