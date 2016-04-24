@@ -115,18 +115,18 @@
                                             <fontDescription key="fontDescription" name="Exo-ExtraBold" family="Exo" pointSize="22"/>
                                             <color key="textColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="8" y="32" width="40" height="26"/>
+                                            </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Before shit pops off, it has to come together. That’s a hard time. Always STRESS GETTING STARTED." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRZ-zw-z3q">
-                                            <rect key="frame" x="64" y="48" width="460" height="30"/>
-                                            <fontDescription key="fontDescription" name="Signika-Regular" family="Signika" pointSize="12"/>
-                                            <color key="textColor" red="0.35288461539999999" green="0.35288461539999999" blue="0.35288461539999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="BRING IT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-7P-LpV">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="BRING IT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pst-7P-LpV">
                                             <rect key="frame" x="64" y="19" width="460" height="24"/>
                                             <fontDescription key="fontDescription" name="Exo-ExtraBold" family="Exo" pointSize="18"/>
                                             <color key="textColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="64" y="22" width="260" height="21"/>
+                                            </variation>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="248" verticalHuggingPriority="248" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="747" image="WREX1" translatesAutoresizingMaskIntoConstraints="NO" id="FLQ-vJ-KDH">
                                             <rect key="frame" x="524" y="11" width="68" height="68"/>
@@ -134,6 +134,15 @@
                                                 <constraint firstAttribute="width" secondItem="FLQ-vJ-KDH" secondAttribute="height" multiplier="1:1" id="avY-c3-9j9"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Before shit pops off, it has to come together. That’s a hard time. Always STRESS GETTING STARTED." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lRZ-zw-z3q">
+                                            <rect key="frame" x="64" y="48" width="460" height="33"/>
+                                            <fontDescription key="fontDescription" name="Signika-Regular" family="Signika" pointSize="13"/>
+                                            <color key="textColor" red="0.35288461539999999" green="0.35288461539999999" blue="0.35288461539999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="64" y="48" width="260" height="34"/>
+                                            </variation>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -242,46 +251,6 @@
                                     <constraint firstAttribute="width" secondItem="MZJ-OV-sZh" secondAttribute="height" multiplier="1:1" id="VPp-e6-Bc4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="WHAT'S YOUR SITUATION?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-Nb-4Tm">
-                                <rect key="frame" x="60" y="32" width="480" height="48"/>
-                                <fontDescription key="fontDescription" name="Exo-Black" family="Exo" pointSize="36"/>
-                                <color key="textColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giy-xa-NoG" customClass="ShadowButton" customModule="YoChing" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="460" width="600" height="60"/>
-                                <color key="backgroundColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="fJp-ly-hb8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="34"/>
-                                <state key="normal" title="THROW THE YO">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderThickness">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.0" height="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.69999999999999996"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="flipCoinAction:" destination="IGd-ft-1RS" eventType="touchUpInside" id="1KQ-kb-Cyy"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzE-jB-y4h">
                                 <rect key="frame" x="60" y="24" width="480" height="214"/>
                                 <subviews>
@@ -339,6 +308,49 @@
                                     <constraint firstItem="D4g-yn-ZZF" firstAttribute="centerX" secondItem="ApJ-rr-Y3s" secondAttribute="centerX" id="yYj-lP-pYl"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" text="WHAT'S YOUR SITUATION?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-Nb-4Tm">
+                                <rect key="frame" x="60" y="32" width="480" height="48"/>
+                                <fontDescription key="fontDescription" name="Exo-Black" family="Exo" pointSize="36"/>
+                                <color key="textColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="40" y="32" width="320" height="84"/>
+                                </variation>
+                            </label>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giy-xa-NoG" customClass="ShadowButton" customModule="YoChing" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="460" width="600" height="60"/>
+                                <color key="backgroundColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fJp-ly-hb8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="34"/>
+                                <state key="normal" title="THROW THE YO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderThickness">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="flipCoinAction:" destination="IGd-ft-1RS" eventType="touchUpInside" id="1KQ-kb-Cyy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -454,6 +466,9 @@
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="26"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="16" y="10" width="227" height="31"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -476,6 +491,9 @@
                                                     <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="70" y="29" width="180" height="14"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="xAN-ec-7kR">
                                                     <rect key="frame" x="24" y="10" width="30" height="30"/>
@@ -488,6 +506,9 @@
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="70" y="8" width="90" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -515,6 +536,9 @@
                                                     <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="70" y="29" width="173" height="14"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="CC5-vb-j5N">
                                                     <rect key="frame" x="24" y="10" width="30" height="30"/>
@@ -527,6 +551,9 @@
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="70" y="8" width="70" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -568,6 +595,9 @@
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="26"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="16" y="10" width="195" height="31"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -590,6 +620,9 @@
                                                     <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="70" y="29" width="136" height="14"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="OxE-7x-kQt">
                                                     <rect key="frame" x="24" y="10" width="30" height="30"/>
@@ -602,6 +635,9 @@
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="70" y="8" width="49" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -629,6 +665,9 @@
                                                     <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="70" y="29" width="108" height="14"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="BMf-7R-GN8">
                                                     <rect key="frame" x="24" y="10" width="30" height="30"/>
@@ -641,6 +680,9 @@
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="70" y="8" width="39" height="21"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -682,6 +724,9 @@
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="26"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="16" y="10" width="140" height="31"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -704,12 +749,18 @@
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="56" y="8" width="114" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300+ pages of YO CHING wisdom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0B6-dm-oQI">
                                                     <rect key="frame" x="56" y="32" width="178" height="16"/>
                                                     <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="56" y="29" width="185" height="14"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="5u2-pH-o5J">
                                                     <rect key="frame" x="549" y="8" width="35" height="35"/>
@@ -743,12 +794,18 @@
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="56" y="8" width="123" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The crew behind the YO CHING app" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lno-Tp-G89">
                                                     <rect key="frame" x="56" y="32" width="184" height="16"/>
                                                     <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="56" y="29" width="196" height="14"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="b9m-lM-jIG">
                                                     <rect key="frame" x="549" y="8" width="35" height="35"/>
@@ -782,12 +839,18 @@
                                                     <fontDescription key="fontDescription" name="Exo-Medium" family="Exo" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="56" y="8" width="124" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn more about YO CHING origins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9E-fH-i07">
                                                     <rect key="frame" x="56" y="32" width="189" height="16"/>
                                                     <fontDescription key="fontDescription" name="Exo-Light" family="Exo" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="56" y="29" width="197" height="14"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="YZW-eu-ktq">
                                                     <rect key="frame" x="549" y="8" width="35" height="35"/>
@@ -941,38 +1004,32 @@
                                         <constraint firstAttribute="height" constant="1" id="4I5-pY-wOZ"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YO CHING" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnd-dg-mLA" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                    <rect key="frame" x="8" y="130" width="584" height="35"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="YO CHING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vnd-dg-mLA" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                    <rect key="frame" x="30" y="130" width="540" height="35"/>
                                     <fontDescription key="fontDescription" name="Exo-Black" family="Exo" pointSize="26"/>
                                     <color key="textColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="8" y="130" width="384" height="31"/>
+                                    </variation>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="vnd-dg-mLA" firstAttribute="width" secondItem="lkZ-BJ-Fch" secondAttribute="width" multiplier="0.9" id="0t0-d7-pdr"/>
                                 <constraint firstItem="NVj-6E-SwQ" firstAttribute="width" secondItem="lkZ-BJ-Fch" secondAttribute="width" multiplier="0.8" id="4fj-co-AGD"/>
-                                <constraint firstAttribute="trailingMargin" secondItem="vnd-dg-mLA" secondAttribute="trailing" id="5Gf-Mf-Ptz"/>
                                 <constraint firstAttribute="bottom" secondItem="6gP-dm-eNJ" secondAttribute="bottom" constant="-195" id="8ci-QD-i4h"/>
                                 <constraint firstAttribute="bottom" secondItem="NVj-6E-SwQ" secondAttribute="bottom" constant="8" id="BgP-9M-aNL"/>
                                 <constraint firstItem="vnd-dg-mLA" firstAttribute="centerX" secondItem="yng-hg-ujy" secondAttribute="centerX" id="Cv8-dp-zZf"/>
                                 <constraint firstItem="NVj-6E-SwQ" firstAttribute="centerX" secondItem="lkZ-BJ-Fch" secondAttribute="centerX" id="KWF-i4-zGk"/>
-                                <constraint firstItem="vnd-dg-mLA" firstAttribute="leading" secondItem="lkZ-BJ-Fch" secondAttribute="leadingMargin" id="Ss3-ZL-qrs"/>
-                                <constraint firstAttribute="trailingMargin" secondItem="vnd-dg-mLA" secondAttribute="trailing" id="gC4-hY-7zG"/>
                                 <constraint firstItem="6gP-dm-eNJ" firstAttribute="top" secondItem="lkZ-BJ-Fch" secondAttribute="top" constant="-241" id="h67-x2-qCJ"/>
                                 <constraint firstItem="6gP-dm-eNJ" firstAttribute="leading" secondItem="lkZ-BJ-Fch" secondAttribute="leading" id="j7n-C8-sIO"/>
-                                <constraint firstItem="vnd-dg-mLA" firstAttribute="leading" secondItem="lkZ-BJ-Fch" secondAttribute="leadingMargin" id="ktn-E3-0rr"/>
                                 <constraint firstItem="yng-hg-ujy" firstAttribute="centerX" secondItem="lkZ-BJ-Fch" secondAttribute="centerX" id="nxP-fi-oYb"/>
                                 <constraint firstAttribute="trailing" secondItem="6gP-dm-eNJ" secondAttribute="trailing" id="oJS-6d-0Om"/>
                                 <constraint firstItem="yng-hg-ujy" firstAttribute="height" secondItem="lkZ-BJ-Fch" secondAttribute="height" multiplier="0.65" id="q7N-he-PI0"/>
                                 <constraint firstItem="yng-hg-ujy" firstAttribute="top" secondItem="lkZ-BJ-Fch" secondAttribute="top" id="qgn-dA-BUU"/>
                                 <constraint firstItem="vnd-dg-mLA" firstAttribute="top" secondItem="yng-hg-ujy" secondAttribute="bottom" id="rW7-jI-LEL"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="5Gf-Mf-Ptz"/>
-                                    <exclude reference="Ss3-ZL-qrs"/>
-                                </mask>
-                            </variation>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BodyCell" rowHeight="200" id="GHa-Ic-a8j" customClass="BodyCell" customModule="YoChing" customModuleProvider="target">
@@ -1017,12 +1074,18 @@
                                             <color key="textColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name="Signika-Semibold" family="Signika" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="16" y="55" width="368" height="137"/>
+                                            </variation>
                                         </textView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="754" text="WHAT'S UP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5Z-oR-Dy8">
                                             <rect key="frame" x="8" y="8" width="584" height="35"/>
                                             <fontDescription key="fontDescription" name="Exo-ExtraBold" family="Exo" pointSize="26"/>
                                             <color key="textColor" red="0.1058823529" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="8" y="8" width="384" height="31"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1124,13 +1187,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Executive Producer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srv-SC-ts5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Executive Producer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srv-SC-ts5">
                                                     <rect key="frame" x="32" y="44" width="137" height="22"/>
                                                     <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="40" width="140" height="19"/>
+                                                    </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="True Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fR-U8-G5F" userLabel="True Player" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="True Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fR-U8-G5F" userLabel="True Player" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                                     <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1140,6 +1206,9 @@
                                                             <real key="value" value="1.5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="8" width="308" height="28"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right-thick" translatesAutoresizingMaskIntoConstraints="NO" id="NJG-om-wXL">
                                                     <rect key="frame" x="548" y="27" width="36" height="36"/>
@@ -1169,13 +1238,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Writer, Producer, Creative Director" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVY-2N-eYn">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Writer, Producer, Creative Director" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVY-2N-eYn">
                                                     <rect key="frame" x="32" y="44" width="246" height="22"/>
                                                     <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="40" width="243" height="19"/>
+                                                    </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hugh Gallagher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5I-P7-jEo" userLabel="Hugh Gallagher" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hugh Gallagher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5I-P7-jEo" userLabel="Hugh Gallagher" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                                     <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1185,6 +1257,9 @@
                                                             <real key="value" value="1.3999999999999999"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="8" width="308" height="28"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right-thick" translatesAutoresizingMaskIntoConstraints="NO" id="97B-5s-PXR">
                                                     <rect key="frame" x="548" y="27" width="36" height="36"/>
@@ -1214,13 +1289,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coder, Producer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbt-x0-Byu">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coder, Producer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbt-x0-Byu">
                                                     <rect key="frame" x="32" y="44" width="114" height="22"/>
                                                     <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="40" width="118" height="19"/>
+                                                    </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marc Risney" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PI2-4H-IxE" userLabel="Marc Risney" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Marc Risney" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PI2-4H-IxE" userLabel="Marc Risney" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                                     <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1230,6 +1308,9 @@
                                                             <real key="value" value="1.3"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="8" width="308" height="28"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right-thick" translatesAutoresizingMaskIntoConstraints="NO" id="lFD-nj-Za9">
                                                     <rect key="frame" x="548" y="27" width="36" height="36"/>
@@ -1265,7 +1346,7 @@
                                                         <constraint firstAttribute="width" secondItem="LgZ-AO-1rh" secondAttribute="height" multiplier="1:1" id="eMC-86-d7O"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wellington Moreno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ls2-X2-i59" userLabel="Wellington Moreno" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wellington Moreno" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ls2-X2-i59" userLabel="Wellington Moreno" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                                     <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1275,12 +1356,18 @@
                                                             <real key="value" value="1.2"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="8" width="308" height="28"/>
+                                                    </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Programming Monk, App Designer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3f-BI-U4H">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Programming Monk, App Designer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3f-BI-U4H">
                                                     <rect key="frame" x="32" y="44" width="244" height="22"/>
                                                     <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="40" width="248" height="19"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1304,11 +1391,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrexagram Artwork, Yo Bro Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oc-Dd-5Fb">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Wrexagram Artwork, Yo Bro Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oc-Dd-5Fb">
                                                     <rect key="frame" x="32" y="44" width="254" height="22"/>
                                                     <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="40" width="248" height="19"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right-thick" translatesAutoresizingMaskIntoConstraints="NO" id="g3J-Kf-01V">
                                                     <rect key="frame" x="548" y="27" width="36" height="36"/>
@@ -1316,7 +1406,7 @@
                                                         <constraint firstAttribute="width" secondItem="g3J-Kf-01V" secondAttribute="height" multiplier="1:1" id="T1e-th-9XY"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brendan Miller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvG-SG-zou" userLabel="Brendan Miller" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Brendan Miller" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvG-SG-zou" userLabel="Brendan Miller" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                                     <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1326,6 +1416,9 @@
                                                             <real key="value" value="1.1000000000000001"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="8" width="308" height="28"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1349,11 +1442,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YO Street Coins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zft-3x-ZWI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="YO Street Coins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zft-3x-ZWI">
                                                     <rect key="frame" x="32" y="44" width="110" height="22"/>
                                                     <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="40" width="116" height="19"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right-thick" translatesAutoresizingMaskIntoConstraints="NO" id="X8h-pm-Mcn">
                                                     <rect key="frame" x="548" y="27" width="36" height="36"/>
@@ -1361,7 +1457,7 @@
                                                         <constraint firstAttribute="width" secondItem="X8h-pm-Mcn" secondAttribute="height" multiplier="1:1" id="O1E-Xg-uKJ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maya Gonsalves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fam-lm-neZ" userLabel="Maya Sugihara" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Maya Gonsalves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fam-lm-neZ" userLabel="Maya Sugihara" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                                     <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1371,6 +1467,9 @@
                                                             <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="32" y="8" width="308" height="28"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1450,12 +1549,18 @@
                                 <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="32" y="8" width="201" height="28"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Programming Monk, App Design" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eod-DB-hVb">
                                 <rect key="frame" x="32" y="48" width="229" height="22"/>
                                 <fontDescription key="fontDescription" name="Exo-Regular" family="Exo" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="32" y="44" width="234" height="19"/>
+                                </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right-thick" translatesAutoresizingMaskIntoConstraints="NO" id="dtt-ZO-Yk6">
                                 <rect key="frame" x="548" y="27" width="36" height="36"/>

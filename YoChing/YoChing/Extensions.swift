@@ -19,24 +19,23 @@ extension Int {
     func isOdd() -> Bool {
         return !self.isEven()
     }
-    
+
     static func random(from begin: Int, to end: Int) -> Int {
-        
+
         guard begin != end else { return begin }
         guard begin < end else { return 0 }
-        
+
         let difference = end - begin
         let random = arc4random_uniform(UInt32(difference))
-        
+
         let result = begin + Int(random)
-        
+
         if result >= end {
             return end - 1
         }
         else {
             return result
         }
-        
     }
 }
 
@@ -62,8 +61,8 @@ extension UIViewController {
 
 //MARK: Adds a delay() function
 extension UIViewController {
-    
-    func delay(delay: Double, closure: ()->()) {
+
+    func delay(delay: Double, closure: () -> ()) {
         dispatch_after(
             dispatch_time(
                 DISPATCH_TIME_NOW,
@@ -73,28 +72,26 @@ extension UIViewController {
             closure
         )
     }
-    
 }
 
 //MARK: Opening Links
 extension UIViewController {
-    
+
     func openLink(link: String) {
-        
+
         guard let url = link.toURL() else { return }
-        
+
         defer {
             AromaClient.beginWithTitle("Opened Link")
                 .withPriority(.MEDIUM)
                 .addBody(link)
                 .send()
         }
-        
+
         let app = UIApplication.sharedApplication()
         app.openURL(url)
     }
 }
-
 
 //MARK: String Operations
 public extension String {
@@ -129,29 +126,71 @@ extension UITableViewController {
         guard let image = UIImage(named: imageName) else { return }
         guard let frame = self.view?.frame else { return }
 
-       let imageView = UIImageView(frame: frame)
-       imageView.backgroundColor = UIColor.clearColor()
+        let imageView = UIImageView(frame: frame)
+        imageView.backgroundColor = UIColor.clearColor()
 
-       imageView.contentMode = .ScaleAspectFill
-       imageView.image = image
-       self.tableView.backgroundView = imageView
+        imageView.contentMode = .ScaleAspectFill
+        imageView.image = image
+        self.tableView.backgroundView = imageView
 
-    //    self.view.backgroundColor = UIColor(patternImage: image)
-    //    self.view.opaque = false
-    //    self.view.layer.opaque = false
+        // self.view.backgroundColor = UIColor(patternImage: image)
+        // self.view.opaque = false
+        // self.view.layer.opaque = false
     }
 }
 
 //MARK: Arrays
 extension Array {
-    
+
     func selectOne() -> Element? {
         guard count > 0 else { return nil }
-        
+
         var index = Int.random(from: 0, to: count)
-        
+
         if index >= count { index -= 1 }
-        
+
         return self[index]
+    }
+}
+
+// MARK: UILabel
+extension UILabel {
+
+    func readjustLabelFontSize() {
+        let rect = self.frame
+        self.adjustFontSizeToFitRect(rect, minFontSize: 5, maxFontSize: 100)
+    }
+
+    func adjustFontSizeToFitRect(rect: CGRect, minFontSize: Int = 5, maxFontSize: Int = 200) {
+
+        guard let text = self.text else { return }
+
+        frame = rect
+
+        var right = maxFontSize
+        var left = minFontSize
+
+        let constraintSize = CGSize(width: rect.width, height: CGFloat.max)
+
+        while (left <= right) {
+
+            let currentSize = (left + right) / 2
+            font = font.fontWithSize(CGFloat(currentSize))
+            let text = NSAttributedString(string: text, attributes: [NSFontAttributeName: font])
+            let textRect = text.boundingRectWithSize(constraintSize, options: .UsesLineFragmentOrigin, context: nil)
+
+            let labelSize = textRect.size
+
+            if labelSize.height < frame.height && labelSize.height >= frame.height - 10 && labelSize.width < frame.width && labelSize.width >= frame.width - 10 {
+                break
+            }
+            else if labelSize.height > frame.height || labelSize.width > frame.width {
+                right = currentSize - 1
+            }
+            else
+            {
+                left = currentSize + 1
+            }
+        }
     }
 }

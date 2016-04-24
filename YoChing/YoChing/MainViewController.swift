@@ -115,11 +115,12 @@ class MainViewController: UIViewController {
         //In order for the animation to show, the text in the label has to change, or appear to chance value.
         let phrase = phrases.selectOne()
         
+        whatsYourSituationLabel?.text = ""
         let animations = { [weak whatsYourSituationLabel] in
-            whatsYourSituationLabel?.text = ""
-            whatsYourSituationLabel?.hidden = false
             whatsYourSituationLabel?.text = phrase
+            whatsYourSituationLabel?.hidden = false
             whatsYourSituationLabel?.layoutIfNeeded()
+            whatsYourSituationLabel?.readjustLabelFontSize()
         }
         
         UIView.transitionWithView(whatsYourSituationLabel, duration: 0.5, options: .TransitionCrossDissolve, animations: animations, completion: nil)

@@ -66,9 +66,12 @@ class WrexagramViewController : UITableViewController {
         navTitle.text = "WREXAGRAM \(wrexagramNumber)"
     }
     
-    private func loadTitle() {
+    private func loadTitle()
+    {
+        wrexagramTitle.adjustsFontSizeToFitWidth = true
         wrexagramTitle.morphingEffect = .Anvil
         wrexagramTitle.text = wrexagram?.title ?? ""
+        wrexagramTitle.readjustLabelFontSize()
     }
     
     private func loadImage() {
