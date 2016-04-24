@@ -35,7 +35,7 @@ class CreditsViewController : UITableViewController {
         self.hughPath : "http://hugh-gallagher.com",
         self.marcPath : "http://Github.com/mrisney",
         self.wellingtonPath : "http://sirwellington.tech/",
-        self.brendanPath : "",
+        self.brendanPath : "https://www.linkedin.com/in/brendankmiller/",
         self.mayaPath : "https://www.behance.net/mayasghr/"
     ]
     
