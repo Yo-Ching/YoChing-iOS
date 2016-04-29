@@ -142,9 +142,9 @@ class WrexagramLibrary {
 extension WrexagramLibrary {
     
     
-    static func loadWrexagram(number number: Int, intoImageView imageView: UIImageView, useHaneke: Bool = false) {
+    static func loadWrexagram(number number: Int, intoImageView imageView: UIImageView, useThumbnail: Bool = false) {
         
-        if useHaneke {
+        if useThumbnail {
             let fetcher = WrexagramImageFetcher(wrexagramNumber: number)
             imageView.hnk_setImageFromFetcher(fetcher)
         }

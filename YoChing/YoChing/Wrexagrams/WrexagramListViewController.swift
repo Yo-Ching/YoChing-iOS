@@ -75,7 +75,7 @@ extension WrexagramListViewController {
         cell.subtitle?.text = wrexagram.subtitle
         cell.wrexagramImage?.image = nil
         
-        WrexagramLibrary.loadWrexagram(number: number, intoImageView: cell.wrexagramImage, useHaneke: true)
+        WrexagramLibrary.loadWrexagram(number: number, intoImageView: cell.wrexagramImage, useThumbnail: true)
         
         randomizeSpray(forCell: cell)
         
