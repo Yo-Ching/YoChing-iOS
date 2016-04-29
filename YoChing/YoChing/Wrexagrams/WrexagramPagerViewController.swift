@@ -91,7 +91,7 @@ extension WrexagramPagerViewController : UIPageViewControllerDelegate {
     }
 }
 
-//MARK: Action Methods
+//MARK: Social Media Sharing
 extension WrexagramPagerViewController {
     
     @IBAction func onShare(sender: AnyObject) {
@@ -134,6 +134,8 @@ extension WrexagramPagerViewController {
             applicationActivities: nil)
         
         activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
+            
+            let activity =  activity ?? ""
             
             if success {
                 AromaClient.beginWithTitle("Wrexagram Shared")
