@@ -233,25 +233,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spray.galaxy.white.transparent" translatesAutoresizingMaskIntoConstraints="NO" id="Hdp-Yh-Khy">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coins.Slick.Tails" translatesAutoresizingMaskIntoConstraints="NO" id="XWZ-UG-Vf2">
-                                <rect key="frame" x="225" y="278" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="XWZ-UG-Vf2" secondAttribute="height" multiplier="1:1" id="KMz-d5-AXO"/>
-                                </constraints>
-                            </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coins.Slick.Heads" translatesAutoresizingMaskIntoConstraints="NO" id="Hlq-cf-f8c">
-                                <rect key="frame" x="43" y="278" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Hlq-cf-f8c" secondAttribute="height" multiplier="1:1" id="Zxp-qa-ezl"/>
-                                </constraints>
-                            </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coins.Slick.Heads" translatesAutoresizingMaskIntoConstraints="NO" id="MZJ-OV-sZh">
-                                <rect key="frame" x="407" y="278" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="MZJ-OV-sZh" secondAttribute="height" multiplier="1:1" id="VPp-e6-Bc4"/>
-                                </constraints>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzE-jB-y4h">
+                            <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzE-jB-y4h">
                                 <rect key="frame" x="60" y="24" width="480" height="214"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WREX_MASTER-splitline" translatesAutoresizingMaskIntoConstraints="NO" id="aJp-Mc-Ssl">
@@ -308,6 +290,24 @@
                                     <constraint firstItem="D4g-yn-ZZF" firstAttribute="centerX" secondItem="ApJ-rr-Y3s" secondAttribute="centerX" id="yYj-lP-pYl"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coins.Slick.Tails" translatesAutoresizingMaskIntoConstraints="NO" id="XWZ-UG-Vf2">
+                                <rect key="frame" x="225" y="278" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XWZ-UG-Vf2" secondAttribute="height" multiplier="1:1" id="KMz-d5-AXO"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coins.Slick.Heads" translatesAutoresizingMaskIntoConstraints="NO" id="Hlq-cf-f8c">
+                                <rect key="frame" x="43" y="278" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hlq-cf-f8c" secondAttribute="height" multiplier="1:1" id="Zxp-qa-ezl"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coins.Slick.Heads" translatesAutoresizingMaskIntoConstraints="NO" id="MZJ-OV-sZh">
+                                <rect key="frame" x="407" y="278" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MZJ-OV-sZh" secondAttribute="height" multiplier="1:1" id="VPp-e6-Bc4"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="WHAT'S YOUR SITUATION?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gh2-Nb-4Tm">
                                 <rect key="frame" x="60" y="40" width="480" height="48"/>
                                 <fontDescription key="fontDescription" name="Exo-Black" family="Exo" pointSize="36"/>
