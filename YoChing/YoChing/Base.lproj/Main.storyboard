@@ -1457,7 +1457,7 @@
                                                         <constraint firstAttribute="width" secondItem="X8h-pm-Mcn" secondAttribute="height" multiplier="1:1" id="O1E-Xg-uKJ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maya Gonsalves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fam-lm-neZ" userLabel="Maya Sugihara" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maya G." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fam-lm-neZ" userLabel="Maya Sugihara" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
                                                     <rect key="frame" x="32" y="8" width="508" height="32"/>
                                                     <fontDescription key="fontDescription" name="Exo-Bold" family="Exo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

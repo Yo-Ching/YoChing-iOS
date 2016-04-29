@@ -57,10 +57,10 @@ class CreditsViewController : UITableViewController {
         labels.forEach() { $0.morphingEnabled = false ; $0.text = nil }
         
         labels.enumerate()
+            .reverse()
             .forEach() { i , label in
                 label.morphingEnabled = true
                 label.morphingEffect = .Anvil
-                
                 label.text = text[i]
         }
     }

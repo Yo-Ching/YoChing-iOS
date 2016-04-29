@@ -17,8 +17,6 @@ class WrexagramListViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        setSprayForWhiteBackground()
     }
 }
 

@@ -54,15 +54,7 @@ class WrexagramViewController : UITableViewController {
         delay(0.1) { self.loadTitle() }
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//       loadTitle()
-
-    }
-    
     private func setNavTitle() {
-        
         navTitle.text = "WREXAGRAM \(wrexagramNumber)"
     }
     
