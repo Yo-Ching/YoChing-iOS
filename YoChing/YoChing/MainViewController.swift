@@ -115,7 +115,7 @@ class MainViewController: UIViewController {
         guard let isHidden = whatsYourSituationLabel?.hidden where isHidden
         else { return }
         
-        //In order for the animation to show, the text in the label has to change, or appear to chance value.
+        //In order for the animation to show, the text in the label has to change, or appear to change value.
         let phrase = phrases.selectOne() ?? "WHAT'S YOUR SITUATION?"
         
         whatsYourSituationLabel?.text = nil
