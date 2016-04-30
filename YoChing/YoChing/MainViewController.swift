@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
             return image
         }
         else {
-            AromaClient.sendLowPriorityMessage(withTitle: "String Line Failed To Load")
+            AromaClient.sendLowPriorityMessage(withTitle: "Strng Line Failed To Load")
             return nil
         }
     }()
@@ -303,21 +303,7 @@ extension MainViewController {
         
         UIView.transitionWithView(imageView, duration: 0.2, options: .TransitionFlipFromTop, animations: animation, completion: nil)
     }
-    
-    
-    private func getWrexLineForResults(results: [Coin.CoinSide]) -> UIImage? {
-        
-        guard !results.isEmpty && results.count == 3 else { return nil }
-        
-        let numberOfHeads = results.filter{ $0 == Coin.CoinSide.HEADS }.count
-        
-        if numberOfHeads >= 2 {
-            return strongLineImage
-        }
-        else {
-            return splitLineImage
-        }
-    }
+
 
     private func throwTheYo() {
         
@@ -433,6 +419,7 @@ extension MainViewController {
             .send()
         
         AromaClient.sendLowPriorityMessage(withTitle: "Loading Wrex Line")
+        
         guard let wrexLineImage = getWrexLineForResults(coinTossResults)
         else {
             AromaClient.beginWithTitle("Failed to Load Wrex Line")
@@ -451,6 +438,38 @@ extension MainViewController {
             case 4 :  wrexLine4.image = wrexLineImage ; fadeInWrexagramLine(wrexLine4)
             case 5 :  wrexLine5.image = wrexLineImage ; fadeInWrexagramLine(wrexLine5)
             default : wrexLine6.image = wrexLineImage ; fadeInWrexagramLine(wrexLine6)
+        }
+    }
+    
+    
+    private func getWrexLineForResults(results: [Coin.CoinSide]) -> UIImage? {
+        
+        AromaClient.beginWithTitle("Determining Wrex Line")
+            .addBody("For Results: \(results)")
+            .withPriority(.LOW)
+            .send()
+        
+        guard !results.isEmpty && results.count == 3
+        else {
+            
+            AromaClient.beginWithTitle("Incorrect Coin Results")
+                .withPriority(.MEDIUM)
+                .addBody("Coin results are either empty or not 3").addLine(2)
+                .addBody("\(results.count) Coins in results").addLine()
+                .addBody("\(results)")
+                .send()
+            
+            return nil
+        }
+        
+        
+        let numberOfHeads = results.filter{ $0 == Coin.CoinSide.HEADS }.count
+        
+        if numberOfHeads >= 2 {
+            return strongLineImage
+        }
+        else {
+            return splitLineImage
         }
     }
     
