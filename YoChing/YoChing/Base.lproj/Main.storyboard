@@ -413,7 +413,7 @@
                         </view>
                         <barButtonItem key="rightBarButtonItem" image="Wrexagram-Icon" id="y61-as-oo1">
                             <connections>
-                                <segue destination="5MJ-DA-mrH" kind="show" id="sfe-EY-h06"/>
+                                <segue destination="5MJ-DA-mrH" kind="show" identifier="ToList" id="sfe-EY-h06"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

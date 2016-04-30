@@ -177,10 +177,14 @@ class MainViewController: UIViewController {
     
     private func addSwipeGesture() {
         
-        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(self.onSwipe(_:)))
-        gesture.direction = .Right
+        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.onSwipeRight(_:)))
+        rightGesture.direction = .Right
         
-        self.view.addGestureRecognizer(gesture)
+        let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.onSwipeLeft(_:)))
+        leftGesture.direction = .Left
+        
+        self.view.addGestureRecognizer(rightGesture)
+        self.view.addGestureRecognizer(leftGesture)
     }
 
     
@@ -190,8 +194,12 @@ class MainViewController: UIViewController {
 //MARK : Actions
 extension MainViewController {
     
-    func onSwipe(sender: UIGestureRecognizer) {
+    func onSwipeRight(sender: UIGestureRecognizer) {
         self.goToSettings()
+    }
+    
+    func onSwipeLeft(sender: UIGestureRecognizer) {
+        self.goToWrexagramList()
     }
     
     @IBAction func scaleUpButton(sender: UIButton) {
@@ -233,7 +241,10 @@ extension MainViewController {
     
     private func goToWrex(outcome: Int) {
         self.performSegueWithIdentifier("ToPager", sender: outcome)
-//        self.performSegueWithIdentifier("ToWrexagram", sender: outcome)
+    }
+    
+    private func goToWrexagramList() {
+        self.performSegueWithIdentifier("ToList", sender: self)
     }
     
     private func goToSettings() {
