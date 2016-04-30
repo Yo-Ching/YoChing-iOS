@@ -54,7 +54,8 @@ class MainViewController: UIViewController {
     
     private let transition = AnimateLeft()
     
-    private var splitLineImage: UIImage? {
+    //MARK: Wrex Lines
+    private lazy var splitLineImage: UIImage? = {
         if let image = UIImage(named: "WREX_MASTER-splitline") {
             AromaClient.sendLowPriorityMessage(withTitle: "Split Line Image Loaded")
             return image
@@ -63,9 +64,9 @@ class MainViewController: UIViewController {
             AromaClient.sendLowPriorityMessage(withTitle: "Split Line Image Failed To Load")
             return nil
         }
-    }
+    }()
     
-    private var strongLineImage: UIImage? {
+    private lazy var strongLineImage: UIImage? = {
         if let image = UIImage(named: "WREX_MASTER-strongline") {
             AromaClient.sendLowPriorityMessage(withTitle: "Strong Line Image Loaded")
             return image
@@ -74,7 +75,7 @@ class MainViewController: UIViewController {
             AromaClient.sendLowPriorityMessage(withTitle: "String Line Failed To Load")
             return nil
         }
-    }
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -275,7 +276,6 @@ extension MainViewController {
     
     
     @IBAction func unwindFromSettings(segue: UIStoryboardSegue) {
-        print("Unwinding")
         
         if tosses == 0 {
             setCoins(coinOneImage, coinTwoImage, coinThreeImage)
@@ -342,7 +342,6 @@ extension MainViewController {
                 self.coinsInTheAir -= 1
                 print("Coin 2 Flipped: \(side)")
                 coinsOutcome.append(side)
-                
             }
         }
         
@@ -352,7 +351,6 @@ extension MainViewController {
                 self.coinsInTheAir -= 1
                 print("Coin 3 Flipped: \(side)")
                 coinsOutcome.append(side)
-                
             }
         }
         
@@ -377,7 +375,7 @@ extension MainViewController {
                     
                     // confusing needs to be cleaned up, but works
                     
-                    var outcome:String
+                    let outcome: String
                     
                     // only 1 toss ? get a random wrexagram
                     if self.maxTosses == 1 {
@@ -428,7 +426,23 @@ extension MainViewController {
             hexNum += "2"
         }
         
-        guard let wrexLineImage = getWrexLineForResults(coinTossResults) else { return }
+        AromaClient.beginWithTitle("Recording Coin Toss")
+            .addBody("\(headCount) Heads | \(3 - headCount) Tails").addLine(2)
+            .addBody("Hex Num is \(hexNum)")
+            .withPriority(.LOW)
+            .send()
+        
+        AromaClient.sendLowPriorityMessage(withTitle: "Loading Wrex Line")
+        guard let wrexLineImage = getWrexLineForResults(coinTossResults)
+        else {
+            AromaClient.beginWithTitle("Failed to Load Wrex Line")
+                .addBody("Hex Num: \(hexNum)")
+                .withPriority(.LOW)
+                .send()
+            
+            return
+        }
+        AromaClient.sendLowPriorityMessage(withTitle: "Loaded Wrex Line")
         
         switch tosses {
             case 1 :  wrexLine1.image = wrexLineImage ; fadeInWrexagramLine(wrexLine1)
