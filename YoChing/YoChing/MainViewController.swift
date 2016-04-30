@@ -453,7 +453,7 @@ extension MainViewController {
         else {
             
             AromaClient.beginWithTitle("Incorrect Coin Results")
-                .withPriority(.MEDIUM)
+                .withPriority(.HIGH)
                 .addBody("Coin results are either empty or not 3").addLine(2)
                 .addBody("\(results.count) Coins in results").addLine()
                 .addBody("\(results)")
