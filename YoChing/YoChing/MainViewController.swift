@@ -55,11 +55,25 @@ class MainViewController: UIViewController {
     private let transition = AnimateLeft()
     
     private var splitLineImage: UIImage? {
-        return UIImage(named: "WREX_MASTER-splitline")
+        if let image = UIImage(named: "WREX_MASTER-splitline") {
+            AromaClient.sendLowPriorityMessage(withTitle: "Split Line Image Loaded")
+            return image
+        }
+        else {
+            AromaClient.sendLowPriorityMessage(withTitle: "Split Line Image Failed To Load")
+            return nil
+        }
     }
     
     private var strongLineImage: UIImage? {
-        return UIImage(named: "WREX_MASTER-strongline")
+        if let image = UIImage(named: "WREX_MASTER-strongline") {
+            AromaClient.sendLowPriorityMessage(withTitle: "Strong Line Image Loaded")
+            return image
+        }
+        else {
+            AromaClient.sendLowPriorityMessage(withTitle: "String Line Failed To Load")
+            return nil
+        }
     }
     
     override func viewDidLoad() {
@@ -263,8 +277,9 @@ extension MainViewController {
     
     
     private func hideWrexLines() {
-        let lines = [ wrexLine1, wrexLine2, wrexLine3, wrexLine4, wrexLine5, wrexLine6]
         
+        AromaClient.sendLowPriorityMessage(withTitle: "Hiding Wrex Lines")
+        let lines = [ wrexLine1, wrexLine2, wrexLine3, wrexLine4, wrexLine5, wrexLine6]
         lines.forEach() { line in line.hidden = true }
     }
     
@@ -356,7 +371,8 @@ extension MainViewController {
                     // only 1 toss ? get a random wrexagram
                     if self.maxTosses == 1 {
                         outcome = self.randomWrexagram()
-                    } else {
+                    }
+                    else {
                         let hexNumber = Int(self.hexNum) ?? 111111
                         outcome  = WrexagramLibrary.getOutcome(hexNumber)
                     }
@@ -364,8 +380,7 @@ extension MainViewController {
                     defer {
                         AromaClient.beginWithTitle("Coins Flipped")
                             .addBody("Result: \(outcome)")
-                            .addLine().addLine()
-                            .addBody("From: \(UIDevice.currentDevice().name)")
+                            .withPriority(.LOW)
                             .send()
                     }
                     
@@ -377,6 +392,7 @@ extension MainViewController {
                     }
                     else {
                         self.flipButton.enabled = false
+                      
                         self.delay(0.5) {
                             self.goToWrex(wrexNumber)
                             self.hideWrexLines()
@@ -425,6 +441,11 @@ extension MainViewController {
             transition = .TransitionCurlDown
             duration = 0.3
         }
+        
+        AromaClient.beginWithTitle("Showing Wrex Line")
+            .withPriority(.LOW)
+            .addBody("Line \(tosses)")
+            .send()
         
         UIView.transitionWithView(wrexLine, duration: duration, options: transition, animations: { wrexLine.hidden = false }, completion: nil)
     }
