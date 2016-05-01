@@ -57,22 +57,20 @@ class MainViewController: UIViewController {
     //MARK: Wrex Lines
     private lazy var splitLineImage: UIImage? = {
         if let image = UIImage(named: "WREX_MASTER-splitline") {
-            AromaClient.sendLowPriorityMessage(withTitle: "Split Line Image Loaded")
             return image
         }
         else {
-            AromaClient.sendLowPriorityMessage(withTitle: "Split Line Image Failed To Load")
+            AromaClient.sendHighPriorityMessage(withTitle: "Split Line Image Failed To Load")
             return nil
         }
     }()
     
     private lazy var strongLineImage: UIImage? = {
         if let image = UIImage(named: "WREX_MASTER-strongline") {
-            AromaClient.sendLowPriorityMessage(withTitle: "Strong Line Image Loaded")
             return image
         }
         else {
-            AromaClient.sendLowPriorityMessage(withTitle: "Strng Line Failed To Load")
+            AromaClient.sendHighPriorityMessage(withTitle: "Strong Line Failed To Load")
             return nil
         }
     }()
@@ -288,8 +286,6 @@ extension MainViewController {
     
     
     private func hideWrexLines() {
-        
-        AromaClient.sendLowPriorityMessage(withTitle: "Hiding Wrex Lines")
         let lines = [ wrexLine1, wrexLine2, wrexLine3, wrexLine4, wrexLine5, wrexLine6]
         lines.forEach() { line in line.hidden = true }
     }
@@ -418,18 +414,17 @@ extension MainViewController {
             .withPriority(.LOW)
             .send()
         
-        AromaClient.sendLowPriorityMessage(withTitle: "Loading Wrex Line")
-        
         guard let wrexLineImage = getWrexLineForResults(coinTossResults)
         else {
             AromaClient.beginWithTitle("Failed to Load Wrex Line")
-                .addBody("Hex Num: \(hexNum)")
+                .addBody("Hex Num: \(hexNum)").addLine(2)
+                .addBody("For Results:").addLine()
+                .addBody("\(coinTossResults)")
                 .withPriority(.LOW)
                 .send()
             
             return
         }
-        AromaClient.sendLowPriorityMessage(withTitle: "Loaded Wrex Line")
         
         switch tosses {
             case 1 :  wrexLine1.image = wrexLineImage ; fadeInWrexagramLine(wrexLine1)
@@ -443,11 +438,6 @@ extension MainViewController {
     
     
     private func getWrexLineForResults(results: [Coin.CoinSide]) -> UIImage? {
-        
-        AromaClient.beginWithTitle("Determining Wrex Line")
-            .addBody("For Results: \(results)")
-            .withPriority(.LOW)
-            .send()
         
         guard !results.isEmpty && results.count == 3
         else {
@@ -485,11 +475,6 @@ extension MainViewController {
             transition = .TransitionCurlDown
             duration = 0.3
         }
-        
-        AromaClient.beginWithTitle("Showing Wrex Line")
-            .withPriority(.LOW)
-            .addBody("Line \(tosses)")
-            .send()
         
         UIView.transitionWithView(wrexLine, duration: duration, options: transition, animations: { wrexLine.hidden = false }, completion: nil)
     }

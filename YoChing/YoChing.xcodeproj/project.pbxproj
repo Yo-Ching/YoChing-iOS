@@ -761,6 +761,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.yoching;
 				PRODUCT_NAME = YoChing;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
