@@ -199,10 +199,10 @@ extension SettingsViewController {
             Settings.isQuickEnabled = indexPath == tapThatPath
             
             if Settings.isQuickEnabled {
-                AromaClient.sendLowPriorityMessage(withTitle: "Enabled TAP THAT Setting")
+                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled TAP THAT Setting")
             }
             else {
-                AromaClient.sendLowPriorityMessage(withTitle: "Enable TRUE PLAYER Setting")
+                AromaClient.sendMediumPriorityMessage(withTitle: "Enable TRUE PLAYER Setting")
             }
             
             self.setLookForCell(tableView, forIndexPath: classicPath)
@@ -216,12 +216,11 @@ extension SettingsViewController {
             Settings.isSlickEnabled = indexPath == slickPath
             
             if Settings.isSlickEnabled {
-                AromaClient.sendLowPriorityMessage(withTitle: "Enabled SLICK COINS Setting")
+                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled SLICK COINS Setting")
             }
             else {
-                AromaClient.sendLowPriorityMessage(withTitle: "Enabled STREET COINS Setting")
+                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled STREET COINS Setting")
             }
-            
             
             self.setLookForCell(tableView, forIndexPath: streetPath)
             self.setLookForCell(tableView, forIndexPath: slickPath)
