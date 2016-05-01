@@ -191,11 +191,19 @@ extension SettingsViewController {
             self.openLink(BOOK_INFO_LINK)
         }
         else if indexPath == seeStreetCredsPath {
+            AromaClient.sendLowPriorityMessage(withTitle: "Opened App Credits Page")
             self.goToCredits()
         }
         else if indexPath == classicPath || indexPath == tapThatPath {
             
             Settings.isQuickEnabled = indexPath == tapThatPath
+            
+            if Settings.isQuickEnabled {
+                AromaClient.sendLowPriorityMessage(withTitle: "Enabled TAP THAT Setting")
+            }
+            else {
+                AromaClient.sendLowPriorityMessage(withTitle: "Enable TRUE PLAYER Setting")
+            }
             
             self.setLookForCell(tableView, forIndexPath: classicPath)
             self.setLookForCell(tableView, forIndexPath: tapThatPath)
@@ -206,6 +214,14 @@ extension SettingsViewController {
         else if indexPath == streetPath || indexPath == slickPath {
             
             Settings.isSlickEnabled = indexPath == slickPath
+            
+            if Settings.isSlickEnabled {
+                AromaClient.sendLowPriorityMessage(withTitle: "Enabled SLICK COINS Setting")
+            }
+            else {
+                AromaClient.sendLowPriorityMessage(withTitle: "Enabled STREET COINS Setting")
+            }
+            
             
             self.setLookForCell(tableView, forIndexPath: streetPath)
             self.setLookForCell(tableView, forIndexPath: slickPath)

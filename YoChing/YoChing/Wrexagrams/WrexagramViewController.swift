@@ -25,6 +25,15 @@ class WrexagramViewController : UITableViewController {
         super.viewDidLoad()
         
         guard wrexagramNumber > 0 else {
+            
+            defer {
+                AromaClient.beginWithTitle("Invalid Logic")
+                    .withPriority(.HIGH)
+                    .addBody("Loaded WrexagramViewController with bad Wrex Number").addLine()
+                    .addBody("\(wrexagramNumber)")
+                    .send()
+            }
+            
             self.parentViewController?.dismissViewControllerAnimated(true, completion: nil)
             return
         }
@@ -35,16 +44,12 @@ class WrexagramViewController : UITableViewController {
             
             AromaClient.beginWithTitle("Wrexagram Viewed")
                 .addBody("\(wrexagram.asString)")
-                .addLine().addLine()
-                .addBody("By \(UIDevice.currentDevice().name)")
                 .withPriority(.LOW)
                 .send()
         }
         else {
             AromaClient.beginWithTitle("Wrexagram Viewed")
                 .addBody("Wrexagram \(wrexagramNumber)")
-                .addLine().addLine()
-                .addBody("By \(UIDevice.currentDevice().name)")
                 .withPriority(.LOW)
                 .send()
         }

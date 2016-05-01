@@ -6,6 +6,7 @@
 //  Copyright © 2016 Yo Ching. All rights reserved.
 //
 
+import AromaSwiftClient
 import Foundation
 import UIKit
 
@@ -17,6 +18,8 @@ class WrexagramListViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AromaClient.sendLowPriorityMessage(withTitle: "Opened Wrexagram List")
     }
 }
 
