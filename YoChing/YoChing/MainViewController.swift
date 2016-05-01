@@ -256,7 +256,6 @@ extension MainViewController {
         
         if let wrexegramView = destination as? WrexagramViewController {
             if let outcome = sender as? Int {
-                print("transitioning to wrexagram with outcome \(outcome)")
                 wrexegramView.wrexagramNumber = outcome
             }
         }
@@ -368,14 +367,14 @@ extension MainViewController {
                         outcome  = WrexagramLibrary.getOutcome(hexNumber)
                     }
                     
+                    let wrexNumber = Int(outcome.stringByReplacingOccurrencesOfString("wrexagram", withString: "")) ?? 01
+                    
                     defer {
                         AromaClient.beginWithTitle("Coins Flipped")
-                            .addBody("Result: \(outcome)")
+                            .addBody("Result: Wrexagram \(wrexNumber)")
                             .withPriority(.LOW)
                             .send()
                     }
-                    
-                    let wrexNumber = Int(outcome.stringByReplacingOccurrencesOfString("wrexagram", withString: "")) ?? 01
                     
                     if self.maxTosses == 1 {
                         self.hideWrexLines()
