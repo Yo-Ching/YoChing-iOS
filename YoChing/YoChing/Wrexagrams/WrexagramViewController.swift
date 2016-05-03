@@ -29,7 +29,7 @@ class WrexagramViewController : UITableViewController {
             defer {
                 AromaClient.beginWithTitle("Invalid Logic")
                     .withPriority(.HIGH)
-                    .addBody("Loaded WrexagramViewController with bad Wrex Number").addLine()
+                    .addBody("Loaded WrexagramViewController with bad Wrex Number").addLine(2)
                     .addBody("\(wrexagramNumber)")
                     .send()
             }
@@ -42,16 +42,10 @@ class WrexagramViewController : UITableViewController {
             
             defer { self.wrexagram = wrexagram }
             
-            AromaClient.beginWithTitle("Wrexagram Viewed")
-                .addBody("\(wrexagram.asString)")
-                .withPriority(.LOW)
-                .send()
+            AromaClient.sendLowPriorityMessage(withTitle: "Wrexagram Viewed", withBody: wrexagram.asString)
         }
         else {
-            AromaClient.beginWithTitle("Wrexagram Viewed")
-                .addBody("Wrexagram \(wrexagramNumber)")
-                .withPriority(.LOW)
-                .send()
+            AromaClient.sendLowPriorityMessage(withTitle: "Wrexagram Viewed", withBody: "Wrexagram \(wrexagramNumber)")
         }
         
         setNavTitle()
