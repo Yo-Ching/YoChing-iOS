@@ -12,3 +12,9 @@ YoChing IOS Swift Mobile Application
 ![YoChing Gif](./YoChing/YoChing-2.gif?raw=true)
 
 YO CHING text, logo and art work copyright 2015-2016 by True Player and Hugh Gallagher. All rights reserved.
+
+## Aroma
+
+[<img src="https://raw.githubusercontent.com/RedRoma/Aroma/develop/Graphics/Logo.png" width="100">](http://aroma.redroma.tech/)
+
+This App is Integrated with [**Aroma**](http://aroma.redroma.tech/), and collects usage data to aid in development and UX efforts.
