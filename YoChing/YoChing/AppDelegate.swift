@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
 	var window: UIWindow?
 
+    private static let buildNumber: String = NSBundle.mainBundle().infoDictionary?[kCFBundleVersionKey as String] as? String ?? ""
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
@@ -22,13 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AromaClient.TOKEN_ID = "3e7ee9ec-9e9e-479e-a44a-24c7376d2786"
         AromaClient.maxConcurrency = 2
         
-        AromaClient.sendLowPriorityMessage(withTitle: "App Launched")
+        AromaClient.beginWithTitle("App Launched")
+            .withPriority(.LOW)
+            .addBody("Build #\(AppDelegate.buildNumber)")
+            .send()
         
         NSSetUncaughtExceptionHandler() { ex in
             
             AromaClient.beginWithTitle("App Crashed")
-                .addBody("Device \(UIDevice.currentDevice().name)")
-                .addLine(2)
+                .addBody("Device \(UIDevice.currentDevice())").addLine()
+                .addBody("Build #\(AppDelegate.buildNumber)").addLine(2)
                 .addBody("\(ex)")
                 .withPriority(.HIGH)
                 .send()
