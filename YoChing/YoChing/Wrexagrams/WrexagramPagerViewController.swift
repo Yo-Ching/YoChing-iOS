@@ -122,11 +122,12 @@ extension WrexagramPagerViewController {
 
         guard let wrexagram = currentWrexagram,
               let wrexagramNumber = wrexagram.number,
-              let image = WrexagramLibrary.imageForWrexagram(wrexagramNumber)
+              let image = WrexagramLibrary.wrexPost(forWrexagram: wrexagramNumber)
         else { return nil }
-        
-        let text = (wrexagram.subtitle ?? "") + "\n\n" +
-                 "\(WrexagramLibrary.bodyForWrexagram(wrexagramNumber))"
+
+        let text = "Yo Ching - \(wrexagram.title)"
+//        let text = (wrexagram.subtitle ?? "") + "\n\n" +
+//                 "\(WrexagramLibrary.bodyForWrexagram(wrexagramNumber))"
         
         // let's add a String and an NSURL
         let activityViewController = UIActivityViewController(

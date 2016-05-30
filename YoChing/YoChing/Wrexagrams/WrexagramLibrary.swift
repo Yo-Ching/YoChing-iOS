@@ -152,13 +152,17 @@ extension WrexagramLibrary {
             let image = WrexagramLibrary.imageForWrexagram(number)
             imageView.image = image
         }
-        
     }
     
     
     static func imageForWrexagram(number: Int) -> UIImage? {
         let imageName = "WREX\(number)"
         return UIImage(named: imageName)
+    }
+    
+    static func wrexPost(forWrexagram wrexagramNumber: Int) -> UIImage? {
+        let name = "WrexaPost-\(wrexagramNumber)"
+        return UIImage(named: name)
     }
     
     

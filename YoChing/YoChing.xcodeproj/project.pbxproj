@@ -70,7 +70,7 @@
 		DE71A35F1CB8055300F5BEF2 /* PTZ56F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE71A34F1CB8055300F5BEF2 /* PTZ56F.ttf */; };
 		DE7AC0E41CC759D9001A5A9A /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AC0E31CC759D9001A5A9A /* ShadowButton.swift */; };
 		DE8362B01CBCB4A300C73BA4 /* WrexagramPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8362AF1CBCB4A300C73BA4 /* WrexagramPagerViewController.swift */; };
-		DEDBE9DF1CFCC7F500FFC76D /* WrexaPosts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEDBE9DE1CFCC7F500FFC76D /* WrexaPosts.xcassets */; };
+		DE8FBCEA1CFCCE75005177B2 /* WrexaPosts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8FBCE91CFCCE75005177B2 /* WrexaPosts.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,7 +156,7 @@
 		DE71A34F1CB8055300F5BEF2 /* PTZ56F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTZ56F.ttf; sourceTree = "<group>"; };
 		DE7AC0E31CC759D9001A5A9A /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		DE8362AF1CBCB4A300C73BA4 /* WrexagramPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrexagramPagerViewController.swift; sourceTree = "<group>"; };
-		DEDBE9DE1CFCC7F500FFC76D /* WrexaPosts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WrexaPosts.xcassets; sourceTree = "<group>"; };
+		DE8FBCE91CFCCE75005177B2 /* WrexaPosts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WrexaPosts.xcassets; sourceTree = "<group>"; };
 		FC05695ED601CAB2DFF5DB0F /* Pods-YoChing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoChing.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-YoChing/Pods-YoChing.debug.xcconfig"; sourceTree = "<group>"; };
 		FCA493FE538E6ADC2394AAC6 /* Pods_YoChing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoChing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -213,7 +213,7 @@
 				3EED85B71978FEE8007EEB62 /* MainViewController.swift */,
 				DE2367491CBC063300D9E87D /* Breaks.xcassets */,
 				3EED85BC1978FEE8007EEB62 /* Images.xcassets */,
-				DEDBE9DE1CFCC7F500FFC76D /* WrexaPosts.xcassets */,
+				DE8FBCE91CFCCE75005177B2 /* WrexaPosts.xcassets */,
 				DE23674B1CBC353800D9E87D /* Animations */,
 				DE683D4B1CB372100072F98A /* Fonts */,
 				3EED85B91978FEE8007EEB62 /* Main.storyboard */,
@@ -475,7 +475,7 @@
 				DE6B7A071CB73B3300C47024 /* Exo-ExtraLightItalic.otf in Resources */,
 				DE6C9A5F1CC1C0A000ACF11A /* Signika 700.ttf in Resources */,
 				DE71A3511CB8055300F5BEF2 /* PTC75F.ttf in Resources */,
-				DEDBE9DF1CFCC7F500FFC76D /* WrexaPosts.xcassets in Resources */,
+				DE8FBCEA1CFCCE75005177B2 /* WrexaPosts.xcassets in Resources */,
 				DE468E931CB968F000AC1199 /* json in Resources */,
 				DE71A3561CB8055300F5BEF2 /* PTM55F.ttf in Resources */,
 			);
