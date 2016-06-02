@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Might be better to put this somewhere safe
         AromaClient.TOKEN_ID = "3e7ee9ec-9e9e-479e-a44a-24c7376d2786"
         AromaClient.maxConcurrency = 2
+        AromaClient.deviceName = UIDevice.currentDevice().name
         
         AromaClient.beginWithTitle("App Launched")
             .withPriority(.LOW)
