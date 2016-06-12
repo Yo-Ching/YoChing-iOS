@@ -3,7 +3,7 @@
 //  YoChing
 //
 //  Created by SirWellington on 4/15/16.
-//  Copyright © 2016 YoChing.com. All rights reserved.
+//  Copyright © 2016 YoChing.net. All rights reserved.
 //
 
 import Foundation

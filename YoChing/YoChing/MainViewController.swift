@@ -10,6 +10,7 @@ import AromaSwiftClient
 import LTMorphingLabel
 import UIKit
 import QuartzCore
+import WebKit
 
 class MainViewController: UIViewController {
     
@@ -20,7 +21,8 @@ class MainViewController: UIViewController {
         "WHAT'S UP?",
         "WHAT'S HAPPENING?",
         "WHAT'S GOING ON?",
-        "WHERE YOU AT?"
+        "WHERE YOU AT?" ,
+        "WHAT'S SHAKIN?"
     ]
     
     @IBOutlet weak var coinOneImage: UIImageView!
@@ -90,6 +92,12 @@ class MainViewController: UIViewController {
         
         setCoins(coinOneImage, coinTwoImage, coinThreeImage)
         addTapGestures(coinOneImage, coinTwoImage, coinThreeImage)
+        
+        if Settings.isFirstTimeRunning {
+            Settings.isFirstTimeRunning = false
+            
+            self.goToTutorial()
+        }
     }
     
     private func addTapGestures(imageView: UIImageView...) {
@@ -248,6 +256,10 @@ extension MainViewController {
     
     private func goToSettings() {
         self.performSegueWithIdentifier("ToSettings", sender: self)
+    }
+    
+    private func goToTutorial() {
+        self.performSegueWithIdentifier("ToTutorial", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

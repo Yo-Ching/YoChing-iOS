@@ -46,6 +46,20 @@ class Settings {
         return !isSlickEnabled
     }
     
+    //MARK: Determines if this is the first time the App has launched
+    private static let firstTimeKey = "YoChing.FirstTime"
+    
+    static var isFirstTimeRunning: Bool {
+        get {
+            let defaults = NSUserDefaults()
+            return defaults.objectForKey(firstTimeKey) as? Bool ?? true
+        }
+        set {
+            let defaults = NSUserDefaults()
+            defaults.setObject(newValue, forKey: firstTimeKey)
+        }
+    }
+    
 }
 
 class SettingsViewController : UITableViewController {
@@ -172,6 +186,10 @@ extension SettingsViewController {
         self.performSegueWithIdentifier("ToCredits", sender: self)
     }
     
+    private func goToTutorial() {
+        self.performSegueWithIdentifier("ToTutorial", sender: self)
+    }
+    
     @IBAction func unwindFromCredits(segue: UIStoryboardSegue) {
         
     }
@@ -188,7 +206,8 @@ extension SettingsViewController {
             self.openLink(BUY_BOOK_LINK)
         }
         else if indexPath == seeInfoPath {
-            self.openLink(BOOK_INFO_LINK)
+//            self.openLink(BOOK_INFO_LINK)
+            self.goToTutorial()
         }
         else if indexPath == seeStreetCredsPath {
             AromaClient.sendLowPriorityMessage(withTitle: "Opened App Credits Page")

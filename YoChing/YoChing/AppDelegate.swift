@@ -9,6 +9,9 @@
 import AromaSwiftClient
 import UIKit
 
+
+let app = UIApplication.sharedApplication()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
@@ -66,4 +69,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
