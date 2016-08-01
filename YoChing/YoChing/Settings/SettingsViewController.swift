@@ -221,7 +221,7 @@ extension SettingsViewController {
                 AromaClient.sendMediumPriorityMessage(withTitle: "Enabled TAP THAT Setting")
             }
             else {
-                AromaClient.sendMediumPriorityMessage(withTitle: "Enable TRUE PLAYER Setting")
+                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled TRUE PLAYER Setting")
             }
             
             self.setLookForCell(tableView, forIndexPath: classicPath)

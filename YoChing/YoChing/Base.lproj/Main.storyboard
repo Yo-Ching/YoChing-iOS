@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r5R-oB-Gnh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r5R-oB-Gnh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -135,7 +135,7 @@
                                                 <constraint firstAttribute="width" secondItem="FLQ-vJ-KDH" secondAttribute="height" multiplier="1:1" id="avY-c3-9j9"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Before shit pops off, it has to come together. That’s a hard time. Always STRESS GETTING STARTED." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lRZ-zw-z3q">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Before shit pops off, it has to come together. That’s a hard time. Always STRESS GETTING STARTED." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lRZ-zw-z3q">
                                             <rect key="frame" x="64" y="48" width="460" height="33"/>
                                             <fontDescription key="fontDescription" name="Signika-Regular" family="Signika" pointSize="13"/>
                                             <color key="textColor" red="0.35288461539999999" green="0.35288461539999999" blue="0.35288461539999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1681,9 +1681,9 @@
         <image name="spray.galaxy.white.transparent" width="842" height="562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rHm-cS-A7a"/>
-        <segue reference="zY3-tK-GuC"/>
-        <segue reference="HT8-GF-4WQ"/>
+        <segue reference="HDs-Lu-ahA"/>
+        <segue reference="VMP-af-WSe"/>
+        <segue reference="pDn-Ua-bt1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
