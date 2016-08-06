@@ -186,9 +186,9 @@
 		3EED85A71978FEE8007EEB62 = {
 			isa = PBXGroup;
 			children = (
-				3EED85B21978FEE8007EEB62 /* YoChing */,
-				CFB327BF22180A17FDDBD6CF /* Pods */,
 				6AE0E31AC8697ED4E2512BED /* Frameworks */,
+				CFB327BF22180A17FDDBD6CF /* Pods */,
+				3EED85B21978FEE8007EEB62 /* YoChing */,
 			);
 			sourceTree = "<group>";
 		};
@@ -353,12 +353,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EED85CC1978FEE8007EEB62 /* Build configuration list for PBXNativeTarget "YoChing" */;
 			buildPhases = (
-				F60A9EC3F1933EC8E60447FA /* 📦 Check Pods Manifest.lock */,
+				F60A9EC3F1933EC8E60447FA /* [CP] Check Pods Manifest.lock */,
 				3EED85AC1978FEE8007EEB62 /* Sources */,
 				3EED85AD1978FEE8007EEB62 /* Frameworks */,
 				3EED85AE1978FEE8007EEB62 /* Resources */,
-				BDF24BAD3B8BD13D5DD15A50 /* 📦 Embed Pods Frameworks */,
-				B90890821FD0B1DE8C4A4794 /* 📦 Copy Pods Resources */,
+				BDF24BAD3B8BD13D5DD15A50 /* [CP] Embed Pods Frameworks */,
+				B90890821FD0B1DE8C4A4794 /* [CP] Copy Pods Resources */,
 				0400814AF8DFD15FE04F48E1 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -374,12 +374,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EED85CF1978FEE8007EEB62 /* Build configuration list for PBXNativeTarget "YoChingTests" */;
 			buildPhases = (
-				E4FEDB4E1F91CF5DE1486A00 /* 📦 Check Pods Manifest.lock */,
+				E4FEDB4E1F91CF5DE1486A00 /* [CP] Check Pods Manifest.lock */,
 				3EED85BE1978FEE8007EEB62 /* Sources */,
 				3EED85BF1978FEE8007EEB62 /* Frameworks */,
 				3EED85C01978FEE8007EEB62 /* Resources */,
-				4BAAEB642B8DD56C077CD387 /* 📦 Embed Pods Frameworks */,
-				BFA3D15B2E1D289268C8BC17 /* 📦 Copy Pods Resources */,
+				4BAAEB642B8DD56C077CD387 /* [CP] Embed Pods Frameworks */,
+				BFA3D15B2E1D289268C8BC17 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -509,14 +509,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YoChing/Pods-YoChing-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4BAAEB642B8DD56C077CD387 /* 📦 Embed Pods Frameworks */ = {
+		4BAAEB642B8DD56C077CD387 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,14 +524,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YoChingTests/Pods-YoChingTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B90890821FD0B1DE8C4A4794 /* 📦 Copy Pods Resources */ = {
+		B90890821FD0B1DE8C4A4794 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,14 +539,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YoChing/Pods-YoChing-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BDF24BAD3B8BD13D5DD15A50 /* 📦 Embed Pods Frameworks */ = {
+		BDF24BAD3B8BD13D5DD15A50 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,14 +554,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YoChing/Pods-YoChing-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BFA3D15B2E1D289268C8BC17 /* 📦 Copy Pods Resources */ = {
+		BFA3D15B2E1D289268C8BC17 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,14 +569,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YoChingTests/Pods-YoChingTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E4FEDB4E1F91CF5DE1486A00 /* 📦 Check Pods Manifest.lock */ = {
+		E4FEDB4E1F91CF5DE1486A00 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,14 +584,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F60A9EC3F1933EC8E60447FA /* 📦 Check Pods Manifest.lock */ = {
+		F60A9EC3F1933EC8E60447FA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,7 +748,7 @@
 				INFOPLIST_FILE = YoChing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.yoching.YoChing;
+				PRODUCT_BUNDLE_IDENTIFIER = net.yoching;
 				PRODUCT_NAME = YoChing;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -766,7 +766,7 @@
 				INFOPLIST_FILE = YoChing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.yoching.YoChing;
+				PRODUCT_BUNDLE_IDENTIFIER = net.yoching;
 				PRODUCT_NAME = YoChing;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
