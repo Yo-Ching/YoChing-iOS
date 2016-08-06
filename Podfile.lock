@@ -8,14 +8,13 @@ PODS:
     - BRYXBanner/Core (= 0.5.2)
   - BRYXBanner/Core (0.5.2)
   - HanekeSwift (0.10.1)
-  - LTMorphingLabel (0.2.0)
+  - LTMorphingLabel (0.2.1)
   - SwiftExceptionCatcher (1.1)
   - SwiftyJSON (2.3.2)
   - ThriftLib (0.9.3)
 
 DEPENDENCIES:
-  - AromaSwiftClient (from `https://github.com/RedRoma/aroma-swift-client.git`, branch
-    `develop`)
+  - AromaSwiftClient (from `https://github.com/RedRoma/aroma-swift-client.git`, branch `develop`)
   - BRYXBanner
   - HanekeSwift
   - LTMorphingLabel
@@ -30,20 +29,22 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AromaSwiftClient:
-    :commit: f306c4bcd97432cfbff56fbb688520c0c8879194
+    :commit: 9f5d1bfcedbbe3589068484eb21065fa2882ff3b
     :git: https://github.com/RedRoma/aroma-swift-client.git
   SwiftyJSON:
-    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
+    :commit: 73670b94292b8d8496c398a973f56ac67789ba9f
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   AromaSwiftClient: 854d0f784aa8034e2b902e41293763ea2501e8c7
   AromaThrift: cfbeb961ce9f3e45743340206c4ec61afa89d898
   BRYXBanner: 5f0911d52e0a77e088f7ea7ddcdebd02afb7828a
-  HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
-  LTMorphingLabel: 490aa8e079f9247c7f3130f7d4b1be1d66677377
+  HanekeSwift: '08e47d3d0f2899ec58e5d257beba0de619aca9e8'
+  LTMorphingLabel: 1858358ea38ef4d548e1f58b648b0d08ec3a62ed
   SwiftExceptionCatcher: 02e81cb4c990ee1023af9d2faa29e75b0d8a6a7d
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   ThriftLib: ff1c3191db124d58a458440f110602ee0a670485
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 287d568bfd2c5438f36801e80cd25b694f60d0c3
+
+COCOAPODS: 1.0.1
