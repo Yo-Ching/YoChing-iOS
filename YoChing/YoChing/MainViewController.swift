@@ -6,7 +6,7 @@
 //  Copyright © 2015 Yo Ching. All rights reserved.
 //
 
-import AromaSwiftClient
+//import AromaSwiftClient
 import LTMorphingLabel
 import UIKit
 import QuartzCore
@@ -62,7 +62,7 @@ class MainViewController: UIViewController {
             return image
         }
         else {
-            AromaClient.sendHighPriorityMessage(withTitle: "Split Line Image Failed To Load")
+       //     AromaClient.sendHighPriorityMessage(withTitle: "Split Line Image Failed To Load")
             return nil
         }
     }()
@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
             return image
         }
         else {
-            AromaClient.sendHighPriorityMessage(withTitle: "Strong Line Failed To Load")
+     //       AromaClient.sendHighPriorityMessage(withTitle: "Strong Line Failed To Load")
             return nil
         }
     }()
@@ -382,10 +382,11 @@ extension MainViewController {
                     let wrexNumber = Int(outcome.stringByReplacingOccurrencesOfString("wrexagram", withString: "")) ?? 01
                     
                     defer {
-                        AromaClient.beginWithTitle("Coins Flipped")
+                    /*    AromaClient.beginWithTitle("Coins Flipped")
                             .addBody("Result: Wrexagram \(wrexNumber)")
                             .withPriority(.LOW)
                             .send()
+                    */
                     }
                     
                     if self.maxTosses == 1 {
@@ -418,22 +419,23 @@ extension MainViewController {
         else {
             hexNum += "2"
         }
-        
+        /*
         AromaClient.beginWithTitle("Recording Coin Toss")
             .addBody("\(headCount) Heads | \(3 - headCount) Tails").addLine(2)
             .addBody("Hex Num is \(hexNum)")
             .withPriority(.LOW)
             .send()
-        
+        */
         guard let wrexLineImage = getWrexLineForResults(coinTossResults)
         else {
+         /*
             AromaClient.beginWithTitle("Failed to Load Wrex Line")
                 .addBody("Hex Num: \(hexNum)").addLine(2)
                 .addBody("For Results:").addLine()
                 .addBody("\(coinTossResults)")
                 .withPriority(.LOW)
                 .send()
-            
+           */
             return
         }
         
@@ -452,14 +454,14 @@ extension MainViewController {
         
         guard !results.isEmpty && results.count == 3
         else {
-            
+          /*
             AromaClient.beginWithTitle("Incorrect Coin Results")
                 .withPriority(.HIGH)
                 .addBody("Coin results are either empty or not 3").addLine(2)
                 .addBody("\(results.count) Coins in results").addLine()
                 .addBody("\(results)")
                 .send()
-            
+            */
             return nil
         }
         

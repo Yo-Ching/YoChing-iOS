@@ -6,7 +6,7 @@
 //  Copyright © 2015 YoChing. All rights reserved.
 //
 
-import AromaSwiftClient
+//import AromaSwiftClient
 import Foundation
 import UIKit
 
@@ -82,11 +82,14 @@ extension UIViewController {
         guard let url = link.toURL() else { return }
 
         defer {
+         /*
             AromaClient.beginWithTitle("Opened Link")
                 .withPriority(.MEDIUM)
                 .addBody(link)
                 .send()
-        }
+    */
+ }
+ 
 
         let app = UIApplication.sharedApplication()
         app.openURL(url)

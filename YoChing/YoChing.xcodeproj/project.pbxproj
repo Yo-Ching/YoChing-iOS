@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -403,7 +403,7 @@
 				TargetAttributes = {
 					3EED85AF1978FEE8007EEB62 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 5JBF7MD4UT;
+						DevelopmentTeam = XKU4RQ3453;
 					};
 					3EED85C11978FEE8007EEB62 = {
 						CreatedOnToolsVersion = 6.0;
@@ -412,7 +412,7 @@
 				};
 			};
 			buildConfigurationList = 3EED85AB1978FEE8007EEB62 /* Build configuration list for PBXProject "YoChing" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
