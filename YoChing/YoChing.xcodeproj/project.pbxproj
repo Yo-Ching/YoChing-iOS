@@ -16,8 +16,6 @@
 		3EED85B81978FEE8007EEB62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EED85B71978FEE8007EEB62 /* MainViewController.swift */; };
 		3EED85BB1978FEE8007EEB62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EED85B91978FEE8007EEB62 /* Main.storyboard */; };
 		3EED85BD1978FEE8007EEB62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EED85BC1978FEE8007EEB62 /* Images.xcassets */; };
-		A31053181CBE115A00BCC866 /* WrexagramSendSMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31053171CBE115A00BCC866 /* WrexagramSendSMSViewController.swift */; };
-		A310531A1CBE130700BCC866 /* WrexagramSendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31053191CBE130700BCC866 /* WrexagramSendEmailViewController.swift */; };
 		A368216C1CB23F6300B2DA44 /* WrexagramLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368216B1CB23F6300B2DA44 /* WrexagramLibrary.swift */; };
 		DE0076901CBB95F1005B3DB1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE00768F1CBB95F1005B3DB1 /* SettingsViewController.swift */; };
 		DE086E6F1D0D28F00048D25F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE086E6E1D0D28F00048D25F /* TutorialViewController.swift */; };
@@ -97,8 +95,6 @@
 		3EED85C21978FEE8007EEB62 /* YoChing.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoChing.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F89BF55C197002986CA2CAC /* Pods-YoChingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoChingTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-YoChingTests/Pods-YoChingTests.release.xcconfig"; sourceTree = "<group>"; };
 		8C996FB898E39F38827B5001 /* Pods_YoChingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoChingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A31053171CBE115A00BCC866 /* WrexagramSendSMSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrexagramSendSMSViewController.swift; sourceTree = "<group>"; };
-		A31053191CBE130700BCC866 /* WrexagramSendEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrexagramSendEmailViewController.swift; sourceTree = "<group>"; };
 		A368216B1CB23F6300B2DA44 /* WrexagramLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrexagramLibrary.swift; sourceTree = "<group>"; };
 		BB8BA239BB98947BEE558160 /* Pods-YoChingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoChingTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-YoChingTests/Pods-YoChingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D6F61F570B70A6455AF6A0A4 /* Pods-YoChing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoChing.release.xcconfig"; path = "../Pods/Target Support Files/Pods-YoChing/Pods-YoChing.release.xcconfig"; sourceTree = "<group>"; };
@@ -332,8 +328,6 @@
 				DE6B79EC1CB7226100C47024 /* WrexagramListViewController.swift */,
 				1397CE011BF454E1004523FD /* WrexagramViewController.swift */,
 				DE8362AF1CBCB4A300C73BA4 /* WrexagramPagerViewController.swift */,
-				A31053171CBE115A00BCC866 /* WrexagramSendSMSViewController.swift */,
-				A31053191CBE130700BCC866 /* WrexagramSendEmailViewController.swift */,
 			);
 			path = Wrexagrams;
 			sourceTree = "<group>";
@@ -611,11 +605,9 @@
 				DE0076901CBB95F1005B3DB1 /* SettingsViewController.swift in Sources */,
 				3EED85B81978FEE8007EEB62 /* MainViewController.swift in Sources */,
 				DE6C9A641CC2189600ACF11A /* CreditsViewController.swift in Sources */,
-				A31053181CBE115A00BCC866 /* WrexagramSendSMSViewController.swift in Sources */,
 				DE6B79ED1CB7226100C47024 /* WrexagramListViewController.swift in Sources */,
 				DE8362B01CBCB4A300C73BA4 /* WrexagramPagerViewController.swift in Sources */,
 				DE23674D1CBC356B00D9E87D /* Animations.swift in Sources */,
-				A310531A1CBE130700BCC866 /* WrexagramSendEmailViewController.swift in Sources */,
 				3EED85B61978FEE8007EEB62 /* AppDelegate.swift in Sources */,
 				A368216C1CB23F6300B2DA44 /* WrexagramLibrary.swift in Sources */,
 				1397CE021BF454E1004523FD /* WrexagramViewController.swift in Sources */,
@@ -751,6 +743,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.yoching;
 				PRODUCT_NAME = YoChing;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -770,6 +763,7 @@
 				PRODUCT_NAME = YoChing;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -778,7 +772,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB8BA239BB98947BEE558160 /* Pods-YoChingTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CoinToss.app/CoinToss";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -790,7 +785,7 @@
 				INFOPLIST_FILE = CoinTossTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = YoChing;
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoChing.app/YoChing";
 			};
 			name = Debug;
 		};
@@ -798,7 +793,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6F89BF55C197002986CA2CAC /* Pods-YoChingTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CoinToss.app/CoinToss";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -806,7 +802,7 @@
 				INFOPLIST_FILE = CoinTossTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = YoChing;
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoChing.app/YoChing";
 			};
 			name = Release;
 		};

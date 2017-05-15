@@ -15,7 +15,7 @@ class AnimateLeft : NSObject, UIViewControllerTransitioningDelegate, UIViewContr
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         
-        guard let container = transitionContext.containerView() else { return }
+        let container = transitionContext.containerView()
         
         guard let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey),
               let toView = transitionContext.viewForKey(UITransitionContextToViewKey)
@@ -80,7 +80,7 @@ class AnimateRight: NSObject, UIViewControllerTransitioningDelegate, UIViewContr
 
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
 
-        guard let container = transitionContext.containerView() else { return }
+        let container = transitionContext.containerView()
 
         guard let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey),
               let toView = transitionContext.viewForKey(UITransitionContextToViewKey)
