@@ -49,7 +49,6 @@ Pods/
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
-
 Carthage/Build
 
 # fastlane
@@ -62,5 +61,5 @@ Carthage/Build
 fastlane/report.xml
 fastlane/screenshots
 
-YoChing.xcworkspace/xcuserdata/SirWellington.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
-YoChing.xcworkspace/xcuserdata/SirWellington.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcbkptlist
+*.xcuserstate
