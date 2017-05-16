@@ -1,5 +1,6 @@
 #YO CHING DEPENDENICES
 
+github "Haneke/HanekeSwift"
 github "RedRoma/AromaSwiftClient" "develop"
 github "RedRoma/Archeota"
 github "lexrus/LTMorphingLabel"
