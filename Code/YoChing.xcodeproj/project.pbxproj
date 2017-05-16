@@ -50,6 +50,18 @@
 		DE6C9A5F1CC1C0A000ACF11A /* Signika 700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE6C9A5B1CC1C0A000ACF11A /* Signika 700.ttf */; };
 		DE6C9A601CC1C0A000ACF11A /* Signika regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE6C9A5C1CC1C0A000ACF11A /* Signika regular.ttf */; };
 		DE6C9A641CC2189600ACF11A /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6C9A631CC2189600ACF11A /* CreditsViewController.swift */; };
+		DE6ED06F1ECAACE700CFCB09 /* Archeota.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06A1ECAACE700CFCB09 /* Archeota.framework */; };
+		DE6ED0701ECAACE800CFCB09 /* AromaSwiftClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06B1ECAACE700CFCB09 /* AromaSwiftClient.framework */; };
+		DE6ED0711ECAACE800CFCB09 /* AromaThrift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06C1ECAACE700CFCB09 /* AromaThrift.framework */; };
+		DE6ED0721ECAACE800CFCB09 /* LTMorphingLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06D1ECAACE700CFCB09 /* LTMorphingLabel.framework */; };
+		DE6ED0731ECAACE800CFCB09 /* SwiftExceptionCatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06E1ECAACE700CFCB09 /* SwiftExceptionCatcher.framework */; };
+		DE6ED0751ECAAD1800CFCB09 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED0741ECAAD1800CFCB09 /* SwiftyJSON.framework */; };
+		DE6ED0761ECAAD2800CFCB09 /* Archeota.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06A1ECAACE700CFCB09 /* Archeota.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE6ED0771ECAAD2800CFCB09 /* AromaSwiftClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06B1ECAACE700CFCB09 /* AromaSwiftClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE6ED0781ECAAD2800CFCB09 /* AromaThrift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06C1ECAACE700CFCB09 /* AromaThrift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE6ED0791ECAAD2800CFCB09 /* LTMorphingLabel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06D1ECAACE700CFCB09 /* LTMorphingLabel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE6ED07A1ECAAD2800CFCB09 /* SwiftExceptionCatcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06E1ECAACE700CFCB09 /* SwiftExceptionCatcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE6ED07B1ECAAD2800CFCB09 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED0741ECAAD1800CFCB09 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE71A3501CB8055300F5BEF2 /* PTC55F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE71A3401CB8055300F5BEF2 /* PTC55F.ttf */; };
 		DE71A3511CB8055300F5BEF2 /* PTC75F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE71A3411CB8055300F5BEF2 /* PTC75F.ttf */; };
 		DE71A3521CB8055300F5BEF2 /* PTF55F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE71A3421CB8055300F5BEF2 /* PTF55F.ttf */; };
@@ -79,6 +91,25 @@
 			remoteInfo = CoinToss;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE6ED0631ECAAC7700CFCB09 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 11;
+			files = (
+				DE6ED0761ECAAD2800CFCB09 /* Archeota.framework in Embed Frameworks */,
+				DE6ED0771ECAAD2800CFCB09 /* AromaSwiftClient.framework in Embed Frameworks */,
+				DE6ED0781ECAAD2800CFCB09 /* AromaThrift.framework in Embed Frameworks */,
+				DE6ED0791ECAAD2800CFCB09 /* LTMorphingLabel.framework in Embed Frameworks */,
+				DE6ED07A1ECAAD2800CFCB09 /* SwiftExceptionCatcher.framework in Embed Frameworks */,
+				DE6ED07B1ECAAD2800CFCB09 /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1397CDFF1BF44E6C004523FD /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -130,6 +161,12 @@
 		DE6C9A5B1CC1C0A000ACF11A /* Signika 700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika 700.ttf"; sourceTree = "<group>"; };
 		DE6C9A5C1CC1C0A000ACF11A /* Signika regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika regular.ttf"; sourceTree = "<group>"; };
 		DE6C9A631CC2189600ACF11A /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		DE6ED06A1ECAACE700CFCB09 /* Archeota.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Archeota.framework; path = Carthage/Build/iOS/Archeota.framework; sourceTree = "<group>"; };
+		DE6ED06B1ECAACE700CFCB09 /* AromaSwiftClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AromaSwiftClient.framework; path = Carthage/Build/iOS/AromaSwiftClient.framework; sourceTree = "<group>"; };
+		DE6ED06C1ECAACE700CFCB09 /* AromaThrift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AromaThrift.framework; path = Carthage/Build/iOS/AromaThrift.framework; sourceTree = "<group>"; };
+		DE6ED06D1ECAACE700CFCB09 /* LTMorphingLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LTMorphingLabel.framework; path = Carthage/Build/iOS/LTMorphingLabel.framework; sourceTree = "<group>"; };
+		DE6ED06E1ECAACE700CFCB09 /* SwiftExceptionCatcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftExceptionCatcher.framework; path = Carthage/Build/iOS/SwiftExceptionCatcher.framework; sourceTree = "<group>"; };
+		DE6ED0741ECAAD1800CFCB09 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		DE71A3401CB8055300F5BEF2 /* PTC55F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTC55F.ttf; sourceTree = "<group>"; };
 		DE71A3411CB8055300F5BEF2 /* PTC75F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTC75F.ttf; sourceTree = "<group>"; };
 		DE71A3421CB8055300F5BEF2 /* PTF55F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTF55F.ttf; sourceTree = "<group>"; };
@@ -156,6 +193,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6ED0731ECAACE800CFCB09 /* SwiftExceptionCatcher.framework in Frameworks */,
+				DE6ED0701ECAACE800CFCB09 /* AromaSwiftClient.framework in Frameworks */,
+				DE6ED0751ECAAD1800CFCB09 /* SwiftyJSON.framework in Frameworks */,
+				DE6ED0721ECAACE800CFCB09 /* LTMorphingLabel.framework in Frameworks */,
+				DE6ED06F1ECAACE700CFCB09 /* Archeota.framework in Frameworks */,
+				DE6ED0711ECAACE800CFCB09 /* AromaThrift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +215,7 @@
 		3EED85A71978FEE8007EEB62 = {
 			isa = PBXGroup;
 			children = (
+				DE6ED0561ECAAC2900CFCB09 /* Frameworks */,
 				3EED85B21978FEE8007EEB62 /* YoChing */,
 			);
 			sourceTree = "<group>";
@@ -300,6 +344,19 @@
 			path = Wrexagrams;
 			sourceTree = "<group>";
 		};
+		DE6ED0561ECAAC2900CFCB09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE6ED06A1ECAACE700CFCB09 /* Archeota.framework */,
+				DE6ED06B1ECAACE700CFCB09 /* AromaSwiftClient.framework */,
+				DE6ED06C1ECAACE700CFCB09 /* AromaThrift.framework */,
+				DE6ED06D1ECAACE700CFCB09 /* LTMorphingLabel.framework */,
+				DE6ED06E1ECAACE700CFCB09 /* SwiftExceptionCatcher.framework */,
+				DE6ED0741ECAAD1800CFCB09 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE7AC0E21CC759C0001A5A9A /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +375,8 @@
 				3EED85AC1978FEE8007EEB62 /* Sources */,
 				3EED85AD1978FEE8007EEB62 /* Frameworks */,
 				3EED85AE1978FEE8007EEB62 /* Resources */,
+				DE6ED0631ECAAC7700CFCB09 /* Embed Frameworks */,
+				DE6ED07D1ECAAD3C00CFCB09 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,6 +508,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DE6ED07D1ECAAD3C00CFCB09 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3EED85AC1978FEE8007EEB62 /* Sources */ = {
@@ -592,6 +668,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5JBF7MD4UT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = YoChing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -611,6 +691,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5JBF7MD4UT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = YoChing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
