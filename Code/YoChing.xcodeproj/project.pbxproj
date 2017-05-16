@@ -385,6 +385,7 @@
 				3EED85AD1978FEE8007EEB62 /* Frameworks */,
 				3EED85AE1978FEE8007EEB62 /* Resources */,
 				DE6ED0631ECAAC7700CFCB09 /* Embed Frameworks */,
+				DEEAECFB1ECB454F00B2E87E /* Strip Invalid Architectures */,
 				DE6ED07D1ECAAD3C00CFCB09 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
@@ -532,6 +533,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		DEEAECFB1ECB454F00B2E87E /* Strip Invalid Architectures */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Strip Invalid Architectures";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
