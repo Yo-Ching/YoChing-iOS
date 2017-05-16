@@ -18,14 +18,15 @@ class WrexagramBreaksViewController : UIViewController {
     var outcome: Int = -1
     
     override func viewDidLoad() {
+        
         if outcome < 0 {
-
             return
         }
         
     }
     
     @IBAction func popBackToBeginning(_ sender: AnyObject) {
+        
         self.navigationController?.popToRootViewController(animated: true)
     }
     
