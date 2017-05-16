@@ -6,7 +6,9 @@
 //  Copyright © 2015 Yo Ching. All rights reserved.
 //
 
+import Archeota
 import AromaSwiftClient
+import Kingfisher
 import UIKit
 
 
@@ -21,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
+        
+        LOG.enable()
         
         AromaClient.TOKEN_ID = "3e7ee9ec-9e9e-479e-a44a-24c7376d2786"
         AromaClient.maxConcurrency = 2
@@ -68,5 +72,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 
-
+    func applicationDidReceiveMemoryWarning(_ application: UIApplication) {
+        let cache = ImageCache.default
+        cache.clearMemoryCache()
+        
+        AromaClient.beginMessage(withTitle: "Memory Warning")
+            .addBody("Received memory warning. Clearing Image Cache.")
+            .withPriority(.medium)
+            .send()
+    }
 }

@@ -80,6 +80,8 @@
 		DE7AC0E41CC759D9001A5A9A /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AC0E31CC759D9001A5A9A /* ShadowButton.swift */; };
 		DE8362B01CBCB4A300C73BA4 /* WrexagramPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8362AF1CBCB4A300C73BA4 /* WrexagramPagerViewController.swift */; };
 		DE8FBCEA1CFCCE75005177B2 /* WrexaPosts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8FBCE91CFCCE75005177B2 /* WrexaPosts.xcassets */; };
+		DEEAECF71ECAC2B800B2E87E /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEAECF61ECAC2B800B2E87E /* Kingfisher.framework */; };
+		DEEAECF81ECAC2C700B2E87E /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEAECF61ECAC2B800B2E87E /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,7 @@
 				DE6ED0801ECABC9700CFCB09 /* Archeota.framework in Embed Frameworks */,
 				DE6ED0811ECABC9700CFCB09 /* AromaSwiftClient.framework in Embed Frameworks */,
 				DE6ED0821ECABC9700CFCB09 /* AromaThrift.framework in Embed Frameworks */,
+				DEEAECF81ECAC2C700B2E87E /* Kingfisher.framework in Embed Frameworks */,
 				DE6ED0831ECABC9700CFCB09 /* LTMorphingLabel.framework in Embed Frameworks */,
 				DE6ED0851ECABC9700CFCB09 /* SwiftExceptionCatcher.framework in Embed Frameworks */,
 				DE6ED0861ECABC9700CFCB09 /* SwiftyJSON.framework in Embed Frameworks */,
@@ -186,6 +189,7 @@
 		DE7AC0E31CC759D9001A5A9A /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		DE8362AF1CBCB4A300C73BA4 /* WrexagramPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrexagramPagerViewController.swift; sourceTree = "<group>"; };
 		DE8FBCE91CFCCE75005177B2 /* WrexaPosts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WrexaPosts.xcassets; sourceTree = "<group>"; };
+		DEEAECF61ECAC2B800B2E87E /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +200,7 @@
 				DE6ED0871ECABC9C00CFCB09 /* Archeota.framework in Frameworks */,
 				DE6ED0881ECABC9C00CFCB09 /* AromaSwiftClient.framework in Frameworks */,
 				DE6ED0891ECABC9C00CFCB09 /* AromaThrift.framework in Frameworks */,
+				DEEAECF71ECAC2B800B2E87E /* Kingfisher.framework in Frameworks */,
 				DE6ED08A1ECABC9C00CFCB09 /* LTMorphingLabel.framework in Frameworks */,
 				DE6ED08C1ECABC9C00CFCB09 /* SwiftExceptionCatcher.framework in Frameworks */,
 				DE6ED08D1ECABC9C00CFCB09 /* SwiftyJSON.framework in Frameworks */,
@@ -350,6 +355,7 @@
 				DE6ED06A1ECAACE700CFCB09 /* Archeota.framework */,
 				DE6ED06B1ECAACE700CFCB09 /* AromaSwiftClient.framework */,
 				DE6ED06C1ECAACE700CFCB09 /* AromaThrift.framework */,
+				DEEAECF61ECAC2B800B2E87E /* Kingfisher.framework */,
 				DE6ED06D1ECAACE700CFCB09 /* LTMorphingLabel.framework */,
 				DE6ED06E1ECAACE700CFCB09 /* SwiftExceptionCatcher.framework */,
 				DE6ED0741ECAAD1800CFCB09 /* SwiftyJSON.framework */,

@@ -6,18 +6,28 @@
 //  Copyright © 2016 Yo Ching. All rights reserved.
 //
 
+import Archeota
 import AromaSwiftClient
 import Foundation
-import SDWebImage
+import Kingfisher
 import SwiftyJSON
 
 class WrexagramLibrary {
     
-    fileprivate let async: OperationQueue = {
+    fileprivate static let async: OperationQueue = {
         let queue = OperationQueue()
         
         return queue
     }()
+    
+    fileprivate static let main = OperationQueue.main
+    
+    fileprivate static let cache: ImageCache = {
+        let cache = ImageCache.default
+        
+        return cache
+    }()
+
     
     class func getOutcome(_ hexNum: Int) -> String {
         
@@ -122,7 +132,7 @@ class WrexagramLibrary {
     
     static var wrexagrams: [Wrexagram] = {
         
-        print("Loading Wrexagrams from Memory")
+        LOG.info("Loading Wrexagrams from Memory")
         
         guard let url = Bundle.main.url(forResource: JSON_FILE, withExtension: nil)
         else { return [] }
@@ -150,14 +160,34 @@ extension WrexagramLibrary {
     
     static func loadWrexagram(_ number: Int, intoImageView imageView: UIImageView, useThumbnail: Bool = false) {
         
-        if useThumbnail {
-            //TODO: Add Async Loading
-            let image = WrexagramLibrary.imageForWrexagram(number)
-            imageView.image = image
+        let key = "\(number)"
+        
+        let setImage: (UIImage) -> () = { image in
+            
+            self.main.addOperation {
+                imageView.image = image
+            }
         }
-        else {
-            let image = WrexagramLibrary.imageForWrexagram(number)
-            imageView.image = image
+        
+        async.addOperation {
+            
+            if useThumbnail, let image = cache.retrieveImageInDiskCache(forKey: key) {
+                
+                LOG.info("Loaded Wrexagram \(number) from cache")
+                setImage(image)
+                return
+            }
+            
+            if let image = WrexagramLibrary.imageForWrexagram(number)
+            {
+                setImage(image)
+                cache.store(image, forKey: key)
+                LOG.info("Stored Wrexagram-\(key) in Cache")
+            }
+            else
+            {
+                LOG.error("Failed to load Image for Wrexagram #\(number)")
+            }
         }
     }
     
