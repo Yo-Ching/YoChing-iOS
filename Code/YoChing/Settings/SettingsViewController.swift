@@ -103,11 +103,7 @@ class SettingsViewController : UITableViewController {
         addSwipeGesture()
     }
     
-//
-//    func preferredStatusBarStyle() -> UIStatusBarStyle {
-//        return .lightContent
-//    }
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     fileprivate func addSwipeGesture() {
         
@@ -126,11 +122,10 @@ class SettingsViewController : UITableViewController {
 //MARK: Throwing Style configuration
 extension SettingsViewController {
     
-//    func tableView(_ tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: IndexPath) {
-//        setLookForCell(tableView, forIndexPath: indexPath)
-//        cell.backgroundColor = cell.contentView.backgroundColor
-//    }
-//    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        setLookForCell(tableView, forIndexPath: indexPath)
+        cell.backgroundColor = cell.contentView.backgroundColor
+    }
     
     fileprivate func setLookForCell(_ tableView: UITableView, forIndexPath indexPath: IndexPath) {
        
@@ -201,56 +196,57 @@ extension SettingsViewController {
 
 //MARK: Opening Links
 extension SettingsViewController {
-
-//    override func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
-//
-//        if indexPath == getBookPath {
-//            self.openLink(BUY_BOOK_LINK)
-//        }
-//        else if indexPath == seeInfoPath {
-////            self.openLink(BOOK_INFO_LINK)
-//            self.goToTutorial()
-//        }
-//        else if indexPath == seeStreetCredsPath {
-//            AromaClient.sendLowPriorityMessage(withTitle: "Opened App Credits Page")
-//            self.goToCredits()
-//        }
-//        else if indexPath == classicPath || indexPath == tapThatPath {
-//            
-//            Settings.isQuickEnabled = indexPath == tapThatPath
-//            
-//            if Settings.isQuickEnabled {
-//                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled TAP THAT Setting")
-//            }
-//            else {
-//                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled TRUE PLAYER Setting")
-//            }
-//            
-//            self.setLookForCell(tableView, forIndexPath: classicPath)
-//            self.setLookForCell(tableView, forIndexPath: tapThatPath)
-//            
-//            tableView.deselectRow(at: classicPath, animated: true)
-//            tableView.deselectRow(at: tapThatPath, animated: true)
-//        }
-//        else if indexPath == streetPath || indexPath == slickPath {
-//            
-//            Settings.isSlickEnabled = indexPath == slickPath
-//            
-//            if Settings.isSlickEnabled {
-//                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled SLICK COINS Setting")
-//            }
-//            else {
-//                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled STREET COINS Setting")
-//            }
-//            
-//            self.setLookForCell(tableView, forIndexPath: streetPath)
-//            self.setLookForCell(tableView, forIndexPath: slickPath)
-//            
-//            tableView.deselectRow(at: streetPath, animated: true)
-//            tableView.deselectRow(at: slickPath, animated: true)
-//        }
-//        
-//
-//    }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        if indexPath == getBookPath {
+            self.openLink(BUY_BOOK_LINK)
+        }
+        else if indexPath == seeInfoPath {
+            //self.openLink(BOOK_INFO_LINK)
+            self.goToTutorial()
+        }
+        else if indexPath == seeStreetCredsPath {
+            AromaClient.sendLowPriorityMessage(withTitle: "Opened App Credits Page")
+            self.goToCredits()
+        }
+        else if indexPath == classicPath || indexPath == tapThatPath {
+            
+            Settings.isQuickEnabled = indexPath == tapThatPath
+            
+            if Settings.isQuickEnabled {
+                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled TAP THAT Setting")
+            }
+            else {
+                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled TRUE PLAYER Setting")
+            }
+            
+            self.setLookForCell(tableView, forIndexPath: classicPath)
+            self.setLookForCell(tableView, forIndexPath: tapThatPath)
+            
+            tableView.deselectRow(at: classicPath, animated: true)
+            tableView.deselectRow(at: tapThatPath, animated: true)
+        }
+        else if indexPath == streetPath || indexPath == slickPath {
+            
+            Settings.isSlickEnabled = indexPath == slickPath
+            
+            if Settings.isSlickEnabled {
+                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled SLICK COINS Setting")
+            }
+            else {
+                AromaClient.sendMediumPriorityMessage(withTitle: "Enabled STREET COINS Setting")
+            }
+            
+            self.setLookForCell(tableView, forIndexPath: streetPath)
+            self.setLookForCell(tableView, forIndexPath: slickPath)
+            
+            tableView.deselectRow(at: streetPath, animated: true)
+            tableView.deselectRow(at: slickPath, animated: true)
+        }
+        
+        
+    }
+    
 }
