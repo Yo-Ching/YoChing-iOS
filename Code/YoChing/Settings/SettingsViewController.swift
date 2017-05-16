@@ -102,6 +102,7 @@ class SettingsViewController : UITableViewController {
         
         addSwipeGesture()
     }
+    
 //
 //    func preferredStatusBarStyle() -> UIStatusBarStyle {
 //        return .lightContent

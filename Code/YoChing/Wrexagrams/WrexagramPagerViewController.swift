@@ -159,7 +159,7 @@ extension WrexagramPagerViewController {
                 AromaClient.beginMessage(withTitle: "Wrexagram Share Canceled")
                     .withPriority(.low)
                     .addBody("Wrexagram \(wrexagramNumber)").addLine(2)
-                    .addBody("\(error)")
+                    .addBody("\(String(describing: error))")
                     .send()
             }
         }

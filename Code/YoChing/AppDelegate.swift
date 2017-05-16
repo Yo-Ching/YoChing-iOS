@@ -6,7 +6,7 @@
 //  Copyright © 2015 Yo Ching. All rights reserved.
 //
 
-//import AromaSwiftClient
+import AromaSwiftClient
 import UIKit
 
 
@@ -20,29 +20,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate static let buildNumber: String = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as? String ?? ""
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		
         
-        //Might be better to put this somewhere safe
-      /*
         AromaClient.TOKEN_ID = "3e7ee9ec-9e9e-479e-a44a-24c7376d2786"
         AromaClient.maxConcurrency = 2
-        AromaClient.deviceName = UIDevice.currentDevice().name
+        AromaClient.deviceName = UIDevice.current.name
         
-        AromaClient.beginWithTitle("App Launched")
-            .withPriority(.LOW)
+        AromaClient.beginMessage(withTitle: "App Launched")
+            .withPriority(.low)
             .addBody("Build #\(AppDelegate.buildNumber)")
             .send()
-        */
+        
         NSSetUncaughtExceptionHandler() { ex in
             
-          /*
-            AromaClient.beginWithTitle("App Crashed")
-                .addBody("Device \(UIDevice.currentDevice())").addLine()
+          
+            AromaClient.beginMessage(withTitle: "App Crashed")
+                .addBody("Device \(UIDevice.current.name)").addLine()
                 .addBody("Build #\(AppDelegate.buildNumber)").addLine(2)
                 .addBody("\(ex)")
-                .withPriority(.HIGH)
+                .withPriority(.high)
                 .send()
-        */
+ 
         }
         
 		return true

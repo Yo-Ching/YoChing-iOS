@@ -6,7 +6,7 @@
 //  Copyright © 2016 YoChing.net. All rights reserved.
 //
 
-//import AromaSwiftClient
+import AromaSwiftClient
 import Foundation
 import UIKit
 import WebKit
@@ -34,7 +34,7 @@ class TutorialViewController : UIViewController {
         self.webView.navigationDelegate = self
         self.webView.load(request)
         
-     //   AromaClient.sendMediumPriorityMessage(withTitle: "Tutorial Opened")
+        AromaClient.sendMediumPriorityMessage(withTitle: "Tutorial Opened")
     }
     
     override func loadView() {

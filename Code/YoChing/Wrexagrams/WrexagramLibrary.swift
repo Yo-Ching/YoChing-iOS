@@ -13,6 +13,12 @@ import SwiftyJSON
 
 class WrexagramLibrary {
     
+    fileprivate let async: OperationQueue = {
+        let queue = OperationQueue()
+        
+        return queue
+    }()
+    
     class func getOutcome(_ hexNum: Int) -> String {
         
         switch (hexNum) {

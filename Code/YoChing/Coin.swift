@@ -73,10 +73,10 @@ class Coin {
         
         UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: { [weak self] in
             
-            guard let `self` = self else { return }
+            guard self != nil else { return }
             
             var rotation = CATransform3DIdentity
-            rotation = CATransform3DRotate(rotation, CGFloat(M_PI_2), 1.0, 0.0, 0.0)
+            rotation = CATransform3DRotate(rotation, CGFloat(Double.pi / 2), 1.0, 0.0, 0.0)
             image.layer.transform = rotation
             
             }, completion: {
@@ -87,7 +87,7 @@ class Coin {
                     
                     var rotation = image.layer.transform
                     
-                    rotation = CATransform3DRotate(rotation, CGFloat(M_PI), 1.0, 0.0, 0.0)
+                    rotation = CATransform3DRotate(rotation, CGFloat(Double.pi), 1.0, 0.0, 0.0)
                     image.layer.transform = rotation;
                     }, completion: {
                         _ in

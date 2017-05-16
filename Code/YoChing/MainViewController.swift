@@ -6,7 +6,7 @@
 //  Copyright © 2015 Yo Ching. All rights reserved.
 //
 
-//import AromaSwiftClient
+import AromaSwiftClient
 import LTMorphingLabel
 import UIKit
 import QuartzCore
@@ -178,7 +178,7 @@ class MainViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            self.flipCoinAction(NSNull)
+            self.flipCoinAction(nil)
         }
     }
     
@@ -221,7 +221,7 @@ extension MainViewController {
         }) 
     }
     
-    @IBAction func flipCoinAction(_ sender: AnyObject) {
+    @IBAction func flipCoinAction(_ sender: AnyObject?) {
         throwTheYo()
     }
     
@@ -419,23 +419,23 @@ extension MainViewController {
         else {
             hexNum += "2"
         }
-        /*
-        AromaClient.beginWithTitle("Recording Coin Toss")
+        
+        AromaClient.beginMessage(withTitle: "Recording Coin Toss")
             .addBody("\(headCount) Heads | \(3 - headCount) Tails").addLine(2)
             .addBody("Hex Num is \(hexNum)")
-            .withPriority(.LOW)
+            .withPriority(.low)
             .send()
-        */
+ 
         guard let wrexLineImage = getWrexLineForResults(coinTossResults)
         else {
-         /*
-            AromaClient.beginWithTitle("Failed to Load Wrex Line")
+         
+            AromaClient.beginMessage(withTitle: "Failed to Load Wrex Line")
                 .addBody("Hex Num: \(hexNum)").addLine(2)
                 .addBody("For Results:").addLine()
                 .addBody("\(coinTossResults)")
-                .withPriority(.LOW)
+                .withPriority(.low)
                 .send()
-           */
+           
             return
         }
         
@@ -454,14 +454,14 @@ extension MainViewController {
         
         guard !results.isEmpty && results.count == 3
         else {
-          /*
-            AromaClient.beginWithTitle("Incorrect Coin Results")
-                .withPriority(.HIGH)
+          
+            AromaClient.beginMessage(withTitle: "Incorrect Coin Results")
+                .withPriority(.high)
                 .addBody("Coin results are either empty or not 3").addLine(2)
                 .addBody("\(results.count) Coins in results").addLine()
                 .addBody("\(results)")
                 .send()
-            */
+ 
             return nil
         }
         

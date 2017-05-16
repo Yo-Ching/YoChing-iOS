@@ -6,7 +6,7 @@
 //  Copyright © 2015 YoChing. All rights reserved.
 //
 
-//import AromaSwiftClient
+import AromaSwiftClient
 import Foundation
 import UIKit
 
@@ -72,21 +72,21 @@ extension UIViewController {
 
 //MARK: Opening Links
 extension UIViewController {
-
+    
     func openLink(_ link: String) {
-
+        
         guard let url = link.toURL() else { return }
-
+        
         defer {
-         /*
-            AromaClient.beginWithTitle("Opened Link")
-                .withPriority(.MEDIUM)
+            
+            AromaClient.beginMessage(withTitle: "Opened Link")
+                .withPriority(.medium)
                 .addBody(link)
                 .send()
-    */
- }
- 
-
+            
+        }
+        
+        
         let app = UIApplication.shared
         app.openURL(url)
     }
