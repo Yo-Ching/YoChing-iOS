@@ -30,7 +30,7 @@ class CreditsViewController : UITableViewController {
     
     
     fileprivate lazy var links: [IndexPath : String] = [
-        self.truePlayerPath : "http://www.yoching.net/about/",
+        self.truePlayerPath : "https://www.youtube.com/channel/UCW91kD4Bx7gYxbPNWeJF8Yg",
         self.hughPath : "http://hugh-gallagher.com",
         self.marcPath : "http://github.com/mrisney",
         self.wellingtonPath : "http://sirwellington.tech/",

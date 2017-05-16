@@ -16,22 +16,18 @@ class WrexagramLibrary {
     
     fileprivate static let async: OperationQueue = {
         let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 3
         
         return queue
     }()
     
     fileprivate static let main = OperationQueue.main
     
-    fileprivate static let cache: ImageCache = {
-        let cache = ImageCache.default
-        
-        return cache
-    }()
-
+    fileprivate static let cache = ImageCache.default
     
     class func getOutcome(_ hexNum: Int) -> String {
         
-        switch (hexNum) {
+        switch hexNum {
             
             case 111111: return "wrexagram01"
             case 111112: return "wrexagram43"
@@ -109,12 +105,13 @@ class WrexagramLibrary {
         let filename = "txt/\(formattedOutcome)"
         
         if let text = Bundle.main.path(forResource: filename, ofType: "txt") {
+            
             do {
-                let string = try String(contentsOfFile: text, encoding: String.Encoding.utf8)
                 
-                return string
+                return try String(contentsOfFile: text, encoding: .utf8)
+            }
+            catch let ex {
                 
-            } catch let ex {
                 AromaClient.beginMessage(withTitle: "Failed To Load")
                     .addBody("\(UIDevice.current.name)")
                     .addLine().addLine()
@@ -138,12 +135,13 @@ class WrexagramLibrary {
         else { return [] }
         
         guard let string = try? String(contentsOf: url),
-              let data = string.data(using: String.Encoding.utf8, allowLossyConversion: false)
+              let data = string.data(using: .utf8, allowLossyConversion: false)
         else { return [] }
         
         let json = JSON(data: data)
         
         var wrexagrams: [Wrexagram] = []
+        
         for (_, element) in json {
             let wrexagram = Wrexagram.fromJson(element)
             wrexagrams.append(wrexagram)
@@ -178,14 +176,14 @@ extension WrexagramLibrary {
                 return
             }
             
-            if let image = WrexagramLibrary.imageForWrexagram(number)
-            {
+            if let image = WrexagramLibrary.imageForWrexagram(number) {
+                
                 setImage(image)
                 cache.store(image, forKey: key)
+                
                 LOG.info("Stored Wrexagram-\(key) in Cache")
             }
-            else
-            {
+            else {
                 LOG.error("Failed to load Image for Wrexagram #\(number)")
             }
         }

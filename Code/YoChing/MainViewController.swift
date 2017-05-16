@@ -62,7 +62,7 @@ class MainViewController: UIViewController {
             return image
         }
         else {
-       //     AromaClient.sendHighPriorityMessage(withTitle: "Split Line Image Failed To Load")
+            AromaClient.sendHighPriorityMessage(withTitle: "Split Line Image Failed To Load")
             return nil
         }
     }()
@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
             return image
         }
         else {
-     //       AromaClient.sendHighPriorityMessage(withTitle: "Strong Line Failed To Load")
+            AromaClient.sendHighPriorityMessage(withTitle: "Strong Line Failed To Load")
             return nil
         }
     }()
@@ -103,8 +103,10 @@ class MainViewController: UIViewController {
     fileprivate func addTapGestures(_ imageView: UIImageView...) {
         
         for image in imageView {
+            
             let gesture = UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:)))
             gesture.numberOfTapsRequired = 1
+            
             image.addGestureRecognizer(gesture)
         }
         
@@ -122,11 +124,13 @@ class MainViewController: UIViewController {
         self.maxTosses = Settings.isQuickEnabled ? 1 : 6
         
         if tosses == 0 {
+            
             hideWrexLines()
             animationRandomFactor = Int.random(from: 1, to: 5)
             showPrompt()
         }
         else {
+            
             hidePrompt()
         }
     }
@@ -142,6 +146,7 @@ class MainViewController: UIViewController {
         whatsYourSituationLabel?.text = nil
         
         let animations = { [weak whatsYourSituationLabel] in
+            
             whatsYourSituationLabel?.isHidden = false
             whatsYourSituationLabel?.text = phrase
             return
@@ -153,6 +158,7 @@ class MainViewController: UIViewController {
     fileprivate func hidePrompt() {
         
         let animation = { [weak whatsYourSituationLabel] in
+            
             whatsYourSituationLabel?.isHidden = true
             return
         }
@@ -177,6 +183,7 @@ class MainViewController: UIViewController {
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        
         if motion == .motionShake {
             self.flipCoinAction(nil)
         }
@@ -210,12 +217,14 @@ extension MainViewController {
     }
     
     @IBAction func scaleUpButton(_ sender: UIButton) {
+        
         UIView.animate(withDuration: 0.1, animations: {
             sender.titleLabel?.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         }) 
     }
     
     @IBAction func scaleDownButton(_ sender: UIButton) {
+        
         UIView.animate(withDuration: 0.1, animations: {
             sender.titleLabel?.transform = CGAffineTransform.identity
         }) 
@@ -226,11 +235,13 @@ extension MainViewController {
     }
     
     fileprivate func randomDouble(_ lower: Double = 0.0, _ upper: Double = 0.35) -> Double {
+        
         return (Double(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
     }
     
     
     fileprivate func randomWrexagram() -> String {
+        
         let randomNum = Int(arc4random_uniform(63) + 1)
         let wrex = String(format: "wrexagram%02d", randomNum)
         return wrex
@@ -297,12 +308,14 @@ extension MainViewController {
     
     
     fileprivate func hideWrexLines() {
+        
         let lines = [ wrexLine1, wrexLine2, wrexLine3, wrexLine4, wrexLine5, wrexLine6]
         lines.forEach() { line in line?.isHidden = true }
     }
     
     
     fileprivate func flipCoin(_ imageView: UIImageView) {
+        
         let animation: (Void)  -> Void = {
             let heads = Int(arc4random_uniform(10)) % 2 == 0
             imageView.image = heads ? Coin.headsCoin : Coin.tailsCoin
@@ -382,11 +395,11 @@ extension MainViewController {
                     let wrexNumber = Int(outcome.replacingOccurrences(of: "wrexagram", with: "")) ?? 01
                     
                     defer {
-                    /*    AromaClient.beginWithTitle("Coins Flipped")
+                        AromaClient.beginMessage(withTitle: "Coins Flipped")
                             .addBody("Result: Wrexagram \(wrexNumber)")
-                            .withPriority(.LOW)
+                            .withPriority(.low)
                             .send()
-                    */
+                        
                     }
                     
                     if self.maxTosses == 1 {
@@ -477,6 +490,7 @@ extension MainViewController {
     }
     
     fileprivate func fadeInWrexagramLine(_ wrexLine: UIImageView) {
+        
         let transition: UIViewAnimationOptions
         let duration: TimeInterval
         

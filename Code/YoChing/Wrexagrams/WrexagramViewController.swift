@@ -27,6 +27,7 @@ class WrexagramViewController : UITableViewController {
         guard wrexagramNumber > 0 else {
             
             defer {
+                
                 AromaClient.beginMessage(withTitle: "Invalid Logic")
                     .withPriority(.high)
                     .addBody("Loaded WrexagramViewController with bad Wrex Number").addLine(2)
@@ -57,8 +58,7 @@ class WrexagramViewController : UITableViewController {
         navTitle.text = "WREXAGRAM \(wrexagramNumber)"
     }
     
-    fileprivate func loadTitle()
-    {
+    fileprivate func loadTitle() {
         wrexagramTitle.adjustsFontSizeToFitWidth = true
         wrexagramTitle.morphingEffect = .anvil
         wrexagramTitle.text = wrexagram?.title ?? ""
@@ -74,6 +74,8 @@ class WrexagramViewController : UITableViewController {
 
 //MARK: Table View Data Methods
 extension WrexagramViewController {
+    
+    private var emptyCell: UITableViewCell { return UITableViewCell() }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -99,9 +101,7 @@ extension WrexagramViewController {
     fileprivate func createBodyCell(_ tableView: UITableView, forIndexPath indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BodyCell", for: indexPath) as? BodyCell
-        else {
-              return UITableViewCell()
-        }
+        else { return emptyCell }
         
         let body = WrexagramLibrary.bodyForWrexagram(wrexagramNumber)
         cell.textView.text = body
@@ -112,9 +112,7 @@ extension WrexagramViewController {
     fileprivate func createWhatsUpCell(_ tableView: UITableView, forIndexPath indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WhatsUpCell", for: indexPath) as? WhatsUpCell
-        else {
-            return UITableViewCell()
-        }
+        else { return emptyCell }
         
         let whatsUpText = wrexagram?.whatsUp ?? ""
         cell.textView.text = whatsUpText
@@ -151,9 +149,11 @@ extension WrexagramViewController {
             NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType
         ]
         
-        guard let string = try? NSMutableAttributedString(data: data, options: options, documentAttributes: nil) else { return nil }
+        guard let string = try? NSMutableAttributedString(data: data, options: options, documentAttributes: nil)
+        else { return nil }
         
         if let font = UIFont.init(name: "Exo-Bold", size: 24) {
+            
             string.addAttribute(NSFontAttributeName, value: font, range: NSRangeFromString(string.string))
             print("Font Loaded")
             
@@ -163,8 +163,8 @@ extension WrexagramViewController {
     }
     
     fileprivate func determineWrexagramFromNumber(_ number: Int) -> Wrexagram? {
-        let index = number - 1
         
+        let index = number - 1
         guard index < WrexagramLibrary.wrexagrams.count else { return nil }
         
         return WrexagramLibrary.wrexagrams[index]
