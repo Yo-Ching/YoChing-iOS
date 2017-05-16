@@ -36,7 +36,7 @@ class Settings {
     
     fileprivate(set) static var isSlickEnabled: Bool {
         get {
-            return defaults.object(forKey: COINS_SLICK) as? Bool ?? false
+            return defaults.object(forKey: COINS_SLICK) as? Bool ?? true
         }
         set(newValue) {
             defaults.set(newValue, forKey: COINS_SLICK)
