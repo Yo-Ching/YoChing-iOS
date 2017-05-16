@@ -6,6 +6,7 @@
 //  Copyright © 2016 Yo Ching. All rights reserved.
 //
 
+import Archeota
 import Foundation
 import QuartzCore
 import UIKit
@@ -101,10 +102,10 @@ class Coin {
     
     func flipCoinAction(_ onDone: @escaping (CoinSide) -> Void) {
         
-        print("Flip Coin called")
+        LOG.debug("Flip Coin called")
         
         guard let image = self.image else {
-            print("Coin Missing Image")
+            LOG.warn("Coin Missing Image")
             return
         }
         

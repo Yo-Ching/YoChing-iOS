@@ -6,6 +6,7 @@
 //  Copyright © 2015 Yo Ching. All rights reserved.
 //
 
+import Archeota
 import AromaSwiftClient
 import LTMorphingLabel
 import UIKit
@@ -50,7 +51,7 @@ class MainViewController: UIViewController {
     fileprivate var hexNum = ""
     fileprivate var animationRandomFactor = 1
     
-    fileprivate var coinsInTheAir = 0
+    fileprivate let coinsInTheAir = AtomicInteger(value: 0)
     fileprivate let main = OperationQueue.main
     fileprivate let async = OperationQueue()
     
@@ -332,12 +333,14 @@ extension MainViewController {
         
         var coinsOutcome: [Coin.CoinSide] = []
         
-        self.coinsInTheAir = 3
+        self.coinsInTheAir.set(3)
         
         delay(randomDouble()) {
+            
             self.coinOne?.flipCoinAction() { side in
-                self.coinsInTheAir -= 1
-                print("Coin 1 Flipped: \(side)")
+                
+                self.coinsInTheAir.decrementAndGet()
+                LOG.debug("Coin 1 Flipped: \(side)")
                 coinsOutcome.append(side)
             }
         }
@@ -345,8 +348,9 @@ extension MainViewController {
         delay(randomDouble()) {
             
             self.coinTwo.flipCoinAction() { side in
-                self.coinsInTheAir -= 1
-                print("Coin 2 Flipped: \(side)")
+                
+                self.coinsInTheAir.decrementAndGet()
+                LOG.debug("Coin 2 Flipped: \(side)")
                 coinsOutcome.append(side)
             }
         }
@@ -354,8 +358,9 @@ extension MainViewController {
         delay(randomDouble()) {
             
             self.coinThree?.flipCoinAction() { side in
-                self.coinsInTheAir -= 1
-                print("Coin 3 Flipped: \(side)")
+                
+                self.coinsInTheAir.decrementAndGet()
+                LOG.debug("Coin 3 Flipped: \(side)")
                 coinsOutcome.append(side)
             }
         }
@@ -365,7 +370,7 @@ extension MainViewController {
             
             self.tosses += 1
             
-            while self.coinsInTheAir > 0 { } //wait
+            while self.coinsInTheAir.get() > 0 { } //wait
             
             self.main.addOperation() {
                 

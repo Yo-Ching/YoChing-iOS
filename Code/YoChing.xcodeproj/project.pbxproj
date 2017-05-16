@@ -82,6 +82,7 @@
 		DE8FBCEA1CFCCE75005177B2 /* WrexaPosts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8FBCE91CFCCE75005177B2 /* WrexaPosts.xcassets */; };
 		DEEAECF71ECAC2B800B2E87E /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEEAECF61ECAC2B800B2E87E /* Kingfisher.framework */; };
 		DEEAECF81ECAC2C700B2E87E /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEEAECF61ECAC2B800B2E87E /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEEAECFA1ECAE62500B2E87E /* AtomicInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEAECF91ECAE62500B2E87E /* AtomicInteger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +191,7 @@
 		DE8362AF1CBCB4A300C73BA4 /* WrexagramPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrexagramPagerViewController.swift; sourceTree = "<group>"; };
 		DE8FBCE91CFCCE75005177B2 /* WrexaPosts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WrexaPosts.xcassets; sourceTree = "<group>"; };
 		DEEAECF61ECAC2B800B2E87E /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		DEEAECF91ECAE62500B2E87E /* AtomicInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicInteger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 				3EED85B31978FEE8007EEB62 /* Supporting Files */,
 				DE7AC0E21CC759C0001A5A9A /* UI */,
 				DE6B79EB1CB721AF00C47024 /* Wrexagrams */,
+				DEEAECF91ECAE62500B2E87E /* AtomicInteger.swift */,
 			);
 			path = YoChing;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				DE8362B01CBCB4A300C73BA4 /* WrexagramPagerViewController.swift in Sources */,
 				DE23674D1CBC356B00D9E87D /* Animations.swift in Sources */,
 				3EED85B61978FEE8007EEB62 /* AppDelegate.swift in Sources */,
+				DEEAECFA1ECAE62500B2E87E /* AtomicInteger.swift in Sources */,
 				A368216C1CB23F6300B2DA44 /* WrexagramLibrary.swift in Sources */,
 				1397CE021BF454E1004523FD /* WrexagramViewController.swift in Sources */,
 				DE086E6F1D0D28F00048D25F /* TutorialViewController.swift in Sources */,
