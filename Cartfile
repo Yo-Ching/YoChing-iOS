@@ -1,6 +1,0 @@
-#YO CHING DEPENDENICES
-
-github "RedRoma/AromaSwiftClient" "develop"
-github "RedRoma/Archeota"
-github "lexrus/LTMorphingLabel"
-github "SwiftyJSON/SwiftyJSON"
