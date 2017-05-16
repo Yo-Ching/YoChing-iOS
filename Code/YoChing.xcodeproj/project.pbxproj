@@ -358,7 +358,7 @@
 				TargetAttributes = {
 					3EED85AF1978FEE8007EEB62 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = XKU4RQ3453;
+						DevelopmentTeam = 5JBF7MD4UT;
 					};
 					3EED85C11978FEE8007EEB62 = {
 						CreatedOnToolsVersion = 6.0;
@@ -607,6 +607,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5JBF7MD4UT;
 				INFOPLIST_FILE = YoChing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
