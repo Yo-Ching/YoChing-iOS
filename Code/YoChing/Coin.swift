@@ -19,15 +19,15 @@ class Coin {
     
     weak var image: UIImageView?
     
-    private var repeatCount = 0
-    private var animationDuration = kQUICK_ANIMATION
-    private var maxReps = kMAX_REPS_QUICK
+    fileprivate var repeatCount = 0
+    fileprivate var animationDuration = kQUICK_ANIMATION
+    fileprivate var maxReps = kMAX_REPS_QUICK
     
-    private var onDone: (CoinSide -> Void)?
+    fileprivate var onDone: ((CoinSide) -> Void)?
     
     enum CoinSide {
-        case HEADS
-        case TAILS
+        case heads
+        case tails
     }
     
     init(image: UIImageView) {
@@ -40,10 +40,10 @@ class Coin {
         
         if repeatCount > maxReps  { //This means we're done
             
-            let possibleSides = [CoinSide.HEADS, CoinSide.TAILS]
-            let resultingSide = possibleSides.selectOne() ?? .HEADS
+            let possibleSides = [CoinSide.heads, CoinSide.tails]
+            let resultingSide = possibleSides.selectOne() ?? .heads
             
-            image.layer.contents =  resultingSide == .HEADS ? Coin.headsCoin.CGImage : Coin.tailsCoin.CGImage
+            image.layer.contents =  resultingSide == .heads ? Coin.headsCoin.cgImage : Coin.tailsCoin.cgImage
             image.layer.transform = CATransform3DIdentity
 
             onDone?(resultingSide)
@@ -55,7 +55,7 @@ class Coin {
         if repeatCount == 1 {					// first time for this animation
             let duration: Double = (animationDuration * Double((maxReps+1)))
             let startFrame = image.frame
-            UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
                 
                 var frame = image.frame
                 
@@ -64,14 +64,14 @@ class Coin {
                 }, completion: {
                     _ in
                     
-                    UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.BeginFromCurrentState, animations: {
+                    UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
                         
                         image.frame = startFrame
                         }, completion: nil)
             })
         }
         
-        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: { [weak self] in
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: { [weak self] in
             
             guard let `self` = self else { return }
             
@@ -82,8 +82,8 @@ class Coin {
             }, completion: {
                 _ in
                 
-                image.layer.contents = Coin.tailsCoin.CGImage
-                UIView.animateWithDuration(self.animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+                image.layer.contents = Coin.tailsCoin.cgImage
+                UIView.animate(withDuration: self.animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
                     
                     var rotation = image.layer.transform
                     
@@ -92,14 +92,14 @@ class Coin {
                     }, completion: {
                         _ in
                         
-                        image.layer.contents = Coin.headsCoin.CGImage
+                        image.layer.contents = Coin.headsCoin.cgImage
                         self.doAnimation()
                 })
         })
     }
     
     
-    func flipCoinAction(onDone: CoinSide -> Void) {
+    func flipCoinAction(_ onDone: @escaping (CoinSide) -> Void) {
         
         print("Flip Coin called")
         
@@ -112,7 +112,7 @@ class Coin {
         self.onDone = onDone
         
         image.layer.removeAllAnimations()
-        image.layer.contents = Coin.headsCoin.CGImage
+        image.layer.contents = Coin.headsCoin.cgImage
         doAnimation()
     }
 }

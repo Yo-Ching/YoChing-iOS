@@ -47,29 +47,25 @@ extension UIViewController {
     func hideNavigationBarShadow() {
         let emptyImage = UIImage()
         self.navigationController?.navigationBar.shadowImage = emptyImage
-        self.navigationController?.navigationBar.setBackgroundImage(emptyImage, forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.setBackgroundImage(emptyImage, for: UIBarMetrics.default)
     }
 
     var isiPhone: Bool {
-        return UI_USER_INTERFACE_IDIOM() == .Phone
+        return UI_USER_INTERFACE_IDIOM() == .phone
     }
 
     var isiPad: Bool {
-        return UI_USER_INTERFACE_IDIOM() == .Pad
+        return UI_USER_INTERFACE_IDIOM() == .pad
     }
 }
 
 //MARK: Adds a delay() function
 extension UIViewController {
 
-    func delay(delay: Double, closure: () -> ()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(),
-            closure
+    func delay(_ delay: Double, closure: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(
+            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC),
+            execute: closure
         )
     }
 }
@@ -77,7 +73,7 @@ extension UIViewController {
 //MARK: Opening Links
 extension UIViewController {
 
-    func openLink(link: String) {
+    func openLink(_ link: String) {
 
         guard let url = link.toURL() else { return }
 
@@ -91,7 +87,7 @@ extension UIViewController {
  }
  
 
-        let app = UIApplication.sharedApplication()
+        let app = UIApplication.shared
         app.openURL(url)
     }
 }
@@ -100,17 +96,17 @@ extension UIViewController {
 public extension String {
     public var length: Int { return self.characters.count }
 
-    public func toURL() -> NSURL? {
-        return NSURL(string: self)
+    public func toURL() -> URL? {
+        return URL(string: self)
     }
 }
 
 //MARK: UITableView Controllers
 extension UITableViewController {
-    func reloadSection(section: Int, animation: UITableViewRowAnimation = .Automatic) {
+    func reloadSection(_ section: Int, animation: UITableViewRowAnimation = .automatic) {
 
-        let section = NSIndexSet(index: section)
-        self.tableView?.reloadSections(section, withRowAnimation: animation)
+        let section = IndexSet(integer: section)
+        self.tableView?.reloadSections(section, with: animation)
     }
 
     func setSprayForBlackBackground() {
@@ -125,14 +121,14 @@ extension UITableViewController {
         setBackground(imageName)
     }
 
-    private func setBackground(imageName: String) {
+    fileprivate func setBackground(_ imageName: String) {
         guard let image = UIImage(named: imageName) else { return }
         guard let frame = self.view?.frame else { return }
 
         let imageView = UIImageView(frame: frame)
-        imageView.backgroundColor = UIColor.clearColor()
+        imageView.backgroundColor = UIColor.clear
 
-        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = .scaleAspectFill
         imageView.image = image
         self.tableView.backgroundView = imageView
 
@@ -164,7 +160,7 @@ extension UILabel {
         self.adjustFontSizeToFitRect(rect, minFontSize: 5, maxFontSize: 100)
     }
 
-    func adjustFontSizeToFitRect(rect: CGRect, minFontSize: Int = 5, maxFontSize: Int = 200) {
+    func adjustFontSizeToFitRect(_ rect: CGRect, minFontSize: Int = 5, maxFontSize: Int = 200) {
 
         guard let text = self.text else { return }
 
@@ -173,14 +169,14 @@ extension UILabel {
         var right = maxFontSize
         var left = minFontSize
 
-        let constraintSize = CGSize(width: rect.width, height: CGFloat.max)
+        let constraintSize = CGSize(width: rect.width, height: CGFloat.greatestFiniteMagnitude)
 
         while (left <= right) {
 
             let currentSize = (left + right) / 2
-            font = font.fontWithSize(CGFloat(currentSize))
+            font = font.withSize(CGFloat(currentSize))
             let text = NSAttributedString(string: text, attributes: [NSFontAttributeName: font])
-            let textRect = text.boundingRectWithSize(constraintSize, options: .UsesLineFragmentOrigin, context: nil)
+            let textRect = text.boundingRect(with: constraintSize, options: .usesLineFragmentOrigin, context: nil)
 
             let labelSize = textRect.size
 
@@ -201,9 +197,9 @@ extension UILabel {
 //MARK: String
 extension String {
     
-    func stringByReplacing(string string: String, with replacement: String) -> String {
+    func stringByReplacing(string: String, with replacement: String) -> String {
         
-        let result = self.stringByReplacingOccurrencesOfString(string, withString: replacement, options: .LiteralSearch, range: nil)
+        let result = self.replacingOccurrences(of: string, with: replacement, options: .literal, range: nil)
         return result
     }
     

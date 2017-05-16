@@ -12,20 +12,20 @@ import Foundation
 class Settings {
     
     //MARK: User Preferences
-    private static let defaults = NSUserDefaults.standardUserDefaults()
-    private static let CLASSIC_KEY = "YoChing.Classic"
-    private static let QUICK_KEY = "YoChing.Quick"
+    fileprivate static let defaults = UserDefaults.standard
+    fileprivate static let CLASSIC_KEY = "YoChing.Classic"
+    fileprivate static let QUICK_KEY = "YoChing.Quick"
     
-    private static let COINS_STREET = "YoChing.Street"
-    private static let COINS_SLICK = "YoChing.Slick"
+    fileprivate static let COINS_STREET = "YoChing.Street"
+    fileprivate static let COINS_SLICK = "YoChing.Slick"
     
     
-    private(set) static var isQuickEnabled: Bool {
+    fileprivate(set) static var isQuickEnabled: Bool {
         get {
-            return defaults.objectForKey(QUICK_KEY) as? Bool ?? false
+            return defaults.object(forKey: QUICK_KEY) as? Bool ?? false
         }
         set(newValue) {
-            defaults.setObject(newValue, forKey: QUICK_KEY)
+            defaults.set(newValue, forKey: QUICK_KEY)
         }
     }
     
@@ -33,12 +33,12 @@ class Settings {
         return !isQuickEnabled
     }
     
-    private(set) static var isSlickEnabled: Bool {
+    fileprivate(set) static var isSlickEnabled: Bool {
         get {
-            return defaults.objectForKey(COINS_SLICK) as? Bool ?? false
+            return defaults.object(forKey: COINS_SLICK) as? Bool ?? false
         }
         set(newValue) {
-            defaults.setObject(newValue, forKey: COINS_SLICK)
+            defaults.set(newValue, forKey: COINS_SLICK)
         }
     }
     
@@ -47,16 +47,16 @@ class Settings {
     }
     
     //MARK: Determines if this is the first time the App has launched
-    private static let firstTimeKey = "YoChing.FirstTime"
+    fileprivate static let firstTimeKey = "YoChing.FirstTime"
     
     static var isFirstTimeRunning: Bool {
         get {
-            let defaults = NSUserDefaults()
-            return defaults.objectForKey(firstTimeKey) as? Bool ?? true
+            let defaults = UserDefaults()
+            return defaults.object(forKey: firstTimeKey) as? Bool ?? true
         }
         set {
-            let defaults = NSUserDefaults()
-            defaults.setObject(newValue, forKey: firstTimeKey)
+            let defaults = UserDefaults()
+            defaults.set(newValue, forKey: firstTimeKey)
         }
     }
     
@@ -78,21 +78,21 @@ class SettingsViewController : UITableViewController {
     @IBOutlet weak var slickCheckmark: UIImageView!
     
     //MARK: Links to open
-    private let BUY_BOOK_LINK = "http://www.amazon.com/Yo-Ching-Ancient-Knowledge-Streets/dp/0996462503"
-    private let BOOK_INFO_LINK = "http://yoching.net"
+    fileprivate let BUY_BOOK_LINK = "http://www.amazon.com/Yo-Ching-Ancient-Knowledge-Streets/dp/0996462503"
+    fileprivate let BOOK_INFO_LINK = "http://yoching.net"
 
     //Mark: Throwing Style Paths
-    private let classicPath = NSIndexPath(forRow: 1, inSection: 0)
-    private let tapThatPath = NSIndexPath(forRow: 2, inSection: 0)
+    fileprivate let classicPath = IndexPath(row: 1, section: 0)
+    fileprivate let tapThatPath = IndexPath(row: 2, section: 0)
     
     //MARK : Coin Styles
-    private let streetPath = NSIndexPath(forRow: 1, inSection: 1)
-    private let slickPath = NSIndexPath(forRow: 2, inSection: 1)
+    fileprivate let streetPath = IndexPath(row: 1, section: 1)
+    fileprivate let slickPath = IndexPath(row: 2, section: 1)
     
     //MARK: Info Paths
-    private let getBookPath = NSIndexPath(forRow: 1, inSection: 2)
-    private let seeStreetCredsPath = NSIndexPath(forRow: 2, inSection: 2)
-    private let seeInfoPath = NSIndexPath(forRow: 3, inSection: 2)
+    fileprivate let getBookPath = IndexPath(row: 1, section: 2)
+    fileprivate let seeStreetCredsPath = IndexPath(row: 2, section: 2)
+    fileprivate let seeInfoPath = IndexPath(row: 3, section: 2)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,7 +108,7 @@ class SettingsViewController : UITableViewController {
     }
     
     
-    private func addSwipeGesture() {
+    fileprivate func addSwipeGesture() {
         
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.onSwipe(_:)))
         swipeGesture.direction = .Left
@@ -116,7 +116,7 @@ class SettingsViewController : UITableViewController {
         self.tableView.addGestureRecognizer(swipeGesture)
     }
     
-    func onSwipe(gesture: UIGestureRecognizer) {
+    func onSwipe(_ gesture: UIGestureRecognizer) {
         self.exit()
     }
 }
@@ -125,12 +125,12 @@ class SettingsViewController : UITableViewController {
 //MARK: Throwing Style configuration
 extension SettingsViewController {
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: IndexPath) {
         setLookForCell(tableView, forIndexPath: indexPath)
         cell.backgroundColor = cell.contentView.backgroundColor
     }
     
-    private func setLookForCell(tableView: UITableView, forIndexPath indexPath: NSIndexPath) {
+    fileprivate func setLookForCell(_ tableView: UITableView, forIndexPath indexPath: IndexPath) {
        
         if indexPath == classicPath {
             if Settings.isClassicEnabled {
@@ -178,19 +178,19 @@ extension SettingsViewController {
 //MARK : Segues
 extension SettingsViewController {
     
-    private func exit() {
+    fileprivate func exit() {
         self.performSegueWithIdentifier("unwind", sender: self)
     }
     
-    private func goToCredits() {
+    fileprivate func goToCredits() {
         self.performSegueWithIdentifier("ToCredits", sender: self)
     }
     
-    private func goToTutorial() {
+    fileprivate func goToTutorial() {
         self.performSegueWithIdentifier("ToTutorial", sender: self)
     }
     
-    @IBAction func unwindFromCredits(segue: UIStoryboardSegue) {
+    @IBAction func unwindFromCredits(_ segue: UIStoryboardSegue) {
         
     }
     
@@ -200,7 +200,7 @@ extension SettingsViewController {
 //MARK: Opening Links
 extension SettingsViewController {
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
 
         if indexPath == getBookPath {
             self.openLink(BUY_BOOK_LINK)

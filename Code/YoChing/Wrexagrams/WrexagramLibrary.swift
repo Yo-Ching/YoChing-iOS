@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class WrexagramLibrary {
     
-    class func getOutcome(hexNum: Int) -> String {
+    class func getOutcome(_ hexNum: Int) -> String {
         
         switch (hexNum) {
             
@@ -87,14 +87,14 @@ class WrexagramLibrary {
     }
 
     
-    static func bodyForWrexagram(wrexagramNumber: Int) -> String {
+    static func bodyForWrexagram(_ wrexagramNumber: Int) -> String {
 
         let formattedOutcome = String(format: "wrexagram%02d", wrexagramNumber)
         let filename = "txt/\(formattedOutcome)"
         
-        if let text = NSBundle.mainBundle().pathForResource(filename, ofType: "txt") {
+        if let text = Bundle.main.path(forResource: filename, ofType: "txt") {
             do {
-                let string = try String(contentsOfFile: text, encoding: NSUTF8StringEncoding)
+                let string = try String(contentsOfFile: text, encoding: String.Encoding.utf8)
                 
                 return string
                 
@@ -112,17 +112,17 @@ class WrexagramLibrary {
         
     }
     
-    private static let JSON_FILE = "json/wrexagrams.json"
+    fileprivate static let JSON_FILE = "json/wrexagrams.json"
     
     static var wrexagrams: [Wrexagram] = {
         
         print("Loading Wrexagrams from Memory")
         
-        guard let url = NSBundle.mainBundle().URLForResource(JSON_FILE, withExtension: nil)
+        guard let url = Bundle.main.url(forResource: JSON_FILE, withExtension: nil)
         else { return [] }
         
-        guard let string = try? String(contentsOfURL: url),
-              let data = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        guard let string = try? String(contentsOf: url),
+              let data = string.data(using: String.Encoding.utf8, allowLossyConversion: false)
         else { return [] }
         
         let json = JSON(data: data)
@@ -142,7 +142,7 @@ class WrexagramLibrary {
 extension WrexagramLibrary {
     
     
-    static func loadWrexagram(number number: Int, intoImageView imageView: UIImageView, useThumbnail: Bool = false) {
+    static func loadWrexagram(number: Int, intoImageView imageView: UIImageView, useThumbnail: Bool = false) {
         
         if useThumbnail {
             let fetcher = WrexagramImageFetcher(wrexagramNumber: number)
@@ -155,7 +155,7 @@ extension WrexagramLibrary {
     }
     
     
-    static func imageForWrexagram(number: Int) -> UIImage? {
+    static func imageForWrexagram(_ number: Int) -> UIImage? {
         let imageName = "WREX\(number)"
         return UIImage(named: imageName)
     }

@@ -34,7 +34,7 @@ class WrexagramViewController : UITableViewController {
                     .send()
             }
             
-            self.parentViewController?.dismissViewControllerAnimated(true, completion: nil)
+            self.parent?.dismiss(animated: true, completion: nil)
             return
         }
         
@@ -53,11 +53,11 @@ class WrexagramViewController : UITableViewController {
         delay(0.1) { self.loadTitle() }
     }
     
-    private func setNavTitle() {
+    fileprivate func setNavTitle() {
         navTitle.text = "WREXAGRAM \(wrexagramNumber)"
     }
     
-    private func loadTitle()
+    fileprivate func loadTitle()
     {
         wrexagramTitle.adjustsFontSizeToFitWidth = true
         wrexagramTitle.morphingEffect = .Anvil
@@ -65,7 +65,7 @@ class WrexagramViewController : UITableViewController {
         wrexagramTitle.readjustLabelFontSize()
     }
     
-    private func loadImage() {
+    fileprivate func loadImage() {
         WrexagramLibrary.loadWrexagram(number: wrexagramNumber, intoImageView: wrexegramImage, useThumbnail: false)
     }
     
@@ -75,16 +75,16 @@ class WrexagramViewController : UITableViewController {
 //MARK: Table View Data Methods
 extension WrexagramViewController {
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //One for the Body, another for the What's Up
         return 2
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let row = indexPath.row
         
@@ -96,9 +96,9 @@ extension WrexagramViewController {
         }
     }
     
-    private func createBodyCell(tableView: UITableView, forIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    fileprivate func createBodyCell(_ tableView: UITableView, forIndexPath indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCellWithIdentifier("BodyCell", forIndexPath: indexPath) as? BodyCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BodyCell", for: indexPath) as? BodyCell
         else {
               return UITableViewCell()
         }
@@ -109,9 +109,9 @@ extension WrexagramViewController {
         return cell
     }
     
-    private func createWhatsUpCell(tableView: UITableView, forIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    fileprivate func createWhatsUpCell(_ tableView: UITableView, forIndexPath indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCellWithIdentifier("WhatsUpCell", forIndexPath: indexPath) as? WhatsUpCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "WhatsUpCell", for: indexPath) as? WhatsUpCell
         else {
             return UITableViewCell()
         }
@@ -128,11 +128,11 @@ extension WrexagramViewController {
 //MARK : Table View Delegate Methods
 extension WrexagramViewController {
     
-    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return UITableViewAutomaticDimension
 
@@ -143,9 +143,9 @@ extension WrexagramViewController {
 //MARK: Utility Methods
 extension WrexagramViewController {
     
-    private func toAttributedString(html: String) -> NSAttributedString? {
+    fileprivate func toAttributedString(_ html: String) -> NSAttributedString? {
         
-        guard let data = html.dataUsingEncoding(NSUnicodeStringEncoding) else { return nil }
+        guard let data = html.data(using: String.Encoding.unicode) else { return nil }
         
         let options: [String : String] = [
             NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType
@@ -162,7 +162,7 @@ extension WrexagramViewController {
         return string
     }
     
-    private func determineWrexagramFromNumber(number: Int) -> Wrexagram? {
+    fileprivate func determineWrexagramFromNumber(_ number: Int) -> Wrexagram? {
         let index = number - 1
         
         guard index < WrexagramLibrary.wrexagrams.count else { return nil }

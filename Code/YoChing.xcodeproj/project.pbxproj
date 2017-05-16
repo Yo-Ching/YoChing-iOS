@@ -359,9 +359,11 @@
 					3EED85AF1978FEE8007EEB62 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 5JBF7MD4UT;
+						LastSwiftMigration = 0830;
 					};
 					3EED85C11978FEE8007EEB62 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0830;
 						TestTargetID = 3EED85AF1978FEE8007EEB62;
 					};
 				};
@@ -589,13 +591,14 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5JBF7MD4UT;
 				INFOPLIST_FILE = YoChing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.yoching;
 				PRODUCT_NAME = YoChing;
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -615,7 +618,7 @@
 				PRODUCT_NAME = YoChing;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -636,6 +639,7 @@
 				INFOPLIST_FILE = CoinTossTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = YoChing;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoChing.app/YoChing";
 			};
 			name = Debug;
@@ -652,6 +656,7 @@
 				INFOPLIST_FILE = CoinTossTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = YoChing;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoChing.app/YoChing";
 			};
 			name = Release;

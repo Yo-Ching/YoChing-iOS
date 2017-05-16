@@ -21,15 +21,15 @@ class CreditsViewController : UITableViewController {
     @IBOutlet weak var mayaLabel: LTMorphingLabel!
     
     
-    private let truePlayerPath = NSIndexPath(forRow: 0, inSection: 0)
-    private let hughPath = NSIndexPath(forRow: 1, inSection: 0)
-    private let marcPath = NSIndexPath(forRow: 2, inSection: 0)
-    private let wellingtonPath = NSIndexPath(forRow: 3, inSection: 0)
-    private let brendanPath = NSIndexPath(forRow: 4, inSection: 0)
-    private let mayaPath = NSIndexPath(forRow: 5, inSection: 0)
+    fileprivate let truePlayerPath = IndexPath(row: 0, section: 0)
+    fileprivate let hughPath = IndexPath(row: 1, section: 0)
+    fileprivate let marcPath = IndexPath(row: 2, section: 0)
+    fileprivate let wellingtonPath = IndexPath(row: 3, section: 0)
+    fileprivate let brendanPath = IndexPath(row: 4, section: 0)
+    fileprivate let mayaPath = IndexPath(row: 5, section: 0)
     
     
-    private lazy var links: [NSIndexPath : String] = [
+    fileprivate lazy var links: [IndexPath : String] = [
         self.truePlayerPath : "http://www.yoching.net/about/",
         self.hughPath : "http://hugh-gallagher.com",
         self.marcPath : "http://github.com/mrisney",
@@ -46,12 +46,12 @@ class CreditsViewController : UITableViewController {
         setLabel(truePlayerLabel, hughLabel, marcLabel, wellingtonLabel, brendanLabel, mayaLabel)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
     
-    private func setLabel(labels: LTMorphingLabel...) {
+    fileprivate func setLabel(_ labels: LTMorphingLabel...) {
         
         let text : [String] = labels.map() { $0.text }
         labels.forEach() { $0.morphingEnabled = false ; $0.text = nil }
@@ -65,8 +65,8 @@ class CreditsViewController : UITableViewController {
         }
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
     
 }
@@ -74,12 +74,12 @@ class CreditsViewController : UITableViewController {
 //MARK : Table View Delegate Methods
 extension CreditsViewController {
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = cell.contentView.backgroundColor
     }
     
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let link = links[indexPath] else { return }
         self.openLink(link)

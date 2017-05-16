@@ -25,8 +25,8 @@ class WrexagramBreaksViewController : UIViewController {
         
     }
     
-    @IBAction func popBackToBeginning(sender: AnyObject) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+    @IBAction func popBackToBeginning(_ sender: AnyObject) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

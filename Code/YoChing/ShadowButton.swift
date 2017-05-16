@@ -36,19 +36,19 @@ import UIKit
         }
     }
 
-    @IBInspectable var borderColor: UIColor = UIColor.blackColor() {
+    @IBInspectable var borderColor: UIColor = UIColor.black {
         didSet {
             updateView()
         }
     }
 
-    @IBInspectable var shadowOffset: CGSize = CGSizeMake(3, 0) {
+    @IBInspectable var shadowOffset: CGSize = CGSize(width: 3, height: 0) {
         didSet {
             updateView()
         }
     }
 
-    @IBInspectable var shadowColor: UIColor = UIColor.darkGrayColor() {
+    @IBInspectable var shadowColor: UIColor = UIColor.darkGray {
         didSet {
             updateView()
         }
@@ -66,15 +66,15 @@ import UIKit
         }
     }
 
-    private func updateView() {
+    fileprivate func updateView() {
 
         //Create the border
         layer.borderWidth = self.borderThickness
-        layer.borderColor = self.borderColor.CGColor
+        layer.borderColor = self.borderColor.cgColor
 
         //Create the shadow
         self.layer.masksToBounds = false
-        self.layer.shadowColor = shadowColor.CGColor
+        self.layer.shadowColor = shadowColor.cgColor
         self.layer.shadowOpacity = Float(shadowOpacity)
         self.layer.shadowRadius = shadowRadius
         self.layer.shadowOffset = shadowOffset

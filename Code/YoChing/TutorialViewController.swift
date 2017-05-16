@@ -15,7 +15,7 @@ class TutorialViewController : UIViewController {
 
     @IBOutlet var containerView: UIView!
     
-    private var webView: WKWebView!
+    fileprivate var webView: WKWebView!
     
     let url = "https://www.youtube.com/embed/mCqsTEY-XVY?list=PLJfSQOoheuTsiV13Ozk0lgOSL4qUaE3x2".toURL()
     
@@ -29,10 +29,10 @@ class TutorialViewController : UIViewController {
         guard let url = url
         else { return }
         
-        let request = NSURLRequest(URL: url)
+        let request = URLRequest(url: url as URL)
         
         self.webView.navigationDelegate = self
-        self.webView.loadRequest(request)
+        self.webView.load(request)
         
      //   AromaClient.sendMediumPriorityMessage(withTitle: "Tutorial Opened")
     }
@@ -44,14 +44,14 @@ class TutorialViewController : UIViewController {
         self.webView = webView
         self.view = webView
         
-        app.networkActivityIndicatorVisible = true
+        app.isNetworkActivityIndicatorVisible = true
     }
 }
 
 
 extension TutorialViewController : WKNavigationDelegate {
     
-    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-        app.networkActivityIndicatorVisible = false
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        app.isNetworkActivityIndicatorVisible = false
     }
 }

@@ -11,18 +11,18 @@ import UIKit
 
 class AnimateLeft : NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     
-    private var isPresenting = true
+    fileprivate var isPresenting = true
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
-        let container = transitionContext.containerView()
+        let container = transitionContext.containerView
         
-        guard let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey),
-              let toView = transitionContext.viewForKey(UITransitionContextToViewKey)
+        guard let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from),
+              let toView = transitionContext.view(forKey: UITransitionContextViewKey.to)
         else { return }
         
-        let offScreenRight = CGAffineTransformMakeTranslation(container.frame.width, 0)
-        let offScreenLeft = CGAffineTransformMakeTranslation(-container.frame.width, 0)
+        let offScreenRight = CGAffineTransform(translationX: container.frame.width, y: 0)
+        let offScreenLeft = CGAffineTransform(translationX: -container.frame.width, y: 0)
         
         toView.transform = offScreenRight
         
@@ -30,13 +30,13 @@ class AnimateLeft : NSObject, UIViewControllerTransitioningDelegate, UIViewContr
         container.addSubview(toView)
         container.addSubview(fromView)
         
-        let duration = self.transitionDuration(transitionContext)
+        let duration = self.transitionDuration(using: transitionContext)
         
         if isPresenting {
-            UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .TransitionNone,
+            UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions(),
                                        animations: {
                                         fromView.transform = offScreenRight
-                                        toView.transform = CGAffineTransformIdentity
+                                        toView.transform = CGAffineTransform.identity
                 },
                                        completion: { finished in
                                         transitionContext.completeTransition(true)
@@ -44,10 +44,10 @@ class AnimateLeft : NSObject, UIViewControllerTransitioningDelegate, UIViewContr
         }
         else {
             
-            UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .TransitionNone,
+            UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions(),
                                        animations: {
                                         fromView.transform = offScreenLeft
-                                        toView.transform = CGAffineTransformIdentity
+                                        toView.transform = CGAffineTransform.identity
                 },
                                        completion: { finished in
                                         transitionContext.completeTransition(true)
@@ -57,17 +57,17 @@ class AnimateLeft : NSObject, UIViewControllerTransitioningDelegate, UIViewContr
         
     }
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.6
     }
     
     
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.isPresenting = true
         return self
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.isPresenting = false
         return self
     }
@@ -76,18 +76,18 @@ class AnimateLeft : NSObject, UIViewControllerTransitioningDelegate, UIViewContr
 
 class AnimateRight: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
-    private var isPresenting = true
+    fileprivate var isPresenting = true
 
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 
-        let container = transitionContext.containerView()
+        let container = transitionContext.containerView
 
-        guard let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey),
-              let toView = transitionContext.viewForKey(UITransitionContextToViewKey)
+        guard let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from),
+              let toView = transitionContext.view(forKey: UITransitionContextViewKey.to)
         else { return }
 
-        let offScreenRight = CGAffineTransformMakeTranslation(container.frame.width, 0)
-        let offScreenLeft = CGAffineTransformMakeTranslation(-container.frame.width, 0)
+        let offScreenRight = CGAffineTransform(translationX: container.frame.width, y: 0)
+        let offScreenLeft = CGAffineTransform(translationX: -container.frame.width, y: 0)
         
         toView.transform = isPresenting ? offScreenRight : offScreenLeft
 
@@ -100,13 +100,13 @@ class AnimateRight: NSObject, UIViewControllerTransitioningDelegate, UIViewContr
             container.addSubview(toView)
         }
 
-        let duration = self.transitionDuration(transitionContext)
+        let duration = self.transitionDuration(using: transitionContext)
 
         if isPresenting {
-            UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .TransitionNone,
+            UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions(),
                 animations: {
                     fromView.transform = offScreenLeft
-                    toView.transform = CGAffineTransformIdentity
+                    toView.transform = CGAffineTransform.identity
                 },
                 completion: { finished in
                     transitionContext.completeTransition(true)
@@ -114,10 +114,10 @@ class AnimateRight: NSObject, UIViewControllerTransitioningDelegate, UIViewContr
         }
         else {
 
-            UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .TransitionNone,
+            UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: UIViewAnimationOptions(),
                 animations: {
                     fromView.transform = offScreenRight
-                    toView.transform = CGAffineTransformIdentity
+                    toView.transform = CGAffineTransform.identity
                 },
                 completion: { finished in
                     transitionContext.completeTransition(true)
@@ -125,17 +125,17 @@ class AnimateRight: NSObject, UIViewControllerTransitioningDelegate, UIViewContr
         }
     }
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.5
     }
     
     
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.isPresenting = true
         return self
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.isPresenting = false
         return self
     }

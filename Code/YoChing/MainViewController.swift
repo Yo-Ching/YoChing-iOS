@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     
     //MARK: IBOutlets
     @IBOutlet weak var whatsYourSituationLabel: UILabel!
-    private let phrases: [String] = [
+    fileprivate let phrases: [String] = [
         "WHAT'S YOUR SITUATION?",
         "WHAT'S UP?",
         "WHAT'S HAPPENING?",
@@ -37,27 +37,27 @@ class MainViewController: UIViewController {
     @IBOutlet weak var wrexLine5: UIImageView!
     @IBOutlet weak var wrexLine6: UIImageView!
     
-    @IBOutlet weak private var flipButton: UIButton!
+    @IBOutlet weak fileprivate var flipButton: UIButton!
     
     
     //MARK: Internal Variables
-    private var coinOne: Coin!
-    private var coinTwo: Coin!
-    private var coinThree: Coin!
+    fileprivate var coinOne: Coin!
+    fileprivate var coinTwo: Coin!
+    fileprivate var coinThree: Coin!
     
-    private var maxTosses = 6
-    private var tosses  = 0
-    private var hexNum = ""
-    private var animationRandomFactor = 1
+    fileprivate var maxTosses = 6
+    fileprivate var tosses  = 0
+    fileprivate var hexNum = ""
+    fileprivate var animationRandomFactor = 1
     
-    private var coinsInTheAir = 0
-    private let main = NSOperationQueue.mainQueue()
-    private let async = NSOperationQueue()
+    fileprivate var coinsInTheAir = 0
+    fileprivate let main = OperationQueue.main
+    fileprivate let async = OperationQueue()
     
-    private let transition = AnimateLeft()
+    fileprivate let transition = AnimateLeft()
     
     //MARK: Wrex Lines
-    private lazy var splitLineImage: UIImage? = {
+    fileprivate lazy var splitLineImage: UIImage? = {
         if let image = UIImage(named: "WREX_MASTER-splitline") {
             return image
         }
@@ -67,7 +67,7 @@ class MainViewController: UIViewController {
         }
     }()
     
-    private lazy var strongLineImage: UIImage? = {
+    fileprivate lazy var strongLineImage: UIImage? = {
         if let image = UIImage(named: "WREX_MASTER-strongline") {
             return image
         }
@@ -84,7 +84,7 @@ class MainViewController: UIViewController {
         coinTwo = Coin(image: coinTwoImage)
         coinThree = Coin(image: coinThreeImage)
         
-        whatsYourSituationLabel.hidden = true
+        whatsYourSituationLabel.isHidden = true
         
         async.maxConcurrentOperationCount = 1
         
@@ -100,7 +100,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func addTapGestures(imageView: UIImageView...) {
+    fileprivate func addTapGestures(_ imageView: UIImageView...) {
         
         for image in imageView {
             let gesture = UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:)))
@@ -110,13 +110,13 @@ class MainViewController: UIViewController {
         
     }
     
-    func onTap(gesture: UIGestureRecognizer) {
+    func onTap(_ gesture: UIGestureRecognizer) {
         guard let view = gesture.view as? UIImageView else { return }
         
         flipCoin(view)
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.maxTosses = Settings.isQuickEnabled ? 1 : 6
@@ -131,9 +131,9 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func showPrompt() {
+    fileprivate func showPrompt() {
         
-        guard let isHidden = whatsYourSituationLabel?.hidden where isHidden
+        guard let isHidden = whatsYourSituationLabel?.isHidden, isHidden
         else { return }
         
         //In order for the animation to show, the text in the label has to change, or appear to change value.
@@ -142,53 +142,53 @@ class MainViewController: UIViewController {
         whatsYourSituationLabel?.text = nil
         
         let animations = { [weak whatsYourSituationLabel] in
-            whatsYourSituationLabel?.hidden = false
+            whatsYourSituationLabel?.isHidden = false
             whatsYourSituationLabel?.text = phrase
             return
         }
         
-        UIView.transitionWithView(whatsYourSituationLabel, duration: 0.5, options: .TransitionCrossDissolve, animations: animations, completion: nil)
+        UIView.transition(with: whatsYourSituationLabel, duration: 0.5, options: .transitionCrossDissolve, animations: animations, completion: nil)
     }
     
-    private func hidePrompt() {
+    fileprivate func hidePrompt() {
         
         let animation = { [weak whatsYourSituationLabel] in
-            whatsYourSituationLabel?.hidden = true
+            whatsYourSituationLabel?.isHidden = true
             return
         }
         
-        UIView.transitionWithView(whatsYourSituationLabel, duration: 0.5, options: .TransitionCrossDissolve, animations: animation, completion: nil)
+        UIView.transition(with: whatsYourSituationLabel, duration: 0.5, options: .transitionCrossDissolve, animations: animation, completion: nil)
     }
     
-    private func setCoins(imageView: UIImageView...) {
+    fileprivate func setCoins(_ imageView: UIImageView...) {
         
         for image in imageView {
             
-            let animations: Void -> Void = {
+            let animations: (Void) -> Void = {
                 image.image = Coin.headsCoin
             }
             
-            UIView.transitionWithView(image, duration: 0.2, options: .TransitionFlipFromTop, animations: animations, completion: nil)
+            UIView.transition(with: image, duration: 0.2, options: .transitionFlipFromTop, animations: animations, completion: nil)
         }
     }
     
-    override func canBecomeFirstResponder() -> Bool {
+    override var canBecomeFirstResponder : Bool {
         return true
     }
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        if motion == .MotionShake {
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
             self.flipCoinAction(NSNull)
         }
     }
     
-    private func addSwipeGesture() {
+    fileprivate func addSwipeGesture() {
         
         let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.onSwipeRight(_:)))
-        rightGesture.direction = .Right
+        rightGesture.direction = .right
         
         let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.onSwipeLeft(_:)))
-        leftGesture.direction = .Left
+        leftGesture.direction = .left
         
         self.view.addGestureRecognizer(rightGesture)
         self.view.addGestureRecognizer(leftGesture)
@@ -201,36 +201,36 @@ class MainViewController: UIViewController {
 //MARK : Actions
 extension MainViewController {
     
-    func onSwipeRight(sender: UIGestureRecognizer) {
+    func onSwipeRight(_ sender: UIGestureRecognizer) {
         self.goToSettings()
     }
     
-    func onSwipeLeft(sender: UIGestureRecognizer) {
+    func onSwipeLeft(_ sender: UIGestureRecognizer) {
         self.goToWrexagramList()
     }
     
-    @IBAction func scaleUpButton(sender: UIButton) {
-        UIView.animateWithDuration(0.1) {
-            sender.titleLabel?.transform = CGAffineTransformMakeScale(0.8, 0.8)
-        }
+    @IBAction func scaleUpButton(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.1, animations: {
+            sender.titleLabel?.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        }) 
     }
     
-    @IBAction func scaleDownButton(sender: UIButton) {
-        UIView.animateWithDuration(0.1) {
-            sender.titleLabel?.transform = CGAffineTransformIdentity
-        }
+    @IBAction func scaleDownButton(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.1, animations: {
+            sender.titleLabel?.transform = CGAffineTransform.identity
+        }) 
     }
     
-    @IBAction func flipCoinAction(sender: AnyObject) {
+    @IBAction func flipCoinAction(_ sender: AnyObject) {
         throwTheYo()
     }
     
-    private func randomDouble(lower: Double = 0.0, _ upper: Double = 0.35) -> Double {
+    fileprivate func randomDouble(_ lower: Double = 0.0, _ upper: Double = 0.35) -> Double {
         return (Double(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
     }
     
     
-    private func randomWrexagram() -> String {
+    fileprivate func randomWrexagram() -> String {
         let randomNum = Int(arc4random_uniform(63) + 1)
         let wrex = String(format: "wrexagram%02d", randomNum)
         return wrex
@@ -242,29 +242,29 @@ extension MainViewController {
 //MARK: Segues
 extension MainViewController {
     
-    @IBAction func onGoToNext(sender: AnyObject) {
-        self.performSegueWithIdentifier("ToCoinResults", sender: sender)
+    @IBAction func onGoToNext(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "ToCoinResults", sender: sender)
     }
     
-    private func goToWrex(outcome: Int) {
-        self.performSegueWithIdentifier("ToPager", sender: outcome)
+    fileprivate func goToWrex(_ outcome: Int) {
+        self.performSegue(withIdentifier: "ToPager", sender: outcome)
     }
     
-    private func goToWrexagramList() {
-        self.performSegueWithIdentifier("ToList", sender: self)
+    fileprivate func goToWrexagramList() {
+        self.performSegue(withIdentifier: "ToList", sender: self)
     }
     
-    private func goToSettings() {
-        self.performSegueWithIdentifier("ToSettings", sender: self)
+    fileprivate func goToSettings() {
+        self.performSegue(withIdentifier: "ToSettings", sender: self)
     }
     
-    private func goToTutorial() {
-        self.performSegueWithIdentifier("ToTutorial", sender: self)
+    fileprivate func goToTutorial() {
+        self.performSegue(withIdentifier: "ToTutorial", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let destination = segue.destinationViewController
+        let destination = segue.destination
         
         if let wrexegramView = destination as? WrexagramViewController {
             if let outcome = sender as? Int {
@@ -272,7 +272,7 @@ extension MainViewController {
             }
         }
         
-        if let pager = destination as? WrexagramPagerViewController, outcome = sender as? Int {
+        if let pager = destination as? WrexagramPagerViewController, let outcome = sender as? Int {
             pager.initialIndex = outcome - 1
             pager.wrexagrams = WrexagramLibrary.wrexagrams
         }
@@ -284,7 +284,7 @@ extension MainViewController {
     }
     
     
-    @IBAction func unwindFromSettings(segue: UIStoryboardSegue) {
+    @IBAction func unwindFromSettings(_ segue: UIStoryboardSegue) {
         
         if tosses == 0 {
             setCoins(coinOneImage, coinTwoImage, coinThreeImage)
@@ -296,25 +296,25 @@ extension MainViewController {
 extension MainViewController {
     
     
-    private func hideWrexLines() {
+    fileprivate func hideWrexLines() {
         let lines = [ wrexLine1, wrexLine2, wrexLine3, wrexLine4, wrexLine5, wrexLine6]
-        lines.forEach() { line in line.hidden = true }
+        lines.forEach() { line in line?.isHidden = true }
     }
     
     
-    private func flipCoin(imageView: UIImageView) {
-        let animation: Void  -> Void = {
+    fileprivate func flipCoin(_ imageView: UIImageView) {
+        let animation: (Void)  -> Void = {
             let heads = Int(arc4random_uniform(10)) % 2 == 0
             imageView.image = heads ? Coin.headsCoin : Coin.tailsCoin
         }
         
-        UIView.transitionWithView(imageView, duration: 0.2, options: .TransitionFlipFromTop, animations: animation, completion: nil)
+        UIView.transition(with: imageView, duration: 0.2, options: .transitionFlipFromTop, animations: animation, completion: nil)
     }
 
 
-    private func throwTheYo() {
+    fileprivate func throwTheYo() {
         
-        flipButton.enabled = false
+        flipButton.isEnabled = false
         hidePrompt()
         
         var coinsOutcome: [Coin.CoinSide] = []
@@ -348,16 +348,16 @@ extension MainViewController {
         }
         
         
-        async.addOperationWithBlock() {
+        async.addOperation() {
             
             self.tosses += 1
             
             while self.coinsInTheAir > 0 { } //wait
             
-            self.main.addOperationWithBlock() {
+            self.main.addOperation() {
                 
                 self.recordCoinTossResult(coinsOutcome)
-                self.flipButton.enabled = true
+                self.flipButton.isEnabled = true
                 
                 if self.tosses >= self.maxTosses {
                     
@@ -379,7 +379,7 @@ extension MainViewController {
                         outcome  = WrexagramLibrary.getOutcome(hexNumber)
                     }
                     
-                    let wrexNumber = Int(outcome.stringByReplacingOccurrencesOfString("wrexagram", withString: "")) ?? 01
+                    let wrexNumber = Int(outcome.replacingOccurrences(of: "wrexagram", with: "")) ?? 01
                     
                     defer {
                     /*    AromaClient.beginWithTitle("Coins Flipped")
@@ -394,12 +394,12 @@ extension MainViewController {
                         self.goToWrex(wrexNumber)
                     }
                     else {
-                        self.flipButton.enabled = false
+                        self.flipButton.isEnabled = false
                       
                         self.delay(0.5) {
                             self.goToWrex(wrexNumber)
                             self.hideWrexLines()
-                            self.flipButton.enabled = true
+                            self.flipButton.isEnabled = true
                         }
                     }
                 }
@@ -409,9 +409,9 @@ extension MainViewController {
     }
     
     
-    private func recordCoinTossResult(coinTossResults: [Coin.CoinSide]) {
+    fileprivate func recordCoinTossResult(_ coinTossResults: [Coin.CoinSide]) {
         
-        let headCount = coinTossResults.filter{$0 == Coin.CoinSide.HEADS}.count
+        let headCount = coinTossResults.filter{$0 == Coin.CoinSide.heads}.count
         
         if headCount >= 2 {
             hexNum += "1"
@@ -450,7 +450,7 @@ extension MainViewController {
     }
     
     
-    private func getWrexLineForResults(results: [Coin.CoinSide]) -> UIImage? {
+    fileprivate func getWrexLineForResults(_ results: [Coin.CoinSide]) -> UIImage? {
         
         guard !results.isEmpty && results.count == 3
         else {
@@ -466,7 +466,7 @@ extension MainViewController {
         }
         
         
-        let numberOfHeads = results.filter{ $0 == Coin.CoinSide.HEADS }.count
+        let numberOfHeads = results.filter{ $0 == Coin.CoinSide.heads }.count
         
         if numberOfHeads >= 2 {
             return strongLineImage
@@ -476,19 +476,19 @@ extension MainViewController {
         }
     }
     
-    private func fadeInWrexagramLine(wrexLine: UIImageView) {
+    fileprivate func fadeInWrexagramLine(_ wrexLine: UIImageView) {
         let transition: UIViewAnimationOptions
-        let duration: NSTimeInterval
+        let duration: TimeInterval
         
         if animationRandomFactor.isEven() {
-            transition = .TransitionCurlUp
+            transition = .transitionCurlUp
             duration = 0.4
         }
         else {
-            transition = .TransitionCurlDown
+            transition = .transitionCurlDown
             duration = 0.3
         }
         
-        UIView.transitionWithView(wrexLine, duration: duration, options: transition, animations: { wrexLine.hidden = false }, completion: nil)
+        UIView.transition(with: wrexLine, duration: duration, options: transition, animations: { wrexLine.isHidden = false }, completion: nil)
     }
 }

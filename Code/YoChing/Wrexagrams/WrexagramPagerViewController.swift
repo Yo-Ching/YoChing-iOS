@@ -19,13 +19,13 @@ class WrexagramPagerViewController : UIPageViewController {
     var wrexagrams: [Wrexagram] = []
     var initialIndex: Int = 0
     
-    private var currentWrexagram: Wrexagram?
+    fileprivate var currentWrexagram: Wrexagram?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let initiallViewController = self.viewControllerAtIndex(initialIndex) else { return }
-        self.setViewControllers([initiallViewController], direction: .Forward, animated: true, completion: nil)
+        self.setViewControllers([initiallViewController], direction: .forward, animated: true, completion: nil)
         self.dataSource = self
         self.delegate = self
         
@@ -33,7 +33,7 @@ class WrexagramPagerViewController : UIPageViewController {
         currentWrexagram = wrexagrams[initialIndex]
     }
     
-    private func setNavTitle(toWrexagramNumber wrexagramNumber: Int) {
+    fileprivate func setNavTitle(toWrexagramNumber wrexagramNumber: Int) {
         self.navTitle?.text = "WREXAGRAM \(wrexagramNumber)"
     }
 }
@@ -41,9 +41,9 @@ class WrexagramPagerViewController : UIPageViewController {
 //MARK: Pager Data Source Methods
 extension WrexagramPagerViewController : UIPageViewControllerDataSource {
     
-    private func viewControllerAtIndex(index: Int) -> UIViewController? {
+    fileprivate func viewControllerAtIndex(_ index: Int) -> UIViewController? {
         
-        guard let viewController = storyboard?.instantiateViewControllerWithIdentifier("WrexagramViewController") as? WrexagramViewController
+        guard let viewController = storyboard?.instantiateViewController(withIdentifier: "WrexagramViewController") as? WrexagramViewController
         else { return nil }
         
         guard index >= 0 && index < wrexagrams.count else {
@@ -56,7 +56,7 @@ extension WrexagramPagerViewController : UIPageViewControllerDataSource {
         return viewController
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         guard let wrexagram = viewController as? WrexagramViewController else { return nil }
         
@@ -65,7 +65,7 @@ extension WrexagramPagerViewController : UIPageViewControllerDataSource {
         return self.viewControllerAtIndex(index + 1)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         guard let wrexagram = viewController as? WrexagramViewController else { return nil }
         
@@ -78,7 +78,7 @@ extension WrexagramPagerViewController : UIPageViewControllerDataSource {
 //MARK: Pager Delegate Methods
 extension WrexagramPagerViewController : UIPageViewControllerDelegate {
     
-    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         
         guard let first = pendingViewControllers.first as? WrexagramViewController else { return }
         
@@ -94,7 +94,7 @@ extension WrexagramPagerViewController : UIPageViewControllerDelegate {
 //MARK: Social Media Sharing
 extension WrexagramPagerViewController {
     
-    @IBAction func onShare(sender: AnyObject) {
+    @IBAction func onShare(_ sender: AnyObject) {
         
         let wrexagram = self.currentWrexagram ?? wrexagrams[initialIndex]
         AromaClient.sendLowPriorityMessage(withTitle: "Share Button Hit", withBody: "\(wrexagram)")
@@ -102,23 +102,23 @@ extension WrexagramPagerViewController {
         guard let controller = createShareController() else { return }
         
         if isiPhone {
-            self.navigationController?.presentViewController(controller, animated: true, completion: nil)
+            self.navigationController?.present(controller, animated: true, completion: nil)
         }
         else if isiPad {
             // Change Rect to position Popover
-            controller.modalPresentationStyle = .Popover
+            controller.modalPresentationStyle = .popover
             
             guard let popover = controller.popoverPresentationController else { return }
-            popover.permittedArrowDirections = .Any
+            popover.permittedArrowDirections = .any
             popover.barButtonItem = self.shareButton
             
-            self.navigationController?.presentViewController(controller, animated: true, completion: nil)
+            self.navigationController?.present(controller, animated: true, completion: nil)
         }
             
         
     }
     
-    private func createShareController() -> UIActivityViewController? {
+    fileprivate func createShareController() -> UIActivityViewController? {
 
         guard let wrexagram = currentWrexagram,
               let wrexagramNumber = wrexagram.number,

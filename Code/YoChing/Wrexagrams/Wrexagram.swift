@@ -29,7 +29,7 @@ struct Wrexagram {
         self.number = number
     }
 
-    static func fromJson(json: JSON) -> Wrexagram {
+    static func fromJson(_ json: JSON) -> Wrexagram {
 
         let title = json["title"].string ?? ""
         let subtitle = json["subtitle"].string ?? ""

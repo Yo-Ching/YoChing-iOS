@@ -14,7 +14,7 @@ class WrexagramListViewController : UITableViewController {
 
     lazy var wrexagrams = WrexagramLibrary.wrexagrams
     
-    private let main = NSOperationQueue.mainQueue()
+    fileprivate let main = OperationQueue.main
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +26,13 @@ class WrexagramListViewController : UITableViewController {
 //MARK: Segues
 extension WrexagramListViewController {
     
-    private func goToWrexagram(number: Int) {
-        self.performSegueWithIdentifier("ToPager", sender: number)
+    fileprivate func goToWrexagram(_ number: Int) {
+        self.performSegue(withIdentifier: "ToPager", sender: number)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let destination = segue.destinationViewController
+        let destination = segue.destination
         
         if let viewController = destination as? WrexagramViewController, let number = sender as? Int {
             viewController.wrexagramNumber = number + 1
@@ -51,15 +51,15 @@ extension WrexagramListViewController {
 //MARK: Table View Data Methods
 extension WrexagramListViewController {
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = wrexagrams.count
         print("There are \(count) Wrexagrams")
         return count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCellWithIdentifier("Wrexagram", forIndexPath: indexPath) as? WrexagramListCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Wrexagram", for: indexPath) as? WrexagramListCell else {
             return UITableViewCell()
         }
         
@@ -83,20 +83,20 @@ extension WrexagramListViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
     
-    private func randomizeSpray(forCell cell: WrexagramListCell) {
+    fileprivate func randomizeSpray(forCell cell: WrexagramListCell) {
         
         let factor = Int.random(from: 1, to: 6)
         
         switch factor {
-            case 1 : cell.sprayBackground.contentMode = .ScaleAspectFit
-            case 2 : cell.sprayBackground.contentMode = .Top
-            case 3: cell.sprayBackground.contentMode = .Bottom
-            case 4 : cell.sprayBackground.contentMode = .TopRight
-            default : cell.sprayBackground.contentMode = .ScaleToFill
+            case 1 : cell.sprayBackground.contentMode = .scaleAspectFit
+            case 2 : cell.sprayBackground.contentMode = .top
+            case 3: cell.sprayBackground.contentMode = .bottom
+            case 4 : cell.sprayBackground.contentMode = .topRight
+            default : cell.sprayBackground.contentMode = .scaleToFill
         }
     }
 
@@ -105,7 +105,7 @@ extension WrexagramListViewController {
 //MARK: Table View Delegate Methods
 extension WrexagramListViewController {
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let row = indexPath.row
         
@@ -114,11 +114,11 @@ extension WrexagramListViewController {
         self.goToWrexagram(row)
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = cell.contentView.backgroundColor
     }
     
-    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let cell = cell as? WrexagramListCell else { return }
         cell.imageView?.image = nil
     }
