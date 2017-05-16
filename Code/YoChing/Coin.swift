@@ -93,7 +93,6 @@ class Coin {
             }, completion: {
                 _ in
                 
-                image.image = Coin.tailsCoin
                 image.layer.contents = Coin.tailsCoin.cgImage
                 
                 UIView.animate(withDuration: self.animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
@@ -107,7 +106,6 @@ class Coin {
                         
                         if self.repeatCount < self.maxReps {
                             image.layer.contents = Coin.headsCoin.cgImage
-                            image.image = Coin.headsCoin
                         }
                         else {
                             LOG.info("No flipping coin to heads")
