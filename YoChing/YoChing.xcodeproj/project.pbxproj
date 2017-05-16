@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0373823B8D641415471834E1 /* Pods_YoChing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA493FE538E6ADC2394AAC6 /* Pods_YoChing.framework */; };
 		1397CE001BF44E6C004523FD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1397CDFF1BF44E6C004523FD /* Extensions.swift */; };
 		1397CE021BF454E1004523FD /* WrexagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1397CE011BF454E1004523FD /* WrexagramViewController.swift */; };
 		1397CE041BF45CAE004523FD /* WrexagramBreaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1397CE031BF45CAE004523FD /* WrexagramBreaksViewController.swift */; };
-		27C3CCC290F40858FECF2147 /* Pods_YoChingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C996FB898E39F38827B5001 /* Pods_YoChingTests.framework */; };
 		3EED85B61978FEE8007EEB62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EED85B51978FEE8007EEB62 /* AppDelegate.swift */; };
 		3EED85B81978FEE8007EEB62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EED85B71978FEE8007EEB62 /* MainViewController.swift */; };
 		3EED85BB1978FEE8007EEB62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EED85B91978FEE8007EEB62 /* Main.storyboard */; };
@@ -93,11 +91,7 @@
 		3EED85BA1978FEE8007EEB62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3EED85BC1978FEE8007EEB62 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3EED85C21978FEE8007EEB62 /* YoChing.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoChing.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F89BF55C197002986CA2CAC /* Pods-YoChingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoChingTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-YoChingTests/Pods-YoChingTests.release.xcconfig"; sourceTree = "<group>"; };
-		8C996FB898E39F38827B5001 /* Pods_YoChingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoChingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A368216B1CB23F6300B2DA44 /* WrexagramLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrexagramLibrary.swift; sourceTree = "<group>"; };
-		BB8BA239BB98947BEE558160 /* Pods-YoChingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoChingTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-YoChingTests/Pods-YoChingTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D6F61F570B70A6455AF6A0A4 /* Pods-YoChing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoChing.release.xcconfig"; path = "../Pods/Target Support Files/Pods-YoChing/Pods-YoChing.release.xcconfig"; sourceTree = "<group>"; };
 		DE00768F1CBB95F1005B3DB1 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DE086E6E1D0D28F00048D25F /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		DE2367491CBC063300D9E87D /* Breaks.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Breaks.xcassets; sourceTree = "<group>"; };
@@ -155,8 +149,6 @@
 		DE7AC0E31CC759D9001A5A9A /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		DE8362AF1CBCB4A300C73BA4 /* WrexagramPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrexagramPagerViewController.swift; sourceTree = "<group>"; };
 		DE8FBCE91CFCCE75005177B2 /* WrexaPosts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WrexaPosts.xcassets; sourceTree = "<group>"; };
-		FC05695ED601CAB2DFF5DB0F /* Pods-YoChing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoChing.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-YoChing/Pods-YoChing.debug.xcconfig"; sourceTree = "<group>"; };
-		FCA493FE538E6ADC2394AAC6 /* Pods_YoChing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoChing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +156,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0373823B8D641415471834E1 /* Pods_YoChing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +163,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27C3CCC290F40858FECF2147 /* Pods_YoChingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,8 +172,6 @@
 		3EED85A71978FEE8007EEB62 = {
 			isa = PBXGroup;
 			children = (
-				6AE0E31AC8697ED4E2512BED /* Frameworks */,
-				CFB327BF22180A17FDDBD6CF /* Pods */,
 				3EED85B21978FEE8007EEB62 /* YoChing */,
 			);
 			sourceTree = "<group>";
@@ -231,26 +219,6 @@
 				3EED85B41978FEE8007EEB62 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6AE0E31AC8697ED4E2512BED /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FCA493FE538E6ADC2394AAC6 /* Pods_YoChing.framework */,
-				8C996FB898E39F38827B5001 /* Pods_YoChingTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CFB327BF22180A17FDDBD6CF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FC05695ED601CAB2DFF5DB0F /* Pods-YoChing.debug.xcconfig */,
-				D6F61F570B70A6455AF6A0A4 /* Pods-YoChing.release.xcconfig */,
-				BB8BA239BB98947BEE558160 /* Pods-YoChingTests.debug.xcconfig */,
-				6F89BF55C197002986CA2CAC /* Pods-YoChingTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		DE23674B1CBC353800D9E87D /* Animations */ = {
@@ -347,13 +315,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EED85CC1978FEE8007EEB62 /* Build configuration list for PBXNativeTarget "YoChing" */;
 			buildPhases = (
-				F60A9EC3F1933EC8E60447FA /* [CP] Check Pods Manifest.lock */,
 				3EED85AC1978FEE8007EEB62 /* Sources */,
 				3EED85AD1978FEE8007EEB62 /* Frameworks */,
 				3EED85AE1978FEE8007EEB62 /* Resources */,
-				BDF24BAD3B8BD13D5DD15A50 /* [CP] Embed Pods Frameworks */,
-				B90890821FD0B1DE8C4A4794 /* [CP] Copy Pods Resources */,
-				0400814AF8DFD15FE04F48E1 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -368,12 +332,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EED85CF1978FEE8007EEB62 /* Build configuration list for PBXNativeTarget "YoChingTests" */;
 			buildPhases = (
-				E4FEDB4E1F91CF5DE1486A00 /* [CP] Check Pods Manifest.lock */,
 				3EED85BE1978FEE8007EEB62 /* Sources */,
 				3EED85BF1978FEE8007EEB62 /* Frameworks */,
 				3EED85C01978FEE8007EEB62 /* Resources */,
-				4BAAEB642B8DD56C077CD387 /* [CP] Embed Pods Frameworks */,
-				BFA3D15B2E1D289268C8BC17 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -486,114 +447,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0400814AF8DFD15FE04F48E1 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YoChing/Pods-YoChing-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4BAAEB642B8DD56C077CD387 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YoChingTests/Pods-YoChingTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B90890821FD0B1DE8C4A4794 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YoChing/Pods-YoChing-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BDF24BAD3B8BD13D5DD15A50 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YoChing/Pods-YoChing-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BFA3D15B2E1D289268C8BC17 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-YoChingTests/Pods-YoChingTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E4FEDB4E1F91CF5DE1486A00 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F60A9EC3F1933EC8E60447FA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3EED85AC1978FEE8007EEB62 /* Sources */ = {
@@ -731,7 +584,6 @@
 		};
 		3EED85CD1978FEE8007EEB62 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC05695ED601CAB2DFF5DB0F /* Pods-YoChing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -750,7 +602,6 @@
 		};
 		3EED85CE1978FEE8007EEB62 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6F61F570B70A6455AF6A0A4 /* Pods-YoChing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -770,7 +621,6 @@
 		};
 		3EED85D01978FEE8007EEB62 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB8BA239BB98947BEE558160 /* Pods-YoChingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -791,7 +641,6 @@
 		};
 		3EED85D11978FEE8007EEB62 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F89BF55C197002986CA2CAC /* Pods-YoChingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
