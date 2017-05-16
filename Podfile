@@ -1,4 +1,4 @@
-xcodeproj 'YoChing/YoChing.xcodeproj/'
+project 'YoChing/YoChing.xcodeproj/'
 
 # Uncomment this line to define a global platform for your project
 platform :ios, '8.0'
