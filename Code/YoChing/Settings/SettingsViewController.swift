@@ -6,6 +6,7 @@
 //  Copyright © 2016 Yo Ching. All rights reserved.
 //
 
+import Archeota
 import AromaSwiftClient
 import Foundation
 
@@ -123,6 +124,7 @@ class SettingsViewController : UITableViewController {
 extension SettingsViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
         setLookForCell(tableView, forIndexPath: indexPath)
         cell.backgroundColor = cell.contentView.backgroundColor
     }
@@ -130,41 +132,53 @@ extension SettingsViewController {
     fileprivate func setLookForCell(_ tableView: UITableView, forIndexPath indexPath: IndexPath) {
        
         if indexPath == classicPath {
+            
             if Settings.isClassicEnabled {
+                
                 classicCheckmark.isHidden = false
                 classicLabel.textColor = UIColor.white
             }
             else {
+                
                 classicCheckmark.isHidden = true
                 classicLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.75)
             }
         }
         else if indexPath == tapThatPath {
+            
             if Settings.isQuickEnabled {
+                
                 tapThatCheckmark.isHidden = false
                 tapThatLabel.textColor = UIColor.white
             }
             else {
+                
                 tapThatCheckmark.isHidden = true
                 tapThatLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.75)
             }
         }
         else if indexPath == streetPath {
+            
             if Settings.isStreetEnabled {
+                
                 streetCheckmark.isHidden = false
                 streetLabel.textColor = UIColor.white
             }
             else {
+                
                 streetLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.75)
                 streetCheckmark.isHidden = true
             }
         }
         else if indexPath == slickPath {
+            
             if Settings.isSlickEnabled {
+                
                 slickLabel.textColor = UIColor.white
                 slickCheckmark.isHidden = false
             }
             else {
+                
                 slickLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.75)
                 slickCheckmark.isHidden = true
             }
@@ -201,13 +215,16 @@ extension SettingsViewController {
         
         
         if indexPath == getBookPath {
+            
             self.openLink(BUY_BOOK_LINK)
         }
         else if indexPath == seeInfoPath {
+            
             //self.openLink(BOOK_INFO_LINK)
             self.goToTutorial()
         }
         else if indexPath == seeStreetCredsPath {
+            
             AromaClient.sendLowPriorityMessage(withTitle: "Opened App Credits Page")
             self.goToCredits()
         }

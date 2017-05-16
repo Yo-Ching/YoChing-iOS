@@ -17,7 +17,7 @@ class TutorialViewController : UIViewController {
     
     fileprivate var webView: WKWebView!
     
-    let url = "https://www.youtube.com/embed/mCqsTEY-XVY?list=PLJfSQOoheuTsiV13Ozk0lgOSL4qUaE3x2".toURL()
+    fileprivate let url = "https://www.youtube.com/embed/mCqsTEY-XVY?list=PLJfSQOoheuTsiV13Ozk0lgOSL4qUaE3x2".toURL()
     
     
     deinit {
