@@ -27,8 +27,8 @@ class WrexagramViewController : UITableViewController {
         guard wrexagramNumber > 0 else {
             
             defer {
-                AromaClient.beginWithTitle("Invalid Logic")
-                    .withPriority(.HIGH)
+                AromaClient.beginMessage(withTitle: "Invalid Logic")
+                    .withPriority(.high)
                     .addBody("Loaded WrexagramViewController with bad Wrex Number").addLine(2)
                     .addBody("\(wrexagramNumber)")
                     .send()
@@ -60,13 +60,13 @@ class WrexagramViewController : UITableViewController {
     fileprivate func loadTitle()
     {
         wrexagramTitle.adjustsFontSizeToFitWidth = true
-        wrexagramTitle.morphingEffect = .Anvil
+        wrexagramTitle.morphingEffect = .anvil
         wrexagramTitle.text = wrexagram?.title ?? ""
         wrexagramTitle.readjustLabelFontSize()
     }
     
     fileprivate func loadImage() {
-        WrexagramLibrary.loadWrexagram(number: wrexagramNumber, intoImageView: wrexegramImage, useThumbnail: false)
+        WrexagramLibrary.loadWrexagram(wrexagramNumber, intoImageView: wrexegramImage, useThumbnail: false)
     }
     
     

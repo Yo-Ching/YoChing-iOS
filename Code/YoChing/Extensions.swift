@@ -197,13 +197,13 @@ extension UILabel {
 //MARK: String
 extension String {
     
-    func stringByReplacing(string: String, with replacement: String) -> String {
+    func stringByReplacing(_ string: String, with replacement: String) -> String {
         
         let result = self.replacingOccurrences(of: string, with: replacement, options: .literal, range: nil)
         return result
     }
     
     func stringByRemovingWhitespace() -> String {
-        return self.stringByReplacing(string: " ", with: "")
+        return self.stringByReplacing(" ", with: "")
     }
 }

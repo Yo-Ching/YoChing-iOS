@@ -136,11 +136,11 @@ extension WrexagramPagerViewController {
         
         activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
             
-            let activity =  activity ?? ""
+            let activity =  activity ?? UIActivityType(rawValue: "")
             
             if success {
-                AromaClient.beginWithTitle("Wrexagram Shared")
-                    .withPriority(.HIGH)
+                AromaClient.beginMessage(withTitle: "Wrexagram Shared")
+                    .withPriority(.high)
                     .addBody("Wrexagram \(wrexagramNumber)").addLine(2)
                     .addBody("\(wrexagram)").addLine(2)
                     .addBody("To Activity: ").addLine()
@@ -148,16 +148,16 @@ extension WrexagramPagerViewController {
                     .send()
             }
             else if let error = error {
-                AromaClient.beginWithTitle("Wrexagram Share Failed")
-                    .withPriority(.HIGH)
+                AromaClient.beginMessage(withTitle: "Wrexagram Share Failed")
+                    .withPriority(.high)
                     .addBody("Wrexagram \(wrexagramNumber)").addLine()
                     .addBody("\(wrexagram)").addLine(2)
                     .addBody("\(error)")
                     .send()
             }
             else {
-                AromaClient.beginWithTitle("Wrexagram Share Canceled")
-                    .withPriority(.LOW)
+                AromaClient.beginMessage(withTitle: "Wrexagram Share Canceled")
+                    .withPriority(.low)
                     .addBody("Wrexagram \(wrexagramNumber)").addLine(2)
                     .addBody("\(error)")
                     .send()

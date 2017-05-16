@@ -8,6 +8,7 @@
 
 import AromaSwiftClient
 import Foundation
+import SDWebImage
 import SwiftyJSON
 
 class WrexagramLibrary {
@@ -98,8 +99,8 @@ class WrexagramLibrary {
                 return string
                 
             } catch let ex {
-                AromaClient.beginWithTitle("Failed To Load")
-                    .addBody("\(UIDevice.currentDevice().name)")
+                AromaClient.beginMessage(withTitle: "Failed To Load")
+                    .addBody("\(UIDevice.current.name)")
                     .addLine().addLine()
                     .addBody("\(ex)")
                     .send()
@@ -141,11 +142,12 @@ class WrexagramLibrary {
 extension WrexagramLibrary {
     
     
-    static func loadWrexagram(number: Int, intoImageView imageView: UIImageView, useThumbnail: Bool = false) {
+    static func loadWrexagram(_ number: Int, intoImageView imageView: UIImageView, useThumbnail: Bool = false) {
         
         if useThumbnail {
-            let fetcher = WrexagramImageFetcher(wrexagramNumber: number)
-            imageView.hnk_setImageFromFetcher(fetcher)
+            //TODO: Add Async Loading
+            let image = WrexagramLibrary.imageForWrexagram(number)
+            imageView.image = image
         }
         else {
             let image = WrexagramLibrary.imageForWrexagram(number)
@@ -164,28 +166,5 @@ extension WrexagramLibrary {
         return UIImage(named: name)
     }
     
-    
-}
-
-class WrexagramImageFetcher: Fetcher<UIImage> {
-    
-    let wrexagramNumber: Int
-    
-    init(wrexagramNumber: Int) {
-        self.wrexagramNumber = wrexagramNumber
-        super.init(key: String(wrexagramNumber))
-    }
-    
-    override func fetch(failure fail: ((NSError?) -> ()), success succeed: (UIImage) -> ()) {
-        
-        if let image = WrexagramLibrary.imageForWrexagram(wrexagramNumber) {
-            succeed(image)
-        }
-        else {
-            fail(nil)
-        }
-    }
-    
-    override func cancelFetch() {}
     
 }
