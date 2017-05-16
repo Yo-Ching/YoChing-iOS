@@ -8,7 +8,6 @@
 
 import AromaSwiftClient
 import Foundation
-import Haneke
 import SwiftyJSON
 
 class WrexagramLibrary {

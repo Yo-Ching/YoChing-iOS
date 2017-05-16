@@ -1,7 +1,7 @@
-github "Haneke/HanekeSwift" "v0.10.1"
 github "RedRoma/Archeota" "v1.2"
 github "RedRoma/AromaSwiftClient" "4768cb0ef0d17c03ffc5e7ba5b3eb2dc766095c1"
 github "RedRoma/AromaThrift" "v1.10.2"
 github "RedRoma/SwiftExceptionCatcher" "v1.2.1"
 github "SwiftyJSON/SwiftyJSON" "3.1.4"
 github "lexrus/LTMorphingLabel" "0.5.0"
+github "rs/SDWebImage" "4.0.0"
