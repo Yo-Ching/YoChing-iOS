@@ -16,7 +16,7 @@ class WrexagramLibrary {
     
     fileprivate static let async: OperationQueue = {
         let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 3
+        queue.maxConcurrentOperationCount = 1
         
         return queue
     }()
@@ -158,34 +158,64 @@ extension WrexagramLibrary {
     
     static func loadWrexagram(_ number: Int, intoImageView imageView: UIImageView, useThumbnail: Bool = false) {
         
+        //Variables
         let key = "\(number)"
+        let deviceScale = UIScreen.main.scale
+        let imageScale: CGFloat = useThumbnail ? deviceScale/3 : deviceScale
+        let options: KingfisherOptionsInfo = [  ]
         
-        let setImage: (UIImage) -> () = { image in
+        
+        //Functions
+        let setImage: (UIImage?) -> () = { image in
             
             self.main.addOperation {
-                imageView.image = image
+                
+                let animations = {
+                    imageView.image = image
+                }
+                
+                UIView.transition(with: imageView, duration: 0.3, options: .transitionCrossDissolve, animations: animations, completion: nil)
             }
         }
         
-        async.addOperation {
+        let loadImageAsynchronously = {
             
-            if useThumbnail, let image = cache.retrieveImageInDiskCache(forKey: key) {
+            async.addOperation {
                 
-                LOG.info("Loaded Wrexagram \(number) from cache")
-                setImage(image)
-                return
+                LOG.info("Loading Wrexagram - \(key) from Assets")
+                
+                guard let image = imageForWrexagram(number) else {
+                    return
+                }
+                
+                cache.store(image, forKey: key, toDisk: true) {
+                    
+                    LOG.info("Stored Wrexagram #\(key) in the cache")
+                    
+                    if useThumbnail {
+                        
+                        //Retry the operation this time with the cache properly set
+                        let cachedImage = cache.retrieveImageInDiskCache(forKey: key, options: options)
+                        setImage(cachedImage)
+                        
+                    }
+                }
+                
+                if !useThumbnail {
+                    setImage(image)
+                }
             }
             
-            if let image = WrexagramLibrary.imageForWrexagram(number) {
-                
-                setImage(image)
-                cache.store(image, forKey: key)
-                
-                LOG.info("Stored Wrexagram-\(key) in Cache")
-            }
-            else {
-                LOG.error("Failed to load Image for Wrexagram #\(number)")
-            }
+        }
+        
+        if useThumbnail, let cachedImage = cache.retrieveImageInDiskCache(forKey: key, options: options) {
+            
+            LOG.info("Loaded Cached Image for Wrex-\(key)")
+            setImage(cachedImage)
+            return
+        }
+        else {
+            loadImageAsynchronously()
         }
     }
     
