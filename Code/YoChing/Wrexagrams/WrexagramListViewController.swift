@@ -6,6 +6,7 @@
 //  Copyright © 2016 Yo Ching. All rights reserved.
 //
 
+import Archeota
 import AromaSwiftClient
 import Foundation
 import UIKit
@@ -17,6 +18,7 @@ class WrexagramListViewController : UITableViewController {
     fileprivate let main = OperationQueue.main
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         AromaClient.sendLowPriorityMessage(withTitle: "Opened Wrexagram List")
@@ -27,6 +29,7 @@ class WrexagramListViewController : UITableViewController {
 extension WrexagramListViewController {
     
     fileprivate func goToWrexagram(_ number: Int) {
+        
         self.performSegue(withIdentifier: "ToPager", sender: number)
     }
     
@@ -35,12 +38,14 @@ extension WrexagramListViewController {
         let destination = segue.destination
         
         if let viewController = destination as? WrexagramViewController, let number = sender as? Int {
+            
             viewController.wrexagramNumber = number + 1
             let wrexagram = wrexagrams[number]
             viewController.wrexagram = wrexagram
         }
         
         if let viewController = destination as? WrexagramPagerViewController, let number = sender as? Int {
+            
             viewController.initialIndex = number
             viewController.wrexagrams = self.wrexagrams
         }
@@ -52,8 +57,9 @@ extension WrexagramListViewController {
 extension WrexagramListViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         let count = wrexagrams.count
-        print("There are \(count) Wrexagrams")
+        LOG.debug("There are \(count) Wrexagrams")
         return count
     }
     
@@ -92,14 +98,15 @@ extension WrexagramListViewController {
         let factor = Int.random(from: 1, to: 6)
         
         switch factor {
-            case 1 : cell.sprayBackground.contentMode = .scaleAspectFit
-            case 2 : cell.sprayBackground.contentMode = .top
-            case 3: cell.sprayBackground.contentMode = .bottom
-            case 4 : cell.sprayBackground.contentMode = .topRight
-            default : cell.sprayBackground.contentMode = .scaleToFill
+            
+        case 1 : cell.sprayBackground.contentMode = .scaleAspectFit
+        case 2 : cell.sprayBackground.contentMode = .top
+        case 3: cell.sprayBackground.contentMode = .bottom
+        case 4 : cell.sprayBackground.contentMode = .topRight
+        default : cell.sprayBackground.contentMode = .scaleToFill
         }
     }
-
+    
 }
 
 //MARK: Table View Delegate Methods
