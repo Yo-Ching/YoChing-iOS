@@ -57,10 +57,10 @@ class Coin {
         
         repeatCount += 1
         
-        guard repeatCount <= maxReps else {
-            doAnimation()
-            return
-        }
+//        guard repeatCount <= maxReps else {
+//            doAnimation()
+//            return
+//        }
         
         if repeatCount == 1 {					// first time for this animation
             
@@ -93,7 +93,9 @@ class Coin {
             }, completion: {
                 _ in
                 
+                image.image = Coin.tailsCoin
                 image.layer.contents = Coin.tailsCoin.cgImage
+                
                 UIView.animate(withDuration: self.animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
                     
                     var rotation = image.layer.transform
@@ -103,8 +105,9 @@ class Coin {
                     }, completion: {
                         _ in
                         
-                        if self.repeatCount <= self.maxReps {
+                        if self.repeatCount < self.maxReps {
                             image.layer.contents = Coin.headsCoin.cgImage
+                            image.image = Coin.headsCoin
                         }
                         else {
                             LOG.info("No flipping coin to heads")
