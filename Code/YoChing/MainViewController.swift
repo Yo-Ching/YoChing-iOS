@@ -400,6 +400,7 @@ extension MainViewController {
                     let wrexNumber = Int(outcome.replacingOccurrences(of: "wrexagram", with: "")) ?? 01
                     
                     defer {
+                        
                         AromaClient.beginMessage(withTitle: "Coins Flipped")
                             .addBody("Result: Wrexagram \(wrexNumber)")
                             .withPriority(.low)
@@ -408,10 +409,12 @@ extension MainViewController {
                     }
                     
                     if self.maxTosses == 1 {
+                        
                         self.hideWrexLines()
                         self.goToWrex(wrexNumber)
                     }
                     else {
+                        
                         self.flipButton.isEnabled = false
                       
                         self.delay(0.5) {

@@ -42,18 +42,28 @@ class Coin {
         if repeatCount > maxReps  { //This means we're done
             
             let possibleSides = [CoinSide.heads, CoinSide.tails]
-            let resultingSide = possibleSides.selectOne() ?? .heads
+            let resultingSide = possibleSides.selectOne() ?? .tails
+            let appropriateImage = resultingSide == .heads ? Coin.headsCoin : Coin.tailsCoin
+            resultingSide == .heads ? LOG.info("Heads") : LOG.info("Tails")
             
-            image.layer.contents =  resultingSide == .heads ? Coin.headsCoin.cgImage : Coin.tailsCoin.cgImage
+            image.image = appropriateImage
+            image.layer.contents =  appropriateImage.cgImage
             image.layer.transform = CATransform3DIdentity
 
             onDone?(resultingSide)
             
             return
         }
+        
         repeatCount += 1
         
+        guard repeatCount <= maxReps else {
+            doAnimation()
+            return
+        }
+        
         if repeatCount == 1 {					// first time for this animation
+            
             let duration: Double = (animationDuration * Double((maxReps+1)))
             let startFrame = image.frame
             UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
@@ -93,7 +103,13 @@ class Coin {
                     }, completion: {
                         _ in
                         
-                        image.layer.contents = Coin.headsCoin.cgImage
+                        if self.repeatCount <= self.maxReps {
+                            image.layer.contents = Coin.headsCoin.cgImage
+                        }
+                        else {
+                            LOG.info("No flipping coin to heads")
+                        }
+                        
                         self.doAnimation()
                 })
         })
@@ -113,7 +129,7 @@ class Coin {
         self.onDone = onDone
         
         image.layer.removeAllAnimations()
-        image.layer.contents = Coin.headsCoin.cgImage
+//        image.layer.contents = Coin.headsCoin.cgImage
         doAnimation()
     }
 }
