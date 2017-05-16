@@ -3,5 +3,5 @@
 github "RedRoma/AromaSwiftClient" "develop"
 github "RedRoma/Archeota"
 github "lexrus/LTMorphingLabel"
-github "rs/SDWebImage"
+github "onevcat/Kingfisher"
 github "SwiftyJSON/SwiftyJSON"

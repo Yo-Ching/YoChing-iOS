@@ -54,14 +54,12 @@
 		DE6ED0811ECABC9700CFCB09 /* AromaSwiftClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06B1ECAACE700CFCB09 /* AromaSwiftClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE6ED0821ECABC9700CFCB09 /* AromaThrift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06C1ECAACE700CFCB09 /* AromaThrift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE6ED0831ECABC9700CFCB09 /* LTMorphingLabel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06D1ECAACE700CFCB09 /* LTMorphingLabel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DE6ED0841ECABC9700CFCB09 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED07E1ECAB95400CFCB09 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE6ED0851ECABC9700CFCB09 /* SwiftExceptionCatcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06E1ECAACE700CFCB09 /* SwiftExceptionCatcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE6ED0861ECABC9700CFCB09 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED0741ECAAD1800CFCB09 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE6ED0871ECABC9C00CFCB09 /* Archeota.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06A1ECAACE700CFCB09 /* Archeota.framework */; };
 		DE6ED0881ECABC9C00CFCB09 /* AromaSwiftClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06B1ECAACE700CFCB09 /* AromaSwiftClient.framework */; };
 		DE6ED0891ECABC9C00CFCB09 /* AromaThrift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06C1ECAACE700CFCB09 /* AromaThrift.framework */; };
 		DE6ED08A1ECABC9C00CFCB09 /* LTMorphingLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06D1ECAACE700CFCB09 /* LTMorphingLabel.framework */; };
-		DE6ED08B1ECABC9C00CFCB09 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED07E1ECAB95400CFCB09 /* SDWebImage.framework */; };
 		DE6ED08C1ECABC9C00CFCB09 /* SwiftExceptionCatcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED06E1ECAACE700CFCB09 /* SwiftExceptionCatcher.framework */; };
 		DE6ED08D1ECABC9C00CFCB09 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6ED0741ECAAD1800CFCB09 /* SwiftyJSON.framework */; };
 		DE71A3501CB8055300F5BEF2 /* PTC55F.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE71A3401CB8055300F5BEF2 /* PTC55F.ttf */; };
@@ -105,7 +103,6 @@
 				DE6ED0811ECABC9700CFCB09 /* AromaSwiftClient.framework in Embed Frameworks */,
 				DE6ED0821ECABC9700CFCB09 /* AromaThrift.framework in Embed Frameworks */,
 				DE6ED0831ECABC9700CFCB09 /* LTMorphingLabel.framework in Embed Frameworks */,
-				DE6ED0841ECABC9700CFCB09 /* SDWebImage.framework in Embed Frameworks */,
 				DE6ED0851ECABC9700CFCB09 /* SwiftExceptionCatcher.framework in Embed Frameworks */,
 				DE6ED0861ECABC9700CFCB09 /* SwiftyJSON.framework in Embed Frameworks */,
 			);
@@ -170,7 +167,6 @@
 		DE6ED06D1ECAACE700CFCB09 /* LTMorphingLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LTMorphingLabel.framework; path = Carthage/Build/iOS/LTMorphingLabel.framework; sourceTree = "<group>"; };
 		DE6ED06E1ECAACE700CFCB09 /* SwiftExceptionCatcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftExceptionCatcher.framework; path = Carthage/Build/iOS/SwiftExceptionCatcher.framework; sourceTree = "<group>"; };
 		DE6ED0741ECAAD1800CFCB09 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		DE6ED07E1ECAB95400CFCB09 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		DE71A3401CB8055300F5BEF2 /* PTC55F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTC55F.ttf; sourceTree = "<group>"; };
 		DE71A3411CB8055300F5BEF2 /* PTC75F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTC75F.ttf; sourceTree = "<group>"; };
 		DE71A3421CB8055300F5BEF2 /* PTF55F.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PTF55F.ttf; sourceTree = "<group>"; };
@@ -201,7 +197,6 @@
 				DE6ED0881ECABC9C00CFCB09 /* AromaSwiftClient.framework in Frameworks */,
 				DE6ED0891ECABC9C00CFCB09 /* AromaThrift.framework in Frameworks */,
 				DE6ED08A1ECABC9C00CFCB09 /* LTMorphingLabel.framework in Frameworks */,
-				DE6ED08B1ECABC9C00CFCB09 /* SDWebImage.framework in Frameworks */,
 				DE6ED08C1ECABC9C00CFCB09 /* SwiftExceptionCatcher.framework in Frameworks */,
 				DE6ED08D1ECABC9C00CFCB09 /* SwiftyJSON.framework in Frameworks */,
 			);
@@ -356,7 +351,6 @@
 				DE6ED06B1ECAACE700CFCB09 /* AromaSwiftClient.framework */,
 				DE6ED06C1ECAACE700CFCB09 /* AromaThrift.framework */,
 				DE6ED06D1ECAACE700CFCB09 /* LTMorphingLabel.framework */,
-				DE6ED07E1ECAB95400CFCB09 /* SDWebImage.framework */,
 				DE6ED06E1ECAACE700CFCB09 /* SwiftExceptionCatcher.framework */,
 				DE6ED0741ECAAD1800CFCB09 /* SwiftyJSON.framework */,
 			);
