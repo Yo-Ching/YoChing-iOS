@@ -20,6 +20,7 @@ class WrexagramViewController : UITableViewController {
     
     var wrexagramNumber: Int = -1
     var wrexagram: Wrexagram?
+    var startTime: Date!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +70,16 @@ class WrexagramViewController : UITableViewController {
         WrexagramLibrary.loadWrexagram(wrexagramNumber, intoImageView: wrexegramImage, useThumbnail: true)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        startTime = Date()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        let secondsViewing = abs(startTime.timeIntervalSinceNow)
+        
+        makeNoteThatWrexagramReadFor(seconds: secondsViewing)
+    }
     
 }
 
@@ -183,4 +194,15 @@ class WhatsUpCell : UITableViewCell {
     @IBOutlet weak var whatsUpLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     
+}
+
+//MARK: Aroma Messages
+fileprivate extension WrexagramViewController {
+    
+    func makeNoteThatWrexagramReadFor(seconds: Double) {
+        
+        let secondsViewing = String(format: "%.2f", seconds)
+        
+        AromaClient.sendLowPriorityMessage(withTitle: "Wrexagram Read", withBody: "Wrexagram #\(self.wrexagramNumber) read for \(secondsViewing) seconds")
+    }
 }
