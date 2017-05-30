@@ -19,6 +19,7 @@
 		DE086E6F1D0D28F00048D25F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE086E6E1D0D28F00048D25F /* TutorialViewController.swift */; };
 		DE23674A1CBC063300D9E87D /* Breaks.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE2367491CBC063300D9E87D /* Breaks.xcassets */; };
 		DE23674D1CBC356B00D9E87D /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23674C1CBC356B00D9E87D /* Animations.swift */; };
+		DE387C401EDD312D00760DDF /* Wrexagrams.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE387C3F1EDD312D00760DDF /* Wrexagrams.xcassets */; };
 		DE468E8A1CB84BDB00AC1199 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE468E891CB84BDB00AC1199 /* Launch Screen.storyboard */; };
 		DE468E921CB968F000AC1199 /* html in Resources */ = {isa = PBXBuildFile; fileRef = DE468E901CB968F000AC1199 /* html */; };
 		DE468E931CB968F000AC1199 /* json in Resources */ = {isa = PBXBuildFile; fileRef = DE468E911CB968F000AC1199 /* json */; };
@@ -131,6 +132,7 @@
 		DE086E6E1D0D28F00048D25F /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		DE2367491CBC063300D9E87D /* Breaks.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Breaks.xcassets; sourceTree = "<group>"; };
 		DE23674C1CBC356B00D9E87D /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		DE387C3F1EDD312D00760DDF /* Wrexagrams.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Wrexagrams.xcassets; sourceTree = "<group>"; };
 		DE468E891CB84BDB00AC1199 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DE468E901CB968F000AC1199 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; name = html; path = media/html; sourceTree = "<group>"; };
 		DE468E911CB968F000AC1199 /* json */ = {isa = PBXFileReference; lastKnownFileType = folder; name = json; path = media/json; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		3EED85B21978FEE8007EEB62 /* YoChing */ = {
 			isa = PBXGroup;
 			children = (
+				DE387C3E1EDD311200760DDF /* Assets */,
 				DE468E901CB968F000AC1199 /* html */,
 				DE468E911CB968F000AC1199 /* json */,
 				DE6C9A571CC1A5A100ACF11A /* txt */,
@@ -249,9 +252,6 @@
 				1397CDFF1BF44E6C004523FD /* Extensions.swift */,
 				3EED85B71978FEE8007EEB62 /* MainViewController.swift */,
 				DE086E6E1D0D28F00048D25F /* TutorialViewController.swift */,
-				DE2367491CBC063300D9E87D /* Breaks.xcassets */,
-				3EED85BC1978FEE8007EEB62 /* Images.xcassets */,
-				DE8FBCE91CFCCE75005177B2 /* WrexaPosts.xcassets */,
 				DE23674B1CBC353800D9E87D /* Animations */,
 				DE683D4B1CB372100072F98A /* Fonts */,
 				3EED85B91978FEE8007EEB62 /* Main.storyboard */,
@@ -288,6 +288,17 @@
 				DE6C9A631CC2189600ACF11A /* CreditsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		DE387C3E1EDD311200760DDF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DE2367491CBC063300D9E87D /* Breaks.xcassets */,
+				3EED85BC1978FEE8007EEB62 /* Images.xcassets */,
+				DE8FBCE91CFCCE75005177B2 /* WrexaPosts.xcassets */,
+				DE387C3F1EDD312D00760DDF /* Wrexagrams.xcassets */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		DE683D4B1CB372100072F98A /* Fonts */ = {
@@ -485,6 +496,7 @@
 				DE23674A1CBC063300D9E87D /* Breaks.xcassets in Resources */,
 				DE6B7A021CB73B3300C47024 /* Exo-Bold.otf in Resources */,
 				3EED85BD1978FEE8007EEB62 /* Images.xcassets in Resources */,
+				DE387C401EDD312D00760DDF /* Wrexagrams.xcassets in Resources */,
 				DE6B7A031CB73B3300C47024 /* Exo-BoldItalic.otf in Resources */,
 				DE71A35C1CB8055300F5BEF2 /* PTS75F.ttf in Resources */,
 				DE71A3591CB8055300F5BEF2 /* PTN77F.ttf in Resources */,
