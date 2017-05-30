@@ -76,9 +76,10 @@ class WrexagramViewController : UITableViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         
-        let secondsViewing = abs(startTime.timeIntervalSinceNow)
-        
-        makeNoteThatWrexagramReadFor(seconds: secondsViewing)
+        if let secondsViewing = startTime?.timeIntervalSinceNow.absoluteValue {
+            
+            makeNoteThatWrexagramReadFor(seconds: secondsViewing)
+        }
     }
     
 }

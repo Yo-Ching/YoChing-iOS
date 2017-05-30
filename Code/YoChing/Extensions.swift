@@ -19,6 +19,10 @@ extension Int {
     func isOdd() -> Bool {
         return !self.isEven()
     }
+    
+    var absoluteValue: Int {
+        return abs(self)
+    }
 
     static func random(from begin: Int, to end: Int) -> Int {
 
@@ -37,6 +41,16 @@ extension Int {
             return result
         }
     }
+}
+
+
+//MARK: Doubles
+extension Double {
+    
+    var absoluteValue: Double {
+        return abs(self)
+    }
+    
 }
 
 //MARK: UIViewController
