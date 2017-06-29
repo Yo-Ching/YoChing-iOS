@@ -59,6 +59,7 @@ class MainViewController: UIViewController {
     
     //MARK: Wrex Lines
     fileprivate lazy var splitLineImage: UIImage? = {
+        
         if let image = UIImage(named: "WREX_MASTER-splitline") {
             return image
         }
@@ -69,6 +70,7 @@ class MainViewController: UIViewController {
     }()
     
     fileprivate lazy var strongLineImage: UIImage? = {
+        
         if let image = UIImage(named: "WREX_MASTER-strongline") {
             return image
         }
@@ -76,6 +78,7 @@ class MainViewController: UIViewController {
             AromaClient.sendHighPriorityMessage(withTitle: "Strong Line Failed To Load")
             return nil
         }
+        
     }()
     
     override func viewDidLoad() {
@@ -97,6 +100,7 @@ class MainViewController: UIViewController {
         if Settings.isFirstTimeRunning {
             Settings.isFirstTimeRunning = false
             
+            AromaClient.sendHighPriorityMessage(withTitle: "First Time User")
             self.goToTutorial()
         }
     }
