@@ -2,6 +2,10 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Yo Bro White@1x.pdf"
+    },
+    {
+      "idiom" : "universal",
       "filename" : "Yo Bro White@0.4x.png",
       "scale" : "1x"
     },
