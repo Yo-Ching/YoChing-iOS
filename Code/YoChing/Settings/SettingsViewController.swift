@@ -79,8 +79,8 @@ class SettingsViewController : UITableViewController {
     @IBOutlet weak var slickCheckmark: UIImageView!
     
     //MARK: Links to open
-    fileprivate let BUY_BOOK_LINK = "http://www.amazon.com/Yo-Ching-Ancient-Knowledge-Streets/dp/0996462503"
-    fileprivate let BOOK_INFO_LINK = "http://yoching.net"
+    fileprivate let BUY_BOOK_LINK = "http://amzn.to/2tuXdG7"
+    fileprivate let BOOK_INFO_LINK = "https://www.facebook.com/Yo-Ching-856773237725836/"
 
     //Mark: Throwing Style Paths
     fileprivate let classicPath = IndexPath(row: 1, section: 0)
