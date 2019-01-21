@@ -2,7 +2,7 @@ YoChing
 =================================
 [![Join the chat at https://gitter.im/mrisney/yoching](https://badges.gitter.im/mrisney/yoching.svg)](https://gitter.im/mrisney/yoching?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[<img src="https://raw.githubusercontent.com/Yo-Ching/YoChing-iOS/develop/Design/Logo/Black/Icon-Original.png" width="400">](http://yoching.net/)
+[<img src="https://raw.githubusercontent.com/Yo-Ching/YoChing-iOS/develop/Design/Logo/Black/Icon-Original.png" width="150">](http://yoching.net/)
 
 
 YoChing IOS Swift Mobile Application
