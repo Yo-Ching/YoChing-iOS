@@ -8,7 +8,7 @@ YoChing
 
 YoChing IOS Swift Mobile Application
 
-![YoChing Gif](./YoChing/YoChing-2.gif?raw=true)
+![YoChing Gif](./Code/YoChing-2.gif?raw=true)
 
 YO CHING text, logo and art work copyright 2015-2016 by True Player and Hugh Gallagher. All rights reserved.
 
